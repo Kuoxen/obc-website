@@ -1,0 +1,177 @@
+extends ../layouts/default
+	
+	
+// ------------ Top Content Panel -------- //
+block topContentPanel
+	h1
+		.smaller The
+		span Open Source
+		br
+		span Distributed Ledger
+		.smaller for
+		span Business
+	
+	br
+	br
+	p
+		strong This is a simple hero unit, a simple jumotro-style compoent for calling extra attention to featured contento or information.
+	
+	br
+	br
+	br
+	
+	p
+		form.thingWrap
+			.title Get the code
+			a(href="https://github.com/openblockchain/" target="_default")
+				button(type="button") GITHUB
+		
+		form.thingWrap(method="POST" action="/mailinglist")
+			.title Join the Growing Community
+			input(type="text" placeholder="Enter your email here" name="email")
+			button(type="submit").cleanButton Submit
+	br
+	br
+	br
+	
+	
+// ------------ Main Content Panel -------- //
+block content
+	.container: .contentWrapper
+	.subcontentPanel
+		
+		
+		// ------------ PoV Panel -------- //
+		h1 Our point of view
+		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
+		
+		
+		.pan1x3
+			.sect1x3
+				h3 ID MANAGEMENT
+				img(src="/images/logo.png").img1x3
+				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+			.sect1x3
+				h3 CONSENSUS
+				img(src="/images/logo.png").img1x3
+				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+			.sect1x3
+				h3 CHAIN CODE
+				img(src="/images/logo.png").img1x3
+				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+		
+		
+		// ------------ Video Panel -------- //
+		.pan1x1
+			h3 Sibos Panel Video
+			br
+			br
+			.fa.fa-play-circle.fa-5x
+		
+		
+		// ------------ Use Cases Panel -------- //
+		h1 Use Cases We're Solving
+		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
+		
+		.pan1x3
+			.sect1x3
+				h3 B2B Contracts
+				img(src="/images/logo.png").img1x3
+				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+			.sect1x3
+				h3 Asset Depository
+				img(src="/images/logo.png").img1x3
+				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+			.sect1x3
+				h3 Supply Chain
+				img(src="/images/logo.png").img1x3
+				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+		
+		
+		// ------------ Getting Started Panel -------- //
+		h1#gettingStarted Get Started
+		p.description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+
+		br
+		a(href="/gettingstarted")
+			button(type="button" style="padding:40px; font-size:69px; border-radius:10px;") Let's Go
+		//.instructions#num1 !{bag}
+		//iframe(src="/rmd/README.md").instructions#num1
+		
+		br
+		br
+		br
+		br
+		
+		// ------------ Sample Panel -------- //
+		h1 Sample Applications
+		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
+		
+		.pan1x3
+			.sect1x2
+				h3 Lease Contracts
+				img(src="/images/logo.png").img1x3
+				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+			.sect1x2
+				h3 IOS TX App
+				img(src="/images/logo.png").img1x3
+				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+		
+		
+		// ------------ Contributors Panel -------- //
+		h1 Contributors
+		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
+		
+		br
+		
+		.contribPanel
+			img().contributor
+			img().contributor
+			img().contributor
+			img().contributor
+			img().contributor
+			img().contributor
+			img().contributor
+			img().contributor
+			img().contributor
+			img().contributor
+			img().contributor
+			img().contributor
+		
+		
+		// ------------ Questions Panel -------- //
+		h1 Questions?
+		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
+		
+		.pan1x1(style="min-height:inherit;")
+			a()
+				img().helpIcon
+			a()
+				img().helpIcon
+			a()
+				img().helpIcon
+			a()
+				img().helpIcon
+			a()
+				img().helpIcon
+			a()
+				img().helpIcon
+			a()
+				img().helpIcon
+			a()
+				img().helpIcon
+			a()
+				img().helpIcon
+			a()
+				img().helpIcon
+			
+		
+		// ------------ Sign Up -------- //
+		form.signUpContainer(method="POST" action="/mailinglist")
+			.signUpWrap
+				.signUpHeader Sign up for updates
+				input(type="text" placeholder="Email" name="email")
+			.signUpWrap
+				.signUpHeader Join the Community
+				input(type="text" placeholder="Email" name="join-email")
+			button(type="submit").signUpButt SIGN UP

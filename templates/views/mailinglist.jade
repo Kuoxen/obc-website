@@ -1,0 +1,32 @@
+extends ../layouts/default
+
+mixin mailinglist(emails)
+	each val, i in emails
+		if val.email
+			p= val.email
+
+
+block topContentPanel
+	h1 
+		span Mailing List - 
+		if data && data.emails 
+			span !{data.emails.length}
+		else
+			span error
+	br
+	br
+		
+			
+block content
+	.container: .contentWrapper
+	.subcontentPanel
+		br
+		br
+		
+		+mailinglist(data.emails)
+				
+block custom_js
+	script(type='text/javascript').
+		$(document).ready(function(){
+			//console.log('data', data, locals);
+		});

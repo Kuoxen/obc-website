@@ -1,0 +1,119 @@
+extends ../layouts/default
+
+block topContentPanel
+	h1 Getting Started
+	br
+	br
+		
+			
+block content
+	.container: .contentWrapper
+	.subcontentPanel
+		
+		.insHeader 1. Setup Environment / Install
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+		.instructions(filename="devenv.md") Loading...
+		
+		.insHeader 2. 30 Min Ramp Up
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+		.instructions(filename="README.md") Loading...
+		
+		.insHeader Architecture
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+		.instructions() Loading...
+		
+		.insHeader Whitepaper
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+		.instructions() Loading...
+		
+		.insHeader Example
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+		.instructions(filename="Openchain_API.md") Loading...
+		
+		// ------------ Example Panel -------- //
+		h1 [CODE HIGHLIGHTING EXAMPLE]
+		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
+	
+		pre
+			code.language-javascript.line-numbers.
+				module.exports = {
+	
+					/** New Enquiry Notifications */
+					
+					'enquiry-notification': function(req, res, callback) {
+						
+						// To test enquiry notifications we create a dummy enquiry that
+						// is not saved to the database, but passed to the template.
+						
+						var Enquiry = keystone.list('Enquiry');
+						
+						var newEnquiry = new Enquiry.model({
+							name: { first: 'Test', last: 'User' },
+							email: 'contact@open-block-chain.com',
+							phone: '+61 2 1234 5678',
+							enquiryType: 'message',
+							message: { md: 'Nice enquiry notification.' }
+						});
+						
+						callback(null, {
+							admin: 'Admin User',
+							enquiry: newEnquiry,
+							enquiry_url: '/keystone/enquiries/'
+						});
+						
+					}
+					
+				};
+				
+block custom_js
+	script(type='text/javascript').
+		$(document).ready(function(){
+			console.log('hi');
+			
+			$(".insHeader").click(function(){
+				if($(this).next().is(":visible")){
+					$(this).next().slideUp();
+				}
+				else{
+					$(this).next().slideDown();
+				}
+			});
+			
+			$(".instructions").each(function(){
+				var filename = $(this).attr("filename");
+				var me = this;
+
+				if(filename && filename.constructor === String){
+					filename = filename.trim();
+					if(filename.length >= 0){
+						console.log('loading:', filename);
+						get_rendered_md(filename, cb_populate_me);
+					}
+				}
+				
+				function cb_populate_me(err, html){
+					if(err == null){
+						$(me).html(html);
+					}
+				}
+			});
+			
+			function get_rendered_md(filename, cb) {
+				$("#log").append("Creating Device Token: \n\t");
+				$.ajax({
+					method: 'GET',
+					url: '/rmd/' + filename,
+					data: null,
+					contentType: 'application/json',
+					success: function(json) {
+						//console.log(json);
+						console.log('Success loading readme file', filename);
+						if (cb) cb(null, json);
+					},
+					error: function(e) {
+						console.log('Error loading readme file', e);
+						if (cb) cb(e, null);
+					}
+				});
+			}
+		});
