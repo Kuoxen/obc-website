@@ -52,7 +52,8 @@ exports = module.exports = function(req, res) {
 		});
 		
 		newEmail.save(function(err) {
-			res.redirect("/mailinglist");
+			if(err != null) next(err);
+			else res.redirect('/mailinglist');
 		});
 	});
 	
