@@ -1,3 +1,20 @@
+# ORIGINAL
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+
+# KEYSTONE
 # Logs
 logs
 *.log
@@ -29,3 +46,11 @@ node_modules
 
 # Ignore .DS_Store files on OS X
 .DS_Store
+
+
+
+## DAVID'S
+**/launchConfigurations
+**/node_modules
+**/.vscode
+
