@@ -1,3 +1,4 @@
+/* global process */
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').load();
@@ -93,6 +94,15 @@ keystone.set('nav', {
 	'users': 'users'
 });
 
-// Start Keystone to connect to your database and initialise the web server
+//run on port 80 if running on prod server
+if(process.env){
+	if(!process.env.OS || process.env.OS !== 'Windows_NT'){
+		process.env.PORT = 80;
+		keystone.set('port', 80);
+	}
+}
 
+
+// Start Keystone to connect to your database and initialise the web server
 keystone.start();
+
