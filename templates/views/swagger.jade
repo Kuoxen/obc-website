@@ -8,17 +8,20 @@ block custom_css
 	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
 	
 	style.
-		.subcontentPanel{
-			text-align:left;
+		/* dsh - to do - move to css file */
+		hr{
+			border-color: #0f6ab4;
+			margin:10px 0;
 		}
-		.swagger-section .swagger-ui-wrap{
-			max-width:1200px;
+		h3{
+			margin:0;
 		}
+		
+		/* sweet swagger divs */
 		.fa{
 			cursor:pointer; 
 			color: #0f6ab4;
 		}
-		
 		#returnUrl{
 			display:none; 
 			position: relative; 
@@ -39,18 +42,23 @@ block custom_css
 
 		}
 		
+		/* obc swagger divs */
+		.subcontentPanel{
+			text-align:left;
+		}
+		.swagger-section .swagger-ui-wrap{
+			max-width:1200px;
+		}
 		#swagNav, #swagger-ui-container{
 			display: inline-block;
 		}
-		
 		#swagger-ui-container{
 			padding:0;
-			width:80%;
+			width:100%;
 		}
 		#resources_container{
 			width:100%;
 		}
-		
 		#swagNav{
 			width:140px;
 			background:#e7f0f7;
@@ -63,6 +71,7 @@ block custom_css
 			z-index:1;
 		}
 		
+		/* swagger divs */
 		.endpoints{
 			margin-left:-40px;
 		}
@@ -80,12 +89,27 @@ block custom_css
 			position:relative;
 			z-index:3;
 		}
-		hr{
-			border-color: #0f6ab4;
-			margin:10px 0;
+	
+		/* half-ass attempt for mobile */
+		@media (max-width: 1400px) {
+			#swagger-ui-container{
+				width:85%;
+			}
 		}
-		h3{
-			margin:0;
+		@media (max-width: 1100px) {
+			#swagger-ui-container{
+				width:80%;
+			}
+		}
+		@media (max-width: 800px) {
+			#swagger-ui-container{
+				width:75%;
+			}
+		}
+		@media (max-width: 650px) {
+			#swagger-ui-container{
+				width:70%;
+			}
 		}
 		
 		
