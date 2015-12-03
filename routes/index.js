@@ -1,3 +1,4 @@
+/* global __dirname */
 /**
  * This file is where you define your application routes and controllers.
  * 
@@ -39,9 +40,11 @@ exports = module.exports = function(app) {
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
 	app.all('/contact', routes.views.contact);
-	app.all('/rmd/:filename', routes.views.md);			//rendered mark down files
-	app.all('/gettingstarted', routes.views.gettingstarted);
+	
+	app.get('/rmd/:filename', routes.views.md);			//rendered mark down files
+	app.get('/gettingstarted', routes.views.gettingstarted);
 	app.all('/mailinglist', routes.views.mailinglist);
+	app.get('/docs', routes.views.swagger);
 	
 	app.get('/admin', function(req, res){
 		res.redirect('/keystone');

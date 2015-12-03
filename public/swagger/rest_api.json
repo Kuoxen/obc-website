@@ -1,0 +1,442 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "Openchain API",
+		"description": "Interact with the enterprise Blockchain through Openchain API",
+		"version": "1.0.0"
+	},
+	"host": "127.0.0.1:3000",
+	"schemes": [
+		"http"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"/chain": {
+			"get": {
+				"summary": "Blockchain Information",
+				"description": "The Chain endpoint returns information about the current state of the blockchain such as the height, the current block hash, and the previous block hash.",
+				"tags": [
+					"Blockchain"
+				],
+				"operationId": "getChain",
+				"responses": {
+					"200": {
+						"description": "Blockchain information",
+						"schema": {
+							"$ref": "#/definitions/BlockchainInfo"
+						}
+					},
+					"default": {
+						"description": "Unexpected error",
+						"schema": {
+							"$ref": "#/definitions/Error"
+						}
+					}
+				}
+			}
+		},
+		"/chain/blocks/{Block}": {
+			"get": {
+				"summary": "Individual Block Information",
+				"description": "The {Block} endpoint returns information about a specific block within the Blockchain. Note that the genesis block is block zero.",
+				"tags": [
+					"Block"
+				],
+				"operationId": "getBlock",
+				"parameters": [{
+					"name": "Block",
+					"in": "path",
+					"description": "Block number to retrieve",
+					"type": "integer",
+					"format": "uint64",
+					"required": true
+				}],
+				"responses": {
+					"200": {
+						"description": "Individual Block contents",
+						"schema": {
+							"$ref": "#/definitions/Block"
+						}
+					},
+					"default": {
+						"description": "Unexpected error",
+						"schema": {
+							"$ref": "#/definitions/Error"
+						}
+					}
+				}
+			}
+		},
+		"/state/{chaincodeID}/{key}": {
+			"get": {
+				"summary": "State information for unique chaincodeID and key",
+				"description": "The {chaincodeID}/{key} endpoint returns state information matching a specific chaincodeID and key. If there is no match on either the chaincodeID or the key, a \"null\" value is returned for the state.",
+				"tags": [
+					"State"
+				],
+				"operationId": "getChaincodeState",
+				"parameters": [{
+					"name": "chaincodeID",
+					"in": "path",
+					"description": "Unique Chaincode identifier",
+					"type": "string",
+					"required": true
+				}, {
+					"name": "key",
+					"in": "path",
+					"description": "Key to match within the Chaincode",
+					"type": "string",
+					"required": true
+				}],
+				"responses": {
+					"200": {
+						"description": "Retrieved state value",
+						"schema": {
+							"$ref": "#/definitions/State"
+						}
+					},
+					"default": {
+						"description": "Unexpected error",
+						"schema": {
+							"$ref": "#/definitions/Error"
+						}
+					}
+				}
+			}
+		},
+		"/devops/build": {
+			"post": {
+				"summary": "Service endpoint for building Chaincode",
+				"description": "The /devops/build endpoint receives Chaincode build requests for existing Chaincodes. The Chaincode and the required entities are packaged into a container upon receipt of the request. If the build is successful, an encoded codePackage is returned. Otherwise, an error is displayed alongside with a reason for the failure.",
+				"tags": [
+					"Devops"
+				],
+				"operationId": "chaincodeBuild",
+				"parameters": [{
+					"name": "ChaincodeSpec",
+					"in": "body",
+					"description": "Chaincode specification message",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/ChaincodeSpec"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "Successfully built chainCode",
+						"schema": {
+							"$ref": "#/definitions/OK"
+						}
+					},
+					"default": {
+						"description": "Unexpected error",
+						"schema": {
+							"$ref": "#/definitions/Error"
+						}
+					}
+				}
+			}
+		},
+		"/devops/deploy": {
+			"post": {
+				"summary": "Service endpoint for deploying Chaincode",
+				"description": "The /devops/deploy endpoint receives Chaincode deployment requests for existing Chaincodes. The Chaincode and the required entities are first packaged into a container and subsequently deployed to the blockchain. If the Chaincode build and deployment are successful, an encoded codePackage is returned. Otherwise, an error is displayed alongside with a reason for the failure.",
+				"tags": [
+					"Devops"
+				],
+				"operationId": "chaincodeDeploy",
+				"parameters": [{
+					"name": "ChaincodeSpec",
+					"in": "body",
+					"description": "Chaincode specification message",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/ChaincodeSpec"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "Successfully deployed chainCode",
+						"schema": {
+							"$ref": "#/definitions/OK"
+						}
+					},
+					"default": {
+						"description": "Unexpected error",
+						"schema": {
+							"$ref": "#/definitions/Error"
+						}
+					}
+				}
+			}
+		},
+		"/devops/invoke": {
+			"post": {
+				"summary": "Service endpoint for invoking Chaincode",
+				"description": "The /devops/invoke endpoint receives requests to invoke functions for existing Chaincodes. If the Chaincode function is invoked sucessfully, a transaction id is returned. Otherwise, an error is displayed alongside with a reason for the failure.",
+				"tags": [
+					"Devops"
+				],
+				"operationId": "chaincodeInvoke",
+				"parameters": [{
+					"name": "ChaincodeInvocationSpec",
+					"in": "body",
+					"description": "Chaincode invocation message",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/ChaincodeInvocationSpec"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "Successfully invoked transaction",
+						"schema": {
+							"$ref": "#/definitions/OK"
+						}
+					},
+					"default": {
+						"description": "Unexpected error",
+						"schema": {
+							"$ref": "#/definitions/Error"
+						}
+					}
+				}
+			}
+		},
+		"/devops/query": {
+			"post": {
+				"summary": "Service endpoint for querying Chaincode",
+				"description": "The /devops/query endpoint receives requests to query existing Chaincodes. The request triggers the query method on the target Chaincode, both specified in the required payload. If the Chaincode query is successful, the response defined within the Chaincode is returned. Otherwise, an error is displayed alongside with a reason for the failure.",
+				"tags": [
+					"Devops"
+				],
+				"operationId": "chaincodeQuery",
+				"parameters": [{
+					"name": "ChaincodeInvocationSpec",
+					"in": "body",
+					"description": "Chaincode invocation message",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/ChaincodeInvocationSpec"
+					}
+				}],
+				"responses": {
+					"200": {
+						"description": "Successfully queried chaincode",
+						"schema": {
+							"$ref": "#/definitions/OK"
+						}
+					},
+					"default": {
+						"description": "Unexpected error",
+						"schema": {
+							"$ref": "#/definitions/Error"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"BlockchainInfo": {
+			"type": "object",
+			"properties": {
+				"height": {
+					"type": "integer",
+					"format": "uint64",
+					"description": "Current height of the blockchain."
+				},
+				"currentBlockHash": {
+					"type": "string",
+					"format": "bytes",
+					"description": "Hash of the last block in the blockchain."
+				},
+				"previousBlockHash": {
+					"type": "string",
+					"format": "bytes",
+					"description": "Hash of the previous block in the blockchain."
+				}
+			}
+		},
+		"Block": {
+			"type": "object",
+			"properties": {
+				"proposerID": {
+					"type": "string",
+					"description": "Creator/originator of the block."
+				},
+				"Timestamp": {
+					"type": "string",
+					"description": "Time of block creation."
+				},
+				"transactions": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Transaction"
+					}
+				},
+				"stateHash": {
+					"type": "string",
+					"format": "bytes",
+					"description": "Global state hash after executing all transactions in the block."
+				},
+				"previousBlockHash": {
+					"type": "string",
+					"format": "bytes",
+					"description": "Hash of the previous block in the blockchain."
+				}
+			}
+		},
+		"Transaction": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string",
+					"default": "UNDEFINED",
+					"example": "UNDEFINED",
+					"enum": [
+						"UNDEFINED",
+						"CHAINCODE_NEW",
+						"CHAINCODE_UPDATE",
+						"CHAINCODE_EXECUTE",
+						"CHAINCODE_TERMINATE"
+					],
+					"description": "Transaction type."
+				},
+				"chaincodeID": {
+					"$ref": "#/definitions/ChaincodeID",
+					"description": "Unique Chaincode identifier."
+				},
+				"function": {
+					"type": "string",
+					"description": "Function to execute within a Chaincode."
+				},
+				"args": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"description": "Arguments supplied to the Chaincode function."
+				},
+				"payload": {
+					"type": "string",
+					"format": "bytes",
+					"description": "Payload supplied for Chaincode function execution."
+				},
+				"uuid": {
+					"type": "string",
+					"description": "Unique transaction identifier."
+				}
+			}
+		},
+		"ChaincodeID": {
+			"type": "object",
+			"properties": {
+				"url": {
+					"type": "string",
+					"description": "URL for accessing the Chaincode."
+				},
+				"version": {
+					"type": "string",
+					"description": "Current version of a Chaincode."
+				}
+			}
+		},
+		"State": {
+			"type": "object",
+			"properties": {
+				"State": {
+					"type": "string",
+					"description": "State value matching the chaincodeId and key parameters."
+				}
+			}
+		},
+		"ChaincodeSpec": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string",
+					"default": "GOLANG",
+					"example": "GOLANG",
+					"enum": [
+						"UNDEFINED",
+						"GOLANG",
+						"NODE"
+					],
+					"description": "Chaincode specification language."
+				},
+				"chaincodeID": {
+					"$ref": "#/definitions/ChaincodeID",
+					"description": "Unique Chaincode identifier."
+				},
+				"ctorMsg": {
+					"$ref": "#/definitions/ChaincodeMessage",
+					"description": "Specific function to execute within the Chaincode."
+				}
+			}
+		},
+		"ChaincodeDeploymentSpec": {
+			"type": "object",
+			"properties": {
+				"chaincodeSpec": {
+					"$ref": "#/definitions/ChaincodeSpec",
+					"description": "Chaincode specification message."
+				},
+				"effectiveDate": {
+					"type": "string",
+					"description": "Time of Chaincode creation/activation."
+				},
+				"codePackage": {
+					"type": "string",
+					"format": "bytes",
+					"description": "Compiled Chaincode package."
+				}
+			}
+		},
+		"ChaincodeInvocationSpec": {
+			"type": "object",
+			"properties": {
+				"chaincodeSpec": {
+					"$ref": "#/definitions/ChaincodeSpec",
+					"description": "Chaincode specification message."
+				}
+			}
+		},
+		"ChaincodeMessage": {
+			"type": "object",
+			"properties": {
+				"function": {
+					"type": "string",
+					"description": "Function to execute within a Chaincode."
+				},
+				"args": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"description": "Arguments supplied to the Chaincode function."
+				}
+			}
+		},
+		"Error": {
+			"type": "object",
+			"properties": {
+				"Error": {
+					"type": "string",
+					"description": "A descriptive message explaining the cause of error."
+				}
+			}
+		},
+		"OK": {
+			"type": "object",
+			"properties": {
+				"OK": {
+					"type": "string",
+					"description": "A descriptive message confirming a successful request."
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,152 @@
+extends ../layouts/default
+	
+	
+// ------------ CSS -------- //
+block custom_css
+	link(href="/swagger/images/favicon-16x16.png" sizes="16x16" rel="icon" type="image/png" )
+	link(href="/swagger/images/favicon-32x32.png" sizes="32x32" rel="icon" type="image/png" )
+	link(href='/swagger/css/typography.css' media='screen' rel='stylesheet' type='text/css')
+	link(href='/swagger/css/screen.css' media='screen' rel='stylesheet' type='text/css')
+	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+	
+	style.
+		.subcontentPanel{
+			text-align:left;
+		}
+		.swagger-section .swagger-ui-wrap{
+			max-width:1200px;
+		}
+		.fa{
+			cursor:pointer; 
+			color: #0f6ab4;
+		}
+		
+		#returnUrl{
+			display:none; 
+			position: relative; 
+			top:-5px; 
+			margin-right:10px;
+		}
+		#urlFullPath{
+			padding-left:5px;
+		}
+		#superSwaggerActiveWrap{
+			text-align: center;
+		}
+		#urlFullPath{
+			border:0; 
+			font-size:30px; 
+			color:#0f6ab4; 
+			margin:0 auto; 
+
+		}
+		
+		#swagNav, #swagger-ui-container{
+			display: inline-block;
+		}
+		
+		#swagger-ui-container{
+			padding:0;
+			width:80%;
+		}
+		#resources_container{
+			width:100%;
+		}
+		
+		#swagNav{
+			width:140px;
+			background:#e7f0f7;
+			color:#0f6ab4;
+			vertical-align: top;
+			padding:15px;
+			min-height:300px;
+			border: 1px solid #c3d9ec;
+			position:fixed;
+			z-index:1;
+		}
+		
+		.endpoints{
+			margin-left:-40px;
+		}
+		#resources{
+			padding: 0;
+		}
+		#api_info{
+			display:none;
+		}
+		#swagger-ui-container{
+			border: 1px solid #c3d9ec;
+			margin-left:150px;
+		}
+		#footer{
+			position:relative;
+			z-index:3;
+		}
+		hr{
+			border-color: #0f6ab4;
+			margin:10px 0;
+		}
+		h3{
+			margin:0;
+		}
+	
+// ------------ Top Content Panel -------- //
+block topContentPanel
+	h1 Documentation
+	
+	
+// ------------ Main Content Panel -------- //
+block content
+	.container: .contentWrapper
+	.subcontentPanel.swagger-section
+		
+		#superSwaggerActiveWrap
+			br
+			p Weclome to the our interactive swagger documentation.  You can change the URL below to target APIs hosted else where.
+			span(title="Revert")#returnUrl.fa.fa-undo
+			input(type="text" value="...loading...")#urlFullPath
+		
+		#swagNav 
+			h3 APIs
+			hr
+		#swagger-ui-container.swagger-ui-wrap
+		
+		
+// ------------ JS -------- //	
+block custom_js
+	script(src='/swagger/lib/jquery-1.8.0.min.js' type='text/javascript')
+	script(src='/swagger/lib/jquery.slideto.min.js' type='text/javascript')
+	script(src='/swagger/lib/jquery.wiggle.min.js' type='text/javascript')
+	script(src='/swagger/lib/jquery.ba-bbq.min.js' type='text/javascript')
+	script(src='/swagger/lib/handlebars-2.0.0.js' type='text/javascript')
+	script(src='/swagger/lib/underscore-min.js' type='text/javascript')
+	script(src='/swagger/lib/backbone-min.js' type='text/javascript')
+	script(src='/swagger/swagger-ui.min.js' type='text/javascript')
+	script(src='/swagger/lib/highlight.7.3.pack.js' type='text/javascript')
+	script(src='/swagger/lib/marked.js' type='text/javascript')
+	script(src='/swagger/lib/swagger-oauth.js' type='text/javascript')
+	script(src='/swagger/sweeter-swagger-ui.js' type='text/javascript')
+	
+	script(type="text/javascript").
+		$(function () {
+			window.swaggerUi = new SwaggerUi({
+				url: swagger_url,
+				dom_id: "swagger-ui-container",
+				supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+				onComplete: function(swaggerApi, swaggerUi){
+					if(window.SwaggerTranslator) {
+						window.SwaggerTranslator.translate();
+					}
+					$('pre code').each(function(i, e) {
+						hljs.highlightBlock(e);
+					});
+				},
+				onFailure: function(data) {
+					console.log("Unable to Load SwaggerUI");
+				},
+				docExpansion: "none",
+				apisSorter: "alpha",
+				showRequestHeaders: false
+			});
+			window.swaggerUi.load();
+		});
