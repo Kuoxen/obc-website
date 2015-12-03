@@ -1,8 +1,13 @@
 # obc-website
 Community portal Web site
 
-Run with:
+Dev run with:
 		> npm install
 		> gulp
-		
-- Defaults to localhost:3000
+			[should appear on localhost:3000]
+
+
+Prod run with:
+		> npm install
+		> sudo node keystone.js
+			[should appear on localhost:80]
