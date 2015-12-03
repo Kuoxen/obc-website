@@ -50,6 +50,8 @@ exports = module.exports = function(app) {
 		res.redirect('/keystone');
 	});
 	
+	app.all('/swagger*', keystone.middleware.cors);		//add cors for swagger file
+	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 	

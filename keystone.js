@@ -102,6 +102,8 @@ if(process.env){
 	}
 }
 
+keystone.set('cors allow origin', true);
+
 
 // Start Keystone to connect to your database and initialise the web server
 keystone.start();
