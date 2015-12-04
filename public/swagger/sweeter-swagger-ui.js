@@ -138,7 +138,7 @@ $(function () {
 	
 	//calculate size of div needed for str
 	function calc_resize(str){
-		return (str.length * 14) + 'px';											//estimate...
+		return (str.length * 15) + 'px';											//estimate...
 	}
 	
 	//change scheme, host, and basepath for all swagger APIs 
@@ -161,9 +161,9 @@ $(function () {
 	//store url in address bar as GET params
 	function store_url(scheme, host, basePath){
 		if(scheme && host && basePath){
-			window.history.pushState({},'', '?url=' + GET.url + '&scheme=' + scheme +'&host=' + host + '&basepath=' + basePath);
+			window.history.pushState({},'', '?url=' + GET.url + '&scheme=' + scheme +'&host=' + host + '&basepath=' + basePath + window.location.hash);
 		}
-		else window.history.pushState({},'', '?url=' + GET.url);					//clear it
+		else window.history.pushState({},'', '?url=' + GET.url + window.location.hash);					//clear it
 	}
 	
 	//get name of swagger.json file

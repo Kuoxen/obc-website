@@ -35,11 +35,20 @@ block custom_css
 			text-align: center;
 		}
 		#urlFullPath{
-			border:0; 
-			font-size:30px; 
+			border:2px #fff solid; 
+			font-size:25px; 
 			color:#0f6ab4; 
 			margin:0 auto; 
-
+			padding:5px;
+			font-family:monospace;
+			text-align: center;
+			margin-bottom:10px;
+		}
+		#urlFullPath:hover{
+			border:2px #0f6ab4 solid;
+		}
+		#urlFullPath::-ms-clear {	/*hide IE10 clear button*/
+			display: none;
 		}
 		
 		/* obc swagger divs */
