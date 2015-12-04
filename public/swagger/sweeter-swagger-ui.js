@@ -138,7 +138,7 @@ $(function () {
 	
 	//calculate size of div needed for str
 	function calc_resize(str){
-		return (str.length * 15) + 'px';											//estimate...
+		return (str.length * 16) + 'px';											//estimate...
 	}
 	
 	//change scheme, host, and basepath for all swagger APIs 
