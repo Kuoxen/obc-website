@@ -8,9 +8,9 @@ var spawn = require('child_process').spawn;
 var node;
 
 var paths = {
-	'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json']
-
-,
+	'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json'],
+	'docs_src': './docs/**/*.*',
+	'docs_dest': './public/md/',
 	'style': {
 		all: './public/styles/**/*.scss',
 		output: './public/styles/'
@@ -37,6 +37,8 @@ gulp.task('sass', function(){
 ////// Run Server Task ///////
 gulp.task('server', function() {
 	if (node) node.kill();
+	// Move the documentation into the page at runtime
+	gulp.src(paths.docs_src).pipe(gulp.dest(paths.docs_dest));
 	node = spawn('node', ['keystone.js'], {stdio: 'inherit'});		//command, file, options
 });
 
