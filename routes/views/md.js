@@ -11,7 +11,7 @@ exports = module.exports = function(req, res) {
 	
 	// Render the view
 	//md.render('index');
-	if(!req.params.filename) req.params.filename = 'README.md';
+	if(!req.params.filename) req.params.filename = 'Setup_OBC_Peer.md';
 	var css = '<link href="/styles/site.css", rel="stylesheet">';
 	
 	markedejs.renderFile('public/md/' + req.params.filename, null, function (err, html) {
