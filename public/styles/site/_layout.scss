@@ -57,13 +57,13 @@ body{
 $border: #bbb;
 $bg: #eee;
 
-#topContentPanel{
+#topContentPanel, #topContentPanel2{
 	text-align: center;
 	//background:$bg;
-  	background-image: url("../../images/hero.jpg");
+	background-image: url("../../images/hero.jpg");
 	border-top: 1px solid $border;
 	border-bottom: 1px solid $border;
-  background-size: cover;
+	background-size: cover;
 }
 
 ///////////////////////////

@@ -100,7 +100,7 @@ $(function () {
 			});
 
 			console.log(window.swaggerUi.api);
-			$(".endpoints").show();														//default to showing them all
+			//$(".endpoints").show();														//default to showing them all
 			displayFullUrl();															//show the path
 			take_new_url();
 			populate_tags();
@@ -179,8 +179,8 @@ $(function () {
 		$(".toggleEndpointList").each(function(){
 			var name = $(this).html();
 			if($.inArray(name, skip_list) == -1){
-				var html = '<p><a href="#swag-' + name + '">' + name + '</a></p>';
-				$("#swagNav").append(html);
+				var html = '<p class="navLinkWrap"><a class="navLink" href="#swag-' + name + '">' + name + '</a></p>';
+				$("#altNavPanel").append(html);
 				$(this).attr('id', 'swag-' + name);
 			}
 		});

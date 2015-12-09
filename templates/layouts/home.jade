@@ -62,10 +62,10 @@ html
 									
 					
 				// ------------ Top Content Panel -------- //
-				#topContentPanel2
-					block topContentPanel
-			
-			
+				.twoByOneWrapper
+					#topContentPanel
+						block topContentPanel
+		
 			//- Flash messages allow you to display once-off status messages to users, e.g. form
 			+flash-messages(messages)
 				
@@ -73,9 +73,6 @@ html
 			// ------------ Main Content Panel -------- //
 			#secondPanel
 				block content
-				
-				#altNavPanel
-					block altNavPanel
 				
 				
 		// ------------ Footer -------- //

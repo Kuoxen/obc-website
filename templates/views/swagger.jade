@@ -31,9 +31,6 @@ block custom_css
 		#urlFullPath{
 			padding-left:5px;
 		}
-		#superSwaggerActiveWrap{
-			text-align: center;
-		}
 		#urlFullPath{
 			border:2px #fff solid; 
 			font-size:25px; 
@@ -92,7 +89,6 @@ block custom_css
 		}
 		#swagger-ui-container{
 			border: 1px solid #c3d9ec;
-			margin-left:150px;
 		}
 		#footer{
 			position:relative;
@@ -127,6 +123,11 @@ block topContentPanel
 	h1 Documentation
 	
 	
+// ------------ Alt Nav Panel -------- //	
+block altNavPanel
+	h3 APIs
+	hr
+		
 // ------------ Main Content Panel -------- //
 block content
 	.container: .contentWrapper
@@ -138,9 +139,6 @@ block content
 			span(title="Revert")#returnUrl.fa.fa-undo
 			input(type="text" value="...loading...")#urlFullPath
 		
-		#swagNav 
-			h3 APIs
-			hr
 		#swagger-ui-container.swagger-ui-wrap
 		
 		

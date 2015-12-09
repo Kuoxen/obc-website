@@ -1,34 +1,77 @@
 extends ../layouts/default
-
+	
+	
+// ------------ Top Content Panel -------- //
 block topContentPanel
 	h1 Getting Started
 	br
 	br
+
+	
+// ------------ Alt Nav Panel -------- //
+block altNavPanel
+	h3 Documentation
+	hr
+	p.navLinkWrap.selected
+		a(href="#anchorStart").navLink Getting Started
+	p.navLinkWrap
+		a(href="#anchorWhite").navLink White Paper
+	p.navLinkWrap
+		a(href="#anchorArch").navLink Architecture
+	p.navLinkWrap
+		a(href="#anchorUse").navLink Use Cases
+	p.navLinkWrap
+		a(href="#anchorPeer").navLink Setting Up an Openchain Peer
+	p.navLinkWrap
+		a(href="#anchorWrite").navLink Writting, Building, And Running Chaincode
+	p.navLinkWrap
+		a(href="#anchorDev").navLink Setting Up a Network for Development
+	p.navLinkWrap
+		a(href="#anchorAPI").navLink API Docs
+	p.navLinkWrap
+		a(href="#anchorExample").navLink Examples
 		
 			
 block content
 	.container: .contentWrapper
 	.subcontentPanel
 		
-		.insHeader 1. Setup Environment / Install
+		.insHeader#anchorStart Getting Started
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="Setup_Developer_Environment.md") Loading...
+		.instructions(filename="Getting_Started.md") Loading...
 		
-		.insHeader 2. 30 Min Ramp Up
+		.insHeader#anchorWhite Whitepaper
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+		.instructions() Loading...
+		
+		.insHeader#anchorArch Architecture
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+		.instructions() Loading...
+		
+		.insHeader#anchorUse Use Cases
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+		.instructions(filename="OBC_Use_Cases.md") Loading...
+		
+		.insHeader#anchorPeer Setting Up an Openchain Peer
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
 		.instructions(filename="Setup_OBC_Peer.md") Loading...
 		
-		.insHeader Architecture
+		.insHeader#anchorWrite Writting, Building, And Running Chaincode
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions() Loading...
+		.instructions(filename="") Loading...
 		
-		.insHeader Whitepaper
+		.insHeader#anchorDev Setting Up a Network for Development
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions() Loading...
+		.instructions(filename="Setup_Network.md") Loading...
 		
-		.insHeader Example
+		.insHeader#anchorAPI API Docs
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
 		.instructions(filename="Openchain_API.md") Loading...
+
+		.insHeader#anchorExample Example
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+		.instructions(filename="Openchain_API.md") Loading...
+		
 		
 		// ------------ Example Panel -------- //
 		h1 [CODE HIGHLIGHTING EXAMPLE]
@@ -116,4 +159,10 @@ block custom_js
 					}
 				});
 			}
+			
+			
+			$(".navLinkWrap").click(function(){
+				$(".selected").removeClass("selected");	
+				$(this).addClass("selected");
+			});
 		});
