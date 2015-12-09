@@ -26,5 +26,8 @@
   "scripts": {
     "start": "node keystone.js"
   },
-  "main": "keystone.js"
+  "main": "keystone.js",
+  "config": {
+  	"unsafe-perm": true
+  }
 }
