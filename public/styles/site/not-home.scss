@@ -56,12 +56,23 @@ hr{
 	padding-left:5px;
 }
 
-.navLinkWrap:hover, .selected{
+.active, active:hover, .navLinkWrap:hover{
 	border:solid 5px #e7f0f7;
 	border-bottom-color:#fff;
 	width:100%;
 }
 
-.navLink:hover{
+.altNavLink:hover{
 	text-decoration: none;
+	background: #e7f0f7 !important;
+}
+
+
+
+.altNavLink{
+	padding: 0 !important;
+}
+
+.resource{
+	border: 0;
 }

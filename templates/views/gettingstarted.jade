@@ -12,24 +12,25 @@ block topContentPanel
 block altNavPanel
 	h3 Documentation
 	hr
-	p.navLinkWrap.selected
-		a(href="#anchorStart").navLink Getting Started
-	p.navLinkWrap
-		a(href="#anchorWhite").navLink White Paper
-	p.navLinkWrap
-		a(href="#anchorArch").navLink Architecture
-	p.navLinkWrap
-		a(href="#anchorUse").navLink Use Cases
-	p.navLinkWrap
-		a(href="#anchorPeer").navLink Setting Up an Openchain Peer
-	p.navLinkWrap
-		a(href="#anchorWrite").navLink Writting, Building, And Running Chaincode
-	p.navLinkWrap
-		a(href="#anchorDev").navLink Setting Up a Network for Development
-	p.navLinkWrap
-		a(href="#anchorAPI").navLink API Docs
-	p.navLinkWrap
-		a(href="#anchorExample").navLink Examples
+	ul.nav
+		li.navLinkWrap.selected
+			a(href="#anchorStart").altNavLink Getting Started
+		li.navLinkWrap
+			a(href="#anchorWhite").altNavLink White Paper
+		li.navLinkWrap
+			a(href="#anchorArch").altNavLink Architecture
+		li.navLinkWrap
+			a(href="#anchorUse").altNavLink Use Cases
+		li.navLinkWrap
+			a(href="#anchorPeer").altNavLink Setting Up an Openchain Peer
+		li.navLinkWrap
+			a(href="#anchorWrite").altNavLink Writting, Building, And Running Chaincode
+		li.navLinkWrap
+			a(href="#anchorDev").altNavLink Setting Up a Network for Development
+		li.navLinkWrap
+			a(href="#anchorAPI").altNavLink API Docs
+		li.navLinkWrap
+			a(href="#anchorExample").altNavLink Examples
 		
 			
 block content
@@ -56,9 +57,9 @@ block content
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
 		.instructions(filename="Setup_OBC_Peer.md") Loading...
 		
-		.insHeader#anchorWrite Writting, Building, And Running Chaincode
+		.insHeader#anchorWrite Writting, Building, And Running Chaincode In Dev Environment
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="") Loading...
+		.instructions(filename="Setup_Sandbox.md") Loading...
 		
 		.insHeader#anchorDev Setting Up a Network for Development
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
@@ -70,7 +71,7 @@ block content
 
 		.insHeader#anchorExample Example
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="Openchain_API.md") Loading...
+		.instructions(filename="") Loading...
 		
 		
 		// ------------ Example Panel -------- //
@@ -162,7 +163,7 @@ block custom_js
 			
 			
 			$(".navLinkWrap").click(function(){
-				$(".selected").removeClass("selected");	
-				$(this).addClass("selected");
+				$(".active").removeClass("active");	
+				$(this).addClass("active");
 			});
 		});

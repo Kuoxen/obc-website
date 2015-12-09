@@ -55,10 +55,29 @@
   margin-right: 25px;
   text-align: left; }
 
-.instructions {
+.instructions, .insHeader {
   width: 80%;
+  margin: auto; }
+
+.instructions {
   padding: 20px;
   text-align: left;
-  border: 1px solid border;
+  border: 1px solid #ccc;
   border-top: 0;
-  border-bottom: 0; }
+  display: none; }
+
+.insHeader {
+  border: 1px solid #ccc;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 10px 20px;
+  text-align: left;
+  margin-top: 20px;
+  cursor: pointer; }
+
+.insHeader:hover {
+  border-color: #000; }
+
+.open {
+  float: right;
+  margin-top: -10px; }

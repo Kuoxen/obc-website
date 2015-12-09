@@ -1,0 +1,59 @@
+#topContentPanel2 {
+  text-align: left;
+  background: #fff;
+  border: 0;
+  margin: auto; }
+
+#topContentPanel2, .subcontentPanel {
+  width: 75%;
+  padding-left: 150px; }
+
+#secondPanel {
+  position: relative; }
+
+#altNavPanel {
+  position: fixed;
+  padding: 2em;
+  left: 10%;
+  top: 80px;
+  background: #e7f0f7;
+  color: #0f6ab4;
+  vertical-align: top;
+  padding: 15px;
+  min-height: 800px;
+  border: 1px solid #c3d9ec;
+  z-index: 1;
+  width: 170px; }
+
+.subcontentPanel {
+  margin: auto; }
+
+.insHeader, .instructions {
+  width: 100%;
+  margin-left: 0; }
+
+hr {
+  border-color: #0f6ab4; }
+
+#footer {
+  position: relative;
+  z-index: 2; }
+
+.navLinkWrap {
+  border: double 5px #e7f0f7;
+  padding-left: 5px; }
+
+.active, active:hover, .navLinkWrap:hover {
+  border: solid 5px #e7f0f7;
+  border-bottom-color: #fff;
+  width: 100%; }
+
+.altNavLink:hover {
+  text-decoration: none;
+  background: #e7f0f7 !important; }
+
+.altNavLink {
+  padding: 0 !important; }
+
+.resource {
+  border: 0; }
