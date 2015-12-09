@@ -14,7 +14,7 @@ exports = module.exports = function(req, res) {
 	if(!req.params.filename) req.params.filename = 'Setup_OBC_Peer.md';
 	var css = '<link href="/styles/site.css", rel="stylesheet">';
 	
-	markedejs.renderFile('public/md/' + req.params.filename, null, function (err, html) {
+	markedejs.renderFile('docs/' + req.params.filename, null, function (err, html) {
 		if(err != null) res.status(500).send(err);
 		else res.send(html + css);															//just throw it at the end, seems to work OK
 	});

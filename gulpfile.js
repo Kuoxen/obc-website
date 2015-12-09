@@ -38,7 +38,7 @@ gulp.task('sass', function(){
 gulp.task('server', function() {
 	if (node) node.kill();
 	// Move the documentation into the page at runtime
-	gulp.src(paths.docs_src).pipe(gulp.dest(paths.docs_dest));
+	//gulp.src(paths.docs_src).pipe(gulp.dest(paths.docs_dest));
 	node = spawn('node', ['keystone.js'], {stdio: 'inherit'});		//command, file, options
 });
 
