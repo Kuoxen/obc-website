@@ -22,6 +22,7 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
+var serve_static = require('serve-static');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -41,7 +42,7 @@ exports = module.exports = function(app) {
 	app.get('/blog/post/:post', routes.views.post);
 	app.all('/contact', routes.views.contact);
 	
-	app.get('/rmd/:filename', routes.views.md);			//rendered mark down files
+	app.get('/rmd/:filename/:repo?', routes.views.md);			//rendered mark down files
 	app.get('/gettingstarted', routes.views.gettingstarted);
 	app.all('/mailinglist', routes.views.mailinglist);
 	app.get('/docs', routes.views.swagger);
@@ -50,7 +51,13 @@ exports = module.exports = function(app) {
 		res.redirect('/keystone');
 	});
 	
-	app.all('/swagger*', keystone.middleware.cors);		//add cors for swagger file
+	app.all('/swagger*', keystone.middleware.cors);				//add cors for swagger file
+	app.use('/images', serve_static('docs/images', {maxAge: '1d', setHeaders: setCustomCC}) );
+	function setCustomCC(res, path) {
+		if (serve_static.mime.lookup(path) === 'image/jpeg')  res.setHeader('Cache-Control', 'public, max-age=2592000');		//30 days cache
+		else if (serve_static.mime.lookup(path) === 'image/png') res.setHeader('Cache-Control', 'public, max-age=2592000');
+		else if (serve_static.mime.lookup(path) === 'image/x-icon') res.setHeader('Cache-Control', 'public, max-age=2592000');
+	}
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

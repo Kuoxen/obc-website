@@ -15,6 +15,11 @@ exports = module.exports = function(req, res) {
 	var css = '<link href="/styles/site.css", rel="stylesheet">';
 	
 	markedejs.renderFile('docs/' + req.params.filename, null, function (err, html) {
+		/*if(html !== null){
+			var repo = 'obc-getting-started';
+			if(req.params.repo) repo = req.params.repo;
+			html = html.replace(/src="images\/(\w+).(\w+)/g, 'src="https://raw.github.com/openblockchain/' + repo + '/master/images/$1.$2');				//replace image link with github link
+		}*/
 		if(err != null) res.status(500).send(err);
 		else res.send(html + css);															//just throw it at the end, seems to work OK
 	});
