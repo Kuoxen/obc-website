@@ -75,38 +75,39 @@ block content
 		
 		
 		// ------------ Example Panel -------- //
-		h1 [CODE HIGHLIGHTING EXAMPLE]
-		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
-	
-		pre
-			code.language-javascript.line-numbers.
-				module.exports = {
-	
-					/** New Enquiry Notifications */
-					
-					'enquiry-notification': function(req, res, callback) {
+		//-
+			h1 [CODE HIGHLIGHTING EXAMPLE]
+			p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
+		
+			pre
+				code.language-javascript.line-numbers.
+					module.exports = {
+		
+						/** New Enquiry Notifications */
 						
-						// To test enquiry notifications we create a dummy enquiry that
-						// is not saved to the database, but passed to the template.
+						'enquiry-notification': function(req, res, callback) {
+							
+							// To test enquiry notifications we create a dummy enquiry that
+							// is not saved to the database, but passed to the template.
+							
+							var Enquiry = keystone.list('Enquiry');
+							
+							var newEnquiry = new Enquiry.model({
+								name: { first: 'Test', last: 'User' },
+								email: 'contact@open-block-chain.com',
+								phone: '+61 2 1234 5678',
+								enquiryType: 'message',
+								message: { md: 'Nice enquiry notification.' }
+							});
+							
+							callback(null, {
+								admin: 'Admin User',
+								enquiry: newEnquiry,
+								enquiry_url: '/keystone/enquiries/'
+							});
+							
+						}
 						
-						var Enquiry = keystone.list('Enquiry');
-						
-						var newEnquiry = new Enquiry.model({
-							name: { first: 'Test', last: 'User' },
-							email: 'contact@open-block-chain.com',
-							phone: '+61 2 1234 5678',
-							enquiryType: 'message',
-							message: { md: 'Nice enquiry notification.' }
-						});
-						
-						callback(null, {
-							admin: 'Admin User',
-							enquiry: newEnquiry,
-							enquiry_url: '/keystone/enquiries/'
-						});
-						
-					}
-					
 				};
 				
 block custom_js
