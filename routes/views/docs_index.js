@@ -10,5 +10,5 @@ exports = module.exports = function(req, res) {
 	locals.section = 'home';
 	
 	// Render the view
-	gs.render('documentation');
+	gs.render('docs_index');
 };
