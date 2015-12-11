@@ -19,7 +19,7 @@ chmod +x docker
 ./docker build -t obc-website .
 ./docker stop -t 0 obc-website || true
 ./docker rm obc-website || true
-./docker run -p 80:80 -e MONGO_URI=$MONGO_URI -d --name=obc-website obc-website
+./docker run -p 10.108.46.87:8080:80 -e MONGO_URI=$MONGO_URI -d --name=obc-website obc-website
 
 
 rm docker
