@@ -20,6 +20,9 @@ exports = module.exports = function(req, res) {
 			if(req.params.repo) repo = req.params.repo;
 			html = html.replace(/src="images\/(\w+).(\w+)/g, 'src="https://raw.github.com/openblockchain/' + repo + '/master/images/$1.$2');				//replace image link with github link
 		}*/
+		if(html !== null){
+			html = html.replace(/src="images\/(\w+).(\w+)/g, 'src="/images/$1.$2');			//replace relative image link with abs link
+		}
 		if(err != null) res.status(500).send(err);
 		else res.send(html + css);															//just throw it at the end, seems to work OK
 	});

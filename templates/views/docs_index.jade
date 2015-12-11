@@ -37,43 +37,37 @@ block content
 	.container: .contentWrapper
 	.subcontentPanel2
 		
-		.insHeader#anchorStart Getting Started
+		.insHeader#anchorStart(filename="Getting_Started.md") Getting Started
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="Getting_Started.md") Loading...
 		
 		.insHeader#anchorWhite Whitepaper
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions() Loading...
 		
 		.insHeader#anchorArch Architecture
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions() Loading...
 		
-		.insHeader#anchorUse Use Cases
+		.insHeader#anchorUse(filename="OBC_Use_Cases.md") Use Cases
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="OBC_Use_Cases.md") Loading...
+			
+		.insHeader#anchorPeer(filename="Setup_OBC_Peer.md") Setting Up an Openchain Peer
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
 		
-		.insHeader#anchorPeer Setting Up an Openchain Peer
+		.insHeader#anchorWrite(filename="Setup_Sandbox.md") Writting, Building, And Running Chaincode In Dev Environment
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="Setup_OBC_Peer.md") Loading...
+
+		.insHeader#anchorDev(filename="Setup_Network.md") Setting Up a Network for Development
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
 		
-		.insHeader#anchorWrite Writting, Building, And Running Chaincode In Dev Environment
+		.insHeader#anchorAPI(filename="Openchain_API.md") API Docs
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="Setup_Sandbox.md") Loading...
-		
-		.insHeader#anchorDev Setting Up a Network for Development
-			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="Setup_Network.md") Loading...
-		
-		.insHeader#anchorAPI API Docs
-			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="Openchain_API.md") Loading...
 
 		.insHeader#anchorExample Example
 			span.fa.fa-angle-right.fa-2x.open &nbsp;
-		.instructions(filename="") Loading...
-		
-		
+			
+			
+			
+			
 		// ------------ Example Panel -------- //
 		//-
 			h1 [CODE HIGHLIGHTING EXAMPLE]
@@ -116,15 +110,13 @@ block custom_js
 			console.log('hi');
 			
 			$(".insHeader").click(function(){
-				if($(this).next().is(":visible")){
-					$(this).next().slideUp();
-				}
-				else{
-					$(this).next().slideDown();
+				var filename = $(this).attr("filename");
+				if(filename){
+					window.location.replace("/docs/" + filename);
 				}
 			});
 			
-			$(".instructions").each(function(){
+			/*$(".instructions").each(function(){
 				var filename = $(this).attr("filename");
 				var me = this;
 
@@ -160,7 +152,7 @@ block custom_js
 						if (cb) cb(e, null);
 					}
 				});
-			}
+			}*/
 			
 			
 			$(".navLinkWrap").click(function(){

@@ -1,0 +1,92 @@
+extends ../layouts/default
+
+- var filename2 = 'unknown';
+
+
+// ------------ Top Content Panel -------- //
+block topContentPanel
+	h1 Documentation:
+	br
+	br
+
+	
+// ------------ Alt Nav Panel -------- //
+block altNavPanel
+	h3 Documentation:
+	hr
+	ul.nav
+		li.navLinkWrap.selected
+			a(href="#anchorStart").altNavLink Getting Started
+		li.navLinkWrap
+			a(href="#anchorWhite").altNavLink White Paper
+		li.navLinkWrap
+			a(href="#anchorArch").altNavLink Architecture
+		li.navLinkWrap
+			a(href="#anchorUse").altNavLink Use Cases
+		li.navLinkWrap
+			a(href="#anchorPeer").altNavLink Setting Up an Openchain Peer
+		li.navLinkWrap
+			a(href="#anchorWrite").altNavLink Writting, Building, And Running Chaincode
+		li.navLinkWrap
+			a(href="#anchorDev").altNavLink Setting Up a Network for Development
+		li.navLinkWrap
+			a(href="#anchorAPI").altNavLink API Docs
+		li.navLinkWrap
+			a(href="#anchorExample").altNavLink Examples
+		
+			
+block content
+	.container: .contentWrapper
+	.subcontentPanel2
+		
+		.instructions(filename="#{data.filename}" style="display:block") Loading...
+				
+block custom_js
+	script(type='text/javascript').
+		$(document).ready(function(){
+			//console.log(locals);
+			
+			$(".instructions").each(function(){
+				var filename = $(this).attr("filename");
+				var me = this;
+
+				if(filename && filename.constructor === String){
+					filename = filename.trim();
+					if(filename.length >= 0){
+						console.log('loading:', filename);
+						get_rendered_md(filename, cb_populate_me);
+					}
+				}
+				
+				function cb_populate_me(err, html){
+					if(err == null){
+						$(me).html(html);
+					}
+				}
+			});
+			
+			function get_rendered_md(filename, cb) {
+				$("#log").append("Creating Device Token: \n\t");
+				$.ajax({
+					method: 'GET',
+					url: '/rmd/' + filename,
+					data: null,
+					contentType: 'application/json',
+					success: function(json) {
+						//console.log(json);
+						console.log('Success loading readme file', filename);
+						if (cb) cb(null, json);
+					},
+					error: function(e) {
+						console.log('Error loading readme file', e);
+						if (cb) cb(e, null);
+					}
+				});
+			}
+			
+			
+			$(".navLinkWrap").click(function(){
+				$(".active").removeClass("active");	
+				$(this).addClass("active");
+			});
+		});

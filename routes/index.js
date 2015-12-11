@@ -47,6 +47,7 @@ exports = module.exports = function(app) {
 	app.all('/mailinglist', routes.views.mailinglist);
 	//app.get('/docs', routes.views.swagger);
 	app.get('/docs', routes.views.docs_index);
+	app.get('/docs/:filename', routes.views.docs_rmd);
 	
 	app.get('/admin', function(req, res){
 		res.redirect('/keystone');

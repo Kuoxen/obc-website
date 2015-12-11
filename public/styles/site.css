@@ -5938,10 +5938,6 @@ h3 {
   font-size: 17px;
   font-weight: 900; }
 
-h4 {
-  font-size: 57px;
-  font-weight: 900; }
-
 button {
   padding: 7px 20px 5px 20px;
   color: #fff;
@@ -5997,6 +5993,10 @@ div.twoByOneWrapper > div {
   top: 27px;
   left: 119px;
   line-height: 12px; }
+
+.bigboy {
+  font-size: 57px;
+  font-weight: 900; }
 
 .gallery-image img {
   display: block;
@@ -6185,34 +6185,6 @@ pre {
   font-weight: 700;
   margin-bottom: 10px; }
 
-.thingWrap {
-  display: inline-block;
-  margin-right: 25px;
-  text-align: left; }
-
-.instructions, .insHeader {
-  width: 80%;
-  margin: auto; }
-
-.instructions {
-  padding: 20px;
-  text-align: left;
-  border: 1px solid #bbb;
-  border-top: 0;
-  display: none; }
-
-.insHeader {
-  border: 1px solid #bbb;
-  font-size: 25px;
-  font-weight: 700;
-  padding: 10px 20px;
-  text-align: left;
-  margin-top: 20px;
-  cursor: pointer; }
-
-.insHeader:hover {
-  border-color: #000; }
-
 .open {
   float: right;
   margin-top: -10px; }
@@ -6300,6 +6272,26 @@ pre {
 
 hr {
   border-color: #0f6ab4; }
+
+.instructions, .insHeader {
+  margin: auto; }
+
+.instructions {
+  text-align: left;
+  border-top: 0;
+  display: none; }
+
+.insHeader {
+  border: 1px solid #bbb;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 10px 20px;
+  text-align: left;
+  margin-top: 20px;
+  cursor: pointer; }
+
+.insHeader:hover {
+  border-color: #000; }
 
 #footer {
   position: relative;
