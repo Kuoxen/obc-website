@@ -43,9 +43,10 @@ exports = module.exports = function(app) {
 	app.all('/contact', routes.views.contact);
 	
 	app.get('/rmd/:filename/:repo?', routes.views.md);			//rendered mark down files
-	app.get('/gettingstarted', routes.views.gettingstarted);
+	//app.get('/gettingstarted', routes.views.gettingstarted);
 	app.all('/mailinglist', routes.views.mailinglist);
-	app.get('/docs', routes.views.swagger);
+	//app.get('/docs', routes.views.swagger);
+	app.get('/docs', routes.views.documentation);
 	
 	app.get('/admin', function(req, res){
 		res.redirect('/keystone');
