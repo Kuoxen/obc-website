@@ -1,25 +1,27 @@
 h1{
-	padding-top:50px;
+	font-family: 'Poppins', sans-serif;
+	font-weight:900;
+	font-size:30px;
 }
 h2{
 	font-weight:500;
+	font-size:25px;
 }
 h3{
 	font-size:17px;
 	font-weight:900;
 }
-h1{
-	//font-family: "Helvetica Narrow","Arial Narrow",Tahoma,Arial,Helvetica,sans-serif;
-	font-family: 'Poppins', sans-serif;
+h4{
+	font-size:57px;
 	font-weight:900;
 }
 
 button{
-	padding: 12px 20px;
+	padding: 7px 20px 5px 20px;
 	color:#fff;
 	background: #428CCB;
 	border:2px #428CCB solid;
-	border-radius: 4px;
+	border-radius: 2px;
 	font-size: 12px; 
 }
 button:hover{
@@ -31,17 +33,14 @@ button:hover{
 input {
 	color: #3BA3E0;
 	padding:10px;
-	margin-right:2px;
+	margin:0;
 }
 
 
 body{
-	//background-image: url("/images/background.png");
-	//background-repeat: no-repeat;
-	//background-position: 0 0;
-	//max-width:1366px;
+	max-width: 1366px;
+	margin: auto;
 	min-width:960px;
-	margin:auto;
 }
 
 #header {
@@ -57,22 +56,14 @@ body{
 $border: #bbb;
 $bg: #eee;
 
-#topContentPanel, #topContentPanel2{
-	text-align: center;
-	//background:$bg;
-	background-image: url("../../images/hero.jpg");
-	border-top: 1px solid $border;
-	border-bottom: 1px solid $border;
-	background-size: cover;
-}
-
 ///////////////////////////
 // Aspect Ratio Wrappers //
 ///////////////////////////
+/*
 // 2:1 ratio - Wrap objects in this to make them scale at this ratio
 div.twoByOneWrapper {
   width: 100%;
-  padding-bottom: 50%;
+
   position: relative;
 }
 
@@ -81,12 +72,7 @@ div.twoByOneWrapper > div {
   position:absolute;
   top:0; bottom: 0; left: 0; right: 0;
 }
-
-
-
-
-
-
+*/
 
 #logo{
 	width:100px;
@@ -120,7 +106,7 @@ div.twoByOneWrapper > div {
 
 .navLinks, #navLinks:visited, .navLinks:hover{
 	display:inline;
-	margin-left:10px;
+	margin-left:20px;
 	font-weight:bold;
 	color: #000;
 }

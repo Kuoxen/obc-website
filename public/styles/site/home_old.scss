@@ -1,11 +1,4 @@
-
-#topContentPanel, #topContentPanel2{
-	text-align: center;
-}
-
-#topContentPanel{
-	padding: 100px 0 150px 0;
-}
+$border: #ccc;
 
 .annoyText{
 	font-size:50px;
@@ -53,7 +46,6 @@
 .description{
 	width: 60%;
 	margin:auto;
-	font-size:17px;
 }
 
 .navbar-collapse{
@@ -102,59 +94,4 @@
 .open{
 	float:right;
 	margin-top:-10px;
-}
-
-.largePanel{
-	padding:30px 60px 60px 60px;
-}
-
-#whoPanel{
-	background: $accent_one;
-	color:#fff;
-}
-
-#whoLogoPanel{
-	margin-top:30px;
-	height:70px;
-	line-height: 70px;
-	font-size:30px;
-}
-
-.sect1x2simple{
-	display:inline-block;
-	width:38%;
-	margin: 0 5%;
-	height:100px;
-	vertical-align: top;
-	text-align: left;
-}
-
-.code{
-	padding:5px;
-	background: #eee;
-	color:#555;
-	border: 2px groove #ccc;
-}
-
-.whoLogo{
-	margin:0 15px;
-	height:55px;
-}
-#youtube{
-	border:1px #000 solid;
-	background:#fff;
-	height:400px;
-	width:700px;
-	margin:25px auto;
-}
-
-#fabricPanel{
-	background:#36ABC5;
-	color:#fff;
-	padding: 40px 0;
-}
-
-
-.fabImg{
-	width:33.33%;
 }

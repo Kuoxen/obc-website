@@ -29,7 +29,7 @@ html
 		
 		
 	// ------------ BODY  -------- //
-	body(data-spy="scroll" data-target=".navbar" data-offset="50")
+	body
 		#body
 			#bgWrap
 				
@@ -37,14 +37,35 @@ html
 				// ------------ Header Panel -------- //
 				#header: .container
 					div(role="navigation").navbar.navbar-default
-						include ./top_nav
+						.container-fluid
+							.navbar-header
+								button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+									span.sr-only Toggle navigation
+									span.icon-bar
+									span.icon-bar
+									span.icon-bar
+									
+								a.navbar-brand(href='/')
+									img(src="/images/logo.png" alt="OBC Logo" title="Home")#logo
+								#logoTextWrap 
+									a(href="/")#logoText
+										span LINUX 
+										p OPEN BLOCKCHAIN
+										
+							.collapse.navbar-collapse
+								ul.nav.navbar-nav.navbar-right
+									a(href="#").navLinks Code
+									a(href="/gettingstarted").navLinks Getting Started
+									a(href="/docs?url=../swagger/rest_api.json").navLinks Docs
+									a(href="/blog").navLinks Blog
+									a(href="#").navLinks Comunity
 									
 					
 				// ------------ Top Content Panel -------- //
-				#topContentPanel2
-					block topContentPanel
-			
-			
+				.twoByOneWrapper
+					#topContentPanel
+						block topContentPanel
+		
 			//- Flash messages allow you to display once-off status messages to users, e.g. form
 			+flash-messages(messages)
 				
@@ -52,9 +73,6 @@ html
 			// ------------ Main Content Panel -------- //
 			#secondPanel
 				block content
-				
-				#altNavPanel.navbar
-					block altNavPanel
 				
 				
 		// ------------ Footer -------- //
