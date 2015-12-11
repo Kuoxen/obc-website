@@ -5994,10 +5994,6 @@ div.twoByOneWrapper > div {
   left: 119px;
   line-height: 12px; }
 
-.bigboy {
-  font-size: 57px;
-  font-weight: 900; }
-
 .gallery-image img {
   display: block;
   max-width: 100%;
@@ -6052,11 +6048,12 @@ div.twoByOneWrapper > div {
   border-left: 2px solid #bbb;
   text-align: center;
   display: inline-block;
-  margin-left: 0; }
+  margin-left: 0;
+  vertical-align: top;
+  height: 435px; }
 
 .img1x3 {
-  width: 100px;
-  margin: 20px; }
+  width: 100%; }
 
 .desc1x3 {
   font-size: 12px; }
@@ -6130,7 +6127,11 @@ pre {
   text-align: center; }
 
 #topContentPanel {
-  padding: 100px 0 150px 0; }
+  padding: 100px 0 150px 0;
+  background-image: url("/images/home-hero-lineart.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 .annoyText {
   font-size: 50px;
@@ -6194,19 +6195,28 @@ pre {
 
 #whoPanel {
   background: #168FDF;
-  color: #fff; }
+  background-image: url("/images/home-who-network-art.png");
+  color: #fff;
+  background-size: contain;
+  background-repeat: no-repeat; }
 
 #whoLogoPanel {
   margin-top: 30px;
   height: 70px;
   line-height: 70px;
-  font-size: 30px; }
+  font-size: 30px;
+  overflow: hidden; }
+
+#busLogoPanel {
+  display: inline-block;
+  width: 90%;
+  margin: auto;
+  overflow: hidden; }
 
 .sect1x2simple {
   display: inline-block;
   width: 38%;
   margin: 0 5%;
-  height: 100px;
   vertical-align: top;
   text-align: left; }
 
@@ -6221,7 +6231,6 @@ pre {
   height: 55px; }
 
 #youtube {
-  border: 1px #000 solid;
   background: #fff;
   height: 400px;
   width: 700px;
@@ -6234,6 +6243,11 @@ pre {
 
 .fabImg {
   width: 33.33%; }
+
+.bigboy {
+  margin-top: -25px;
+  font-size: 57px;
+  font-weight: 900; }
 
 #topContentPanel2 {
   text-align: left;

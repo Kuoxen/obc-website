@@ -11,7 +11,7 @@ block topContentPanel
 	
 // ------------ Main Content Panel -------- //
 block content
-	.container: .contentWrapper
+	br
 	.subcontentPanel
 		
 		
@@ -24,12 +24,13 @@ block content
 			
 			#whoLogoPanel
 				span.fa.fa-chevron-left
-				img(src="/images/who/r.png").whoLogo
-				img(src="/images/who/london.png").whoLogo
-				img(src="/images/who/ibm.png").whoLogo
-				img(src="/images/who/anz.png").whoLogo
-				img(src="/images/who/cibc.png").whoLogo
-				img(src="/images/who/wells.png").whoLogo
+				#busLogoPanel
+					img(src="/images/who/r.png").whoLogo
+					img(src="/images/who/london.png").whoLogo
+					img(src="/images/who/ibm.png").whoLogo
+					img(src="/images/who/anz.png").whoLogo
+					img(src="/images/who/cibc.png").whoLogo
+					img(src="/images/who/wells.png").whoLogo
 				span.fa.fa-chevron-right
 		
 		
@@ -56,20 +57,24 @@ block content
 				.sect1x2simple
 					ul
 						li Anything in the master branch is deployable
-						li To work on something new, create a descriptively named branc off your fork.  More detail on fork.
-						li
-						li
-						li
+						li To work on something new, create a descriptively named branch off of your fork.  More detail on fork.
+						li Commit to that branch locally and regularly push your work to the same named branch on the server
+						li When you need feedback or help, or you think the branch is ready for merging, open a pull request (make sure successfully built and tested with the testsuite)
+						li After your pull request has reviewed and signed off, a committer can merge it into master branch
 				.sect1x2simple
-					p We use the same approach for blah blah blah blah.
+					p 
+						span We use the same approach as the Linux Kernel community, The Developers's Certificate of Origin, to manage contributions.
+						span We simply ask that hwen submitting a pull request, that the developer includes a sign-off statement in the pull request's desription.
+					br
+					p Here is an example Signed-off-by-line.  It indicates that the submitter accepted the DCO:
 					.code Signed-off-by: John Doe &#60;john.doh@domain.com&#62;
 					
-			hr
+			hr(style="border-color:#ccc;")
 			
 			div
 				.sect1x2simple
 					h3 QUESTIONS?
-					p Don't hesitat to join our Slack, check our open-source code at GitHub, take a peek at our 60 second video, send us an email, read the bog and follow or connect with us or else.
+					p Don't hesitate to join our Slack channel, check out our GitHub code, take a peek at our 60 second video, send us an email, read the bog or connect with us.
 				.sect1x2simple
 					h3 NEWSLETTER
 					p Sign up for our newsletter, or don't.
@@ -78,11 +83,20 @@ block content
 			
 			
 		// ------------ Video Panel -------- //
-		.largePanel(style="background-image: url('images/ckt.png')")
+		.largePanel(style="background-image: url('images/ckt.png'); background-size: contain")
 			h2
 				strong OBC BY EXAMPLE
 			strong.description This video demo provides a detailed examination of an example Blockchain Proof of Technology (PoT).
-			#youtube youtube link here
+			#youtube 
+				br
+				br
+				br
+				br
+				br
+				br
+				br
+				br
+				.fa.fa-play-circle.fa-5x
 			
 			
 		// ------------ Fabric Panel -------- //
@@ -94,141 +108,57 @@ block content
 			br
 			br
 			br
-			a(href="#")
+			a(href="/swagger?url=./swagger/rest_api.json")
 				img(src="images/fabric_1.png").fabImg
-			a(href="#")
+			a(href="/docs")
 				img(src="images/fabric_2.png").fabImg
-			a(href="#")
+			a(href="/docs")
 				img(src="images/fabric_3.png").fabImg
+			br
+			br
+			br
+			br
 			
-		// ------------ PoV Panel -------- //
-		h1 Our point of view
-		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
-		
-		
-		.pan1x3
-			.sect1x3
-				h3 ID MANAGEMENT
-				img(src="/images/logo.png").img1x3
-				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-			.sect1x3
-				h3 CONSENSUS
-				img(src="/images/logo.png").img1x3
-				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-			.sect1x3
-				h3 CHAIN CODE
-				img(src="/images/logo.png").img1x3
-				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-		
-		
-		// ------------ Video Panel -------- //
-		.pan1x1
-			h3 Sibos Panel Video
-			br
-			br
-			.fa.fa-play-circle.fa-5x
-		
-		
 		// ------------ Use Cases Panel -------- //
-		h1 Use Cases We're Solving
-		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
-		
-		.pan1x3
-			.sect1x3
-				h3 B2B Contracts
-				img(src="/images/logo.png").img1x3
-				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-			.sect1x3
-				h3 Asset Depository
-				img(src="/images/logo.png").img1x3
-				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-			.sect1x3
-				h3 Supply Chain
-				img(src="/images/logo.png").img1x3
-				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-		
-		
-		// ------------ Getting Started Panel -------- //
-		h1#gettingStarted Get Started
-		p.description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-
-		br
-		a(href="/gettingstarted")
-			button(type="button" style="padding:40px; font-size:69px; border-radius:10px;") Let's Go
-		//.instructions#num1 !{bag}
-		//iframe(src="/rmd/README.md").instructions#num1
-		
-		br
-		br
-		br
-		br
-		
-		
-		// ------------ Sample Panel -------- //
-		h1 Sample Applications
-		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
-		
-		.pan1x3
-			.sect1x2
-				h3 Lease Contracts
-				img(src="/images/logo.png").img1x3
-				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-			.sect1x2
-				h3 IOS TX App
-				img(src="/images/logo.png").img1x3
-				.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-		
-		
-		// ------------ Contributors Panel -------- //
-		h1 Contributors
-		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
-		
-		br
-		
-		.contribPanel
-			img().contributor
-			img().contributor
-			img().contributor
-			img().contributor
-			img().contributor
-			img().contributor
-			img().contributor
-			img().contributor
-			img().contributor
-			img().contributor
-			img().contributor
-			img().contributor
-		
-		
-		// ------------ Questions Panel -------- //
-		h1 Questions?
-		p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
-		
-		.pan1x1(style="min-height:inherit;")
-			a()
-				img().twitterIcon
-			a()
-				img().redditIcon
-			a()
-				img().facebookIcon
-			a()
-				img().googlePlusIcon
-			a()
-				img().githubIcon
-			a()
-				img().skypeIcon
-			a()
-				img().tumblrIcon
-			a()
-				img().youTubeIcon
+		.largePanel(style="padding:30px 0; border:0;")
+			h2
+				strong OUR USE CASES
+			p.description Get familiar with our initial use cases.
 			
-		
-		// ------------ Sign Up -------- //
-		form.signUpContainer(method="POST" action="/mailinglist")
-			.signUpWrap
-				.signUpHeader Sign up for updates
-				input(type="text" placeholder="Email" name="email")
-			.signUpWrap
-				.signUpHeader Join the Community
-				input(type="text" placeholder="Email" name="join-email")
-			button(type="submit").signUpButt SIGN UP
+			.pan1x3(style="background:#295584; color:#fff; border:0;")
+				.sect1x3(style="border-left:0;")
+					h3 B2B Contracts
+					img(src="/images/b2b.png").img1x3
+					.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+				.sect1x3
+					h3 Asset Depository
+					img(src="/images/asset.png").img1x3
+					.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+				.sect1x3
+					h3 Supply Chain
+					img(src="/images/supply.png").img1x3
+					.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
+				
+				
+		// ------------ Questions Panel -------- //
+		.largePanel
+			h1 Questions?
+			p.description Feel free to contact us with any questions.
+			
+			div
+				a()
+					img().twitterIcon
+				a()
+					img().redditIcon
+				a()
+					img().facebookIcon
+				a()
+					img().googlePlusIcon
+				a()
+					img().githubIcon
+				a()
+					img().skypeIcon
+				a()
+					img().tumblrIcon
+				a()
+					img().youTubeIcon

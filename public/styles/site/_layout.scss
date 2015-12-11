@@ -87,10 +87,6 @@ div.twoByOneWrapper > div {
 
 
 
-.bigboy{
-	font-size:57px;
-	font-weight:900;
-}
 
 
 
@@ -162,11 +158,12 @@ div.twoByOneWrapper > div {
 	text-align: center;
 	display:inline-block;
 	margin-left:0;
+	vertical-align: top;
+	height:435px;
 }
 
 .img1x3{
-	width:100px;
-	margin:20px;
+	width:100%;
 }
 
 .desc1x3{
