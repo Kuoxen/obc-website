@@ -6050,10 +6050,12 @@ div.twoByOneWrapper > div {
   display: inline-block;
   margin-left: 0;
   vertical-align: top;
-  height: 435px; }
+  height: 450px; }
 
 .img1x3 {
-  width: 100%; }
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px; }
 
 .desc1x3 {
   font-size: 12px; }
