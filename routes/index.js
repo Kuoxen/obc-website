@@ -45,7 +45,7 @@ exports = module.exports = function(app) {
 	app.get('/rmd/:filename/:repo?', routes.views.md);			//rendered mark down files
 	//app.get('/gettingstarted', routes.views.gettingstarted);
 	app.all('/mailinglist', routes.views.mailinglist);
-	//app.get('/docs', routes.views.swagger);
+	app.get('/swagger', routes.views.swagger);
 	app.get('/docs', routes.views.docs_index);
 	app.get('/docs/:filename', routes.views.docs_rmd);
 	

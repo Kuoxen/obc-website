@@ -6243,7 +6243,7 @@ pre {
 
 #topContentPanel2, .subcontentPanel2 {
   width: 75%;
-  padding-left: 150px; }
+  padding-left: 65px; }
 
 #secondPanel {
   position: relative; }
@@ -6251,7 +6251,6 @@ pre {
 #altNavPanel {
   position: fixed;
   padding: 2em;
-  left: 10%;
   top: 80px;
   background: #e7f0f7;
   color: #0f6ab4;
@@ -6260,7 +6259,8 @@ pre {
   min-height: 800px;
   border: 1px solid #c3d9ec;
   z-index: 1;
-  width: 170px; }
+  width: 170px;
+  transform: 50%; }
 
 .subcontentPanel2 {
   margin: auto;

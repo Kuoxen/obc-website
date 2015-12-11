@@ -8,7 +8,7 @@
 
 #topContentPanel2, .subcontentPanel2{
 	width: 75%;
-	padding-left:150px;
+	padding-left:65px;
 }
 
 #secondPanel{
@@ -19,7 +19,6 @@
 #altNavPanel{
 	position: fixed;
 	padding: 2em;
-	left: 10%;
 	top: 80px;
 	
 	background: #e7f0f7;
@@ -30,6 +29,7 @@
 	border: 1px solid #c3d9ec;
 	z-index: 1;
 	width:170px;
+	transform: 50%;
 }
 
 .subcontentPanel2{

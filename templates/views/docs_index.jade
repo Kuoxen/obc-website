@@ -10,27 +10,7 @@ block topContentPanel
 	
 // ------------ Alt Nav Panel -------- //
 block altNavPanel
-	h3 Documentation
-	hr
-	ul.nav
-		li.navLinkWrap.selected
-			a(href="#anchorStart").altNavLink Getting Started
-		li.navLinkWrap
-			a(href="#anchorWhite").altNavLink White Paper
-		li.navLinkWrap
-			a(href="#anchorArch").altNavLink Architecture
-		li.navLinkWrap
-			a(href="#anchorUse").altNavLink Use Cases
-		li.navLinkWrap
-			a(href="#anchorPeer").altNavLink Setting Up an Openchain Peer
-		li.navLinkWrap
-			a(href="#anchorWrite").altNavLink Writting, Building, And Running Chaincode
-		li.navLinkWrap
-			a(href="#anchorDev").altNavLink Setting Up a Network for Development
-		li.navLinkWrap
-			a(href="#anchorAPI").altNavLink API Docs
-		li.navLinkWrap
-			a(href="#anchorExample").altNavLink Examples
+	include ../layouts/left_nav
 		
 			
 block content
