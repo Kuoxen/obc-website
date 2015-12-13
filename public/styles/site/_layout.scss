@@ -1,6 +1,6 @@
 h1{
 	font-family: 'Poppins', sans-serif;
-	font-weight:900;
+	font-weight:700;
 	font-size:30px;
 }
 h2{
@@ -18,7 +18,7 @@ button{
 	background: #428CCB;
 	border:2px #428CCB solid;
 	border-radius: 2px;
-	font-size: 12px; 
+	font-size: 12px;
 }
 button:hover{
 	border:2px #428CCB solid;
@@ -32,15 +32,26 @@ input {
 	margin:0;
 }
 
-
 body{
-	max-width: 1366px;
-	margin: auto;
-	min-width:960px;
+	// max-width: 1366px;
+	margin: 0;
+	// background-color: #F5F8F9;
+	// min-width:960px;
+	font-family: 'Roboto', sans-serif;
+}
+
+a{
+	color: #006AC4;
+}
+
+a:hover, a:active{
+	color: #14B655;
 }
 
 #header {
-	//margin-top: 30px;
+	background-color: #fff;
+	height: 86px;
+	border-bottom: 1px solid #ddd;
 }
 
 #footer {
@@ -71,7 +82,7 @@ div.twoByOneWrapper > div {
 */
 
 #logo{
-	width:100px;
+	width: 170px;
 }
 #logoText, #logoText:hover, #logoText:visited, #logoText:active{
 	font-size: 13px;
@@ -101,6 +112,7 @@ div.twoByOneWrapper > div {
 
 .navLinks, #navLinks:visited, .navLinks:hover{
 	display:inline;
+	font-size: 16px;
 	margin-left:20px;
 	font-weight:bold;
 	color: #000;
@@ -110,7 +122,7 @@ div.twoByOneWrapper > div {
 }
 
 .navbar-right{
-	padding-top:10px;
+	padding-top:0px;
 }
 
 .navbar-default{
@@ -118,9 +130,13 @@ div.twoByOneWrapper > div {
 	border:0;
 }
 
-.container{
-	max-width: 1300px;
+.navbar-brand{
+	padding: 18px 0;
 }
+
+// .container{
+// 	max-width: 1300px;
+// }
 
 .test{
 	border: solid 1px #000;
@@ -198,7 +214,7 @@ div.twoByOneWrapper > div {
 	background: $bg;
 	margin-right:15px;
 	margin-top:15px;
-	
+
 }
 
 
@@ -255,9 +271,9 @@ div.twoByOneWrapper > div {
 code{
 	text-align: left;
 }
-
-pre{
-	text-align: left;
-	width:80%;
-	margin:auto !important;
-}
+//
+// pre{
+// 	text-align: left;
+// 	width:80%;
+// 	margin:auto !important;
+// }

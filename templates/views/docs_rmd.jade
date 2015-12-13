@@ -1,29 +1,26 @@
 extends ../layouts/default
-	
-	
+
+
 // ------------ Top Content Panel -------- //
 block topContentPanel
 	h1 Documentation:
-	br
-	br
 
-	
 // ------------ Alt Nav Panel -------- //
 block altNavPanel
 	include ../layouts/left_nav
-		
-			
+
+
 block content
 	.container: .contentWrapper
 	.subcontentPanel2
-		
-		.instructions(filename="#{data.filename}" style="display:block") Loading...
-				
+
+	.col-md-10.col-md-offset-2.instructions(filename="#{data.filename}" style="display:block") Loading...
+
 block custom_js
 	script(type='text/javascript').
 		$(document).ready(function(){
 			//console.log(locals);
-			
+
 			$(".instructions").each(function(){
 				var filename = $(this).attr("filename");
 				var me = this;
@@ -35,14 +32,14 @@ block custom_js
 						get_rendered_md(filename, cb_populate_me);
 					}
 				}
-				
+
 				function cb_populate_me(err, html){
 					if(err == null){
 						$(me).html(html);
 					}
 				}
 			});
-			
+
 			function get_rendered_md(filename, cb) {
 				$("#log").append("Creating Device Token: \n\t");
 				$.ajax({
@@ -61,13 +58,13 @@ block custom_js
 					}
 				});
 			}
-			
-			
+
+
 			$(".navLinkWrap").click(function(){
-				$(".active").removeClass("active");	
+				$(".active").removeClass("active");
 				$(this).addClass("active");
 			});
-			
+
 			var filename = '#{data.filename}';
 			$(".altNavLink").each(function(){								//find the damn link and style it as active
 				var link = $(this).attr("href");

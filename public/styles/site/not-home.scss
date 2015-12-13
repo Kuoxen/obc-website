@@ -19,17 +19,70 @@
 #altNavPanel{
 	position: fixed;
 	padding: 2em;
-	top: 80px;
-	
-	background: #e7f0f7;
+	top: 106px;
+	// background: #e7f0f7;
 	color: #0f6ab4;
 	vertical-align: top;
-	padding: 15px;
+	padding: 0px;
 	min-height: 800px;
-	border: 1px solid #c3d9ec;
+	// border: 1px solid #c3d9ec;
 	z-index: 1;
-	width:170px;
-	transform: 50%;
+	width:164px;
+	// transform: 50%;
+	h3 {
+    font-size: 16px;
+    font-weight: 700;
+	}
+	hr{
+		margin: 24px 0 0 0;
+		border-color: #eee;
+	}
+  .nav{
+		.navLinkWrap{
+			border-bottom: solid 1px #eee;
+  		padding:0;
+		}
+		& li > a {
+  		padding: 12px 8px;
+			font-size: 12px;
+		}
+		& .active > a{
+			color: #14B655;
+			font-weight:700;
+		}
+		& active:hover, & :hover{
+			border-bottom:solid 1px #333;
+			width:100%;
+			background-color: transparent;
+		}
+		& :hover > a{
+			border-bottom: none;
+			text-decoration: none;
+
+		}
+	}
+}
+
+
+pre {
+    display: block;
+    padding: 10px;
+    margin: 0 0 10.5px;
+    font-size: 14px;
+    line-height: 1.42857;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333333;
+    background-color: transparent;
+    border: 1px solid #eee;
+    border-radius: 2px;
+		border: 0;
+    border-left: 4px solid #ddd;
+    background: #eee;
+}
+
+code, pre {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 
 .subcontentPanel2{
@@ -38,8 +91,8 @@
 }
 
 .insHeader, .instructions{
-	width:100%;
-	margin-left:0;
+	// width:100%;
+	// margin-left:0;
 }
 
 hr{
@@ -49,12 +102,13 @@ hr{
 
 
 .instructions, .insHeader{
-	margin:auto;
+	// margin:auto;
 }
 .instructions{
 	text-align: left;
-	border-top:0;
-	display:none;
+	margin-top: 20px;
+	// border-top:0;
+	// display:none;
 }
 
 .insHeader{
@@ -73,30 +127,13 @@ hr{
 
 #footer{
 	position: relative;
-	z-index:2;	
-}
-
-.navLinkWrap{
-	border:double 5px #e7f0f7;
-	padding-left:5px;
-}
-
-.active, active:hover, .navLinkWrap:hover{
-	border:solid 5px #e7f0f7;
-	border-bottom-color:#fff;
-	width:100%;
-}
-
-.altNavLink:hover{
-	text-decoration: none;
-	background: #e7f0f7 !important;
+	z-index:2;
 }
 
 
-
-.altNavLink{
-	padding: 0 !important;
-}
+// .altNavLink{
+// 	padding: 0 !important;
+// }
 
 .resource{
 	border: 0;

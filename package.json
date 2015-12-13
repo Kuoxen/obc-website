@@ -5,9 +5,10 @@
   "dependencies": {
     "async": "^1.4.2",
     "dotenv": "^1.1.0",
-	"serve-static": "1.9.2",
-    "keystone": "^0.3.14",
+	  "serve-static": "1.9.2",
+    "keystone": "^0.3.16",
     "markedejs": "*",
+    "node-sass": "^3.3.2",
     "node-sass-middleware": "^0.9.7",
     "underscore": "^1.8.3"
   },
