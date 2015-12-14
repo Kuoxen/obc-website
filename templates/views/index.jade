@@ -1,164 +1,126 @@
 extends ../layouts/home
-	
-	
+
+
 // ------------ Top Content Panel -------- //
 block topContentPanel
-	h1 WHAT IS
-	.bigboy OPEN BLOCKCHAIN?
-	
-	
-	
-	
+	.hero
+		h1 WHAT IS THE
+		.bigboy OPEN LEDGER FOUNDATION?
+		.container
+			.heroIntroCopy.col-md-8.col-md-offset-2 Blockchain technology is in its infancy and is often not well suited for the needs of industry. Scalability challenges and the lack of support for confidential and private transactions, among other issues, make its use infeasible for many important industry applications. We lay out an industry–focused design, based on and extending the learnings of the pioneers in this field.
+			.row
+			<button type="button" class="btn btn-primary btn-lg">Read Whitepaper</button>
+			<button type="button" class="btn btn-primary btn-lg">Get Started</button>
+			<button type="button" class="btn btn-primary btn-lg">Github</button>
+
+
+
 // ------------ Main Content Panel -------- //
 block content
-	br
 	.subcontentPanel
-		
-		
+
 		// ------------ Who Panel -------- //
-		.largePanel#whoPanel
+		#whoPanel.largePanel
 			h2 WHO IS INVOLVED
-			p.description 
-				span Some of the most innovative companies in the world are actively engaged and in several cases contribute to the BOC Blockchain technology.  
-				span It is a global collaboration of some of the best and brightest in Finance, Banking, Technology, and Manufacturing.
-			
-			#whoLogoPanel
-				span.fa.fa-chevron-left
-				#busLogoPanel
-					//img(src="/images/who/r.png").whoLogo
-					//img(src="/images/who/london.png").whoLogo
-					img(src="/images/who/ibm.png").whoLogo
-					//img(src="/images/who/anz.png").whoLogo
-					//img(src="/images/who/cibc.png").whoLogo
-					//img(src="/images/who/wells.png").whoLogo
-				span.fa.fa-chevron-right
-		
-		
+			.container
+				.row
+					div.description.col-lg-10.col-lg-offset-1
+						p Some of the most innovative companies in the world are actively engaged and in several cases contribute to the OLF Blockchain technology. It is a global collaboration of some of the best and brightest in Finance, Banking, Technology, and Manufacturing.
+				.row
+					#carousel-foundation.carousel.slide
+						ol.carousel-indicators
+							li(data-target="#carousel-example-generic" data-slide-to="0" class="active")
+							li(data-target="#carousel-example-generic" data-slide-to="1")
+
+						.carousel-inner(role="listbox")
+							.item.active
+								#busLogoPanel
+									img(src="/images/who/r.png").whoLogo
+									img(src="/images/who/london.png").whoLogo
+									img(src="/images/who/ibm.png").whoLogo
+									img(src="/images/who/anz.png").whoLogo
+									img(src="/images/who/cibc.png").whoLogo
+									img(src="/images/who/wells.png").whoLogo
+							.item
+								#busLogoPanel
+									img(src="/images/who/r.png").whoLogo
+									img(src="/images/who/london.png").whoLogo
+									img(src="/images/who/ibm.png").whoLogo
+									img(src="/images/who/anz.png").whoLogo
+									img(src="/images/who/cibc.png").whoLogo
+									img(src="/images/who/wells.png").whoLogo
+
+						//-- Controls --//
+						.left.carousel-control(href="#carousel-example-generic" role="button" data-slide="prev")
+							.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+							.sr-onlyPrevious
+
+						.right.carousel-control(href="#carousel-example-generic" role="button" data-slide="next")
+							.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+							.sr-onlyNext
+
+
 		// ------------ HOW Panel -------- //
-		.largePanel
-			h2
-				strong HOW TO GET INVOLVED
-			p.description
-				span Open source projects depend on a lot more than code to be successful.
-				span Accurate documentation, support, meetups, and blogs are also critical to a healthy project.
-			
-			br
-			br
-			
-			strong.small 
-				span We are using 
-				a(href="#") Github Flow 
-				span process to contribute code.  here is the basic Github Flow:
-			
-			br
-			br
-			
-			div
-				.sect1x2simple
-					ul
-						li Anything in the master branch is deployable
-						li To work on something new, create a descriptively named branch off of your fork.  More detail on fork.
-						li Commit to that branch locally and regularly push your work to the same named branch on the server
-						li When you need feedback or help, or you think the branch is ready for merging, open a pull request (make sure successfully built and tested with the testsuite)
-						li After your pull request has reviewed and signed off, a committer can merge it into master branch
-				.sect1x2simple
-					p 
-						span We use the same approach as the Linux Kernel community, The Developers's Certificate of Origin, to manage contributions.
-						span We simply ask that hwen submitting a pull request, that the developer includes a sign-off statement in the pull request's desription.
-					br
-					p Here is an example Signed-off-by-line.  It indicates that the submitter accepted the DCO:
-					.code Signed-off-by: John Doe &#60;john.doh@domain.com&#62;
-					
-			hr(style="border-color:#ccc;")
-			
-			div
-				.sect1x2simple
-					h3 QUESTIONS?
-					p Don't hesitate to join our Slack channel, check out our GitHub code, take a peek at our 60 second video, send us an email, read the bog or connect with us.
-				.sect1x2simple
-					h3 NEWSLETTER
-					p Sign up for our newsletter, or don't.
-					input(type="text" placeholder="Enter your email for the latest OBC news" style="width:350px;").code
-					button(type="submit") Submit
-			
-			
+		#howPanel.largePanel
+			.container
+				h2
+					strong HOW TO GET INVOLVED
+				.row
+					div.description.col-lg-8.col-lg-offset-2
+						p Open source projects depend on a lot more than code to be successful. Accurate documentation, support, meetups, and blogs are also critical to a healthy project. We are using #[a(href="#") Github Flow] process to contribute code.  here is the basic Github Flow:
+
+				.row
+					.col-lg-5
+						ul
+							li Anything in the master branch is deployable
+							li To work on something new, create a descriptively named branch off of your fork.  More detail on fork.
+							li Commit to that branch locally and regularly push your work to the same named branch on the server
+							li When you need feedback or help, or you think the branch is ready for merging, open a pull request (make sure successfully built and tested with the testsuite)
+							li After your pull request has reviewed and signed off, a committer can merge it into master branch
+					.col-lg-5.col-lg-offset-2
+						p
+							span We use the same approach as the Linux Kernel community, The Developers's Certificate of Origin, to manage contributions.
+							span We simply ask that hwen submitting a pull request, that the developer includes a sign-off statement in the pull request's desription.
+
+						p Here is an example Signed-off-by-line.  It indicates that the submitter accepted the DCO:
+						pre
+							code Signed-off-by: John Doe &#60;john.doh@domain.com&#62;
+
+				hr(style="border-color:#ccc;")
+
+				div.row
+					.col-lg-5
+						h3 QUESTIONS?
+						p Don't hesitate to join our Slack channel, check out our GitHub code, take a peek at our 60 second video, send us an email, read the bog or connect with us.
+					.col-lg-5.col-lg-offset-2
+						h3 NEWSLETTER
+						p Sign up for our newsletter, or don't.
+						.input-group
+							input.form-control(type="text" placeholder="Enter your email for the latest OBC news")
+							span.input-group-btn
+								button.btn.btn-default(type="button") Go!
+
+
 		// ------------ Video Panel -------- //
-		.largePanel(style="background-image: url('images/ckt.png'); background-size: contain")
-			h2
-				strong OBC BY EXAMPLE
-			strong.description This video demo provides a detailed examination of an example Blockchain Proof of Technology (PoT).
-			#youtube 
-				br
-				br
-				br
-				br
-				br
-				br
-				br
-				br
-				.fa.fa-play-circle.fa-5x
-			
-			
+		#examplePanel.largePanel
+			.container
+				h2
+					strong OLF BY EXAMPLE
+				.row
+					div.description.col-lg-10.col-lg-offset-1
+						p This video demo provides a detailed examination of an example Blockchain Proof of Technology (PoT).
+				.row
+
+			#youtube
+
 		// ------------ Fabric Panel -------- //
 		.largePanel#fabricPanel
 			h2
 				strong THE OBC FABRIC
-			br
 			p.description  We have fabric yes we do, we have fabric how about you.
-			br
-			br
-			br
 			a(href="/swagger?url=./swagger/rest_api.json")
 				img(src="images/fabric_1.png").fabImg
 			a(href="/docs")
 				img(src="images/fabric_2.png").fabImg
 			a(href="/docs")
 				img(src="images/fabric_3.png").fabImg
-			br
-			br
-			br
-			br
-			
-		// ------------ Use Cases Panel -------- //
-		.largePanel(style="padding:30px 0; border:0;")
-			h2
-				strong OUR USE CASES
-			p.description Get familiar with our initial use cases.
-			
-			.pan1x3(style="background:#295584; color:#fff; border:0;")
-				.sect1x3(style="border-left:0;")
-					h3 B2B Contracts
-					img(src="/images/b2b.png").img1x3
-					.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-				.sect1x3
-					h3 Asset Depository
-					img(src="/images/asset.png").img1x3
-					.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-				.sect1x3
-					h3 Supply Chain
-					img(src="/images/supply.png").img1x3
-					.desc1x3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in vehicula mi, et molestie mi. Proin mauris enim, tempus scelerisque placerat vel, ultrices pellentesque lacus. Praesent et eros pharetra, volutpat augue et, interdum tortor.
-				
-				
-		// ------------ Questions Panel -------- //
-		.largePanel
-			h1 Questions?
-			p.description Feel free to contact us with any questions.
-			
-			div
-				a()
-					img().twitterIcon
-				a()
-					img().redditIcon
-				a()
-					img().facebookIcon
-				a()
-					img().googlePlusIcon
-				a()
-					img().githubIcon
-				a()
-					img().skypeIcon
-				a()
-					img().tumblrIcon
-				a()
-					img().youTubeIcon

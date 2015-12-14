@@ -134,6 +134,27 @@ div.twoByOneWrapper > div {
 	padding: 18px 0;
 }
 
+pre {
+    display: block;
+    padding: 10px;
+    margin: 0 0 10.5px;
+    font-size: 14px;
+    line-height: 1.42857;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333333;
+    background-color: transparent;
+    border: 1px solid #eee;
+    border-radius: 2px;
+		border: 0;
+    border-left: 4px solid #ddd;
+    background: #eee;
+}
+
+code, pre {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
 // .container{
 // 	max-width: 1300px;
 // }

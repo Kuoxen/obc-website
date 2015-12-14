@@ -5925,6 +5925,25 @@ div.twoByOneWrapper > div {
 .navbar-brand {
   padding: 18px 0; }
 
+pre {
+  display: block;
+  padding: 10px;
+  margin: 0 0 10.5px;
+  font-size: 14px;
+  line-height: 1.42857;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  background-color: transparent;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  border: 0;
+  border-left: 4px solid #ddd;
+  background: #eee; }
+
+code, pre {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace; }
+
 .test {
   border: solid 1px #000; }
 
@@ -6030,12 +6049,58 @@ code {
 #topContentPanel, #topContentPanel2 {
   text-align: center; }
 
+.twoByOneWrapper {
+  height: 640px; }
+
 #topContentPanel {
-  padding: 100px 0 150px 0;
   background-image: url("/images/home-hero-lineart.png");
-  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  background-size: 40%;
+  height: 100%;
+  width: 100%; }
+  #topContentPanel .hero {
+    top: 220px;
+    display: block;
+    position: relative;
+    margin-top: 0; }
+    #topContentPanel .hero h1 {
+      margin: 20px;
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 1.4;
+      position: relative; }
+    #topContentPanel .hero .bigboy {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 64px;
+      margin-top: -25px;
+      line-height: 1;
+      position: relative; }
+    #topContentPanel .hero .heroIntroCopy {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      background: rgba(255, 255, 255, 0.4); }
+
+#mainContent h2 {
+  margin: 40px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 40px; }
+
+#examplePanel.largePanel {
+  background-image: url("/images/home-example-background.jpg");
+  background-color: #ccc;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%;
+  height: 100%;
+  width: 100%; }
 
 .annoyText {
   font-size: 50px;
@@ -6071,13 +6136,26 @@ code {
 .white {
   color: #fff; }
 
-.subcontentPanel {
-  text-align: center; }
-
 .description {
-  width: 60%;
-  margin: auto;
-  font-size: 17px; }
+  font-size: 24px;
+  text-align: center;
+  font-weight: 300; }
+  .description p {
+    margin: 0 0 40px; }
+
+.carousel {
+  position: relative; }
+
+#carousel-foundation {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none; }
+
+@media screen and (min-width: 768px) {
+  .carousel-indicators {
+    bottom: -40px; } }
 
 .navbar-collapse {
   margin-top: 32px; }
@@ -6095,7 +6173,7 @@ code {
   margin-top: -10px; }
 
 .largePanel {
-  padding: 30px 60px 60px 60px; }
+  padding: 20px 0px 80px 0px; }
 
 #whoPanel {
   background: #168FDF;
@@ -6113,9 +6191,10 @@ code {
 
 #busLogoPanel {
   display: inline-block;
-  width: 90%;
+  width: 100%;
   margin: auto;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 0 120px; }
 
 .sect1x2simple {
   display: inline-block;
@@ -6136,9 +6215,14 @@ code {
 
 #youtube {
   background: #fff;
-  height: 400px;
-  width: 700px;
-  margin: 25px auto; }
+  height: 481px;
+  width: 854px;
+  margin: 25px auto;
+  background-image: url("/images/OFL-video-teaser.jpg");
+  background-color: #ccc;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%; }
 
 #fabricPanel {
   background: #36ABC5;
@@ -6147,11 +6231,6 @@ code {
 
 .fabImg {
   width: 33.33%; }
-
-.bigboy {
-  margin-top: -25px;
-  font-size: 57px;
-  font-weight: 900; }
 
 #topContentPanel2 {
   text-align: left;
@@ -6177,6 +6256,7 @@ code {
   z-index: 1;
   width: 164px; }
   #altNavPanel h3 {
+    color: #2F3034;
     font-size: 16px;
     font-weight: 700; }
   #altNavPanel hr {
@@ -6192,31 +6272,12 @@ code {
     color: #14B655;
     font-weight: 700; }
   #altNavPanel .nav active:hover, #altNavPanel .nav :hover {
-    border-bottom: solid 1px #333;
+    border-bottom: solid 1px #168FDF;
     width: 100%;
     background-color: transparent; }
   #altNavPanel .nav :hover > a {
     border-bottom: none;
     text-decoration: none; }
-
-pre {
-  display: block;
-  padding: 10px;
-  margin: 0 0 10.5px;
-  font-size: 14px;
-  line-height: 1.42857;
-  word-break: break-all;
-  word-wrap: break-word;
-  color: #333333;
-  background-color: transparent;
-  border: 1px solid #eee;
-  border-radius: 2px;
-  border: 0;
-  border-left: 4px solid #ddd;
-  background: #eee; }
-
-code, pre {
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace; }
 
 .subcontentPanel2 {
   margin: auto;

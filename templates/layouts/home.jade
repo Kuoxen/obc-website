@@ -17,7 +17,7 @@ html
 		link(href="/styles/prism.css", rel="stylesheet")
 		link(href="/styles/site.css", rel="stylesheet")
 		link(type="text/css", rel="stylesheet" href="/styles/font-awesome-4.3.0/css/font-awesome.min.css")
-		link(href='https://fonts.googleapis.com/css?family=Poppins:300,700' rel='stylesheet' type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Poppins:300,500,700' rel='stylesheet' type='text/css')
 		link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css')
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
@@ -40,17 +40,17 @@ html
 					include ./top_nav
 
 
-				// ------------ Top Content Panel -------- //
-				.twoByOneWrapper
-					#topContentPanel
-						block topContentPanel
+			// ------------ Top Content Panel -------- //
+			.twoByOneWrapper
+				#topContentPanel
+					block topContentPanel
 
 			//- Flash messages allow you to display once-off status messages to users, e.g. form
 			+flash-messages(messages)
 
 
 			// ------------ Main Content Panel -------- //
-			#secondPanel
+			#mainContent
 				block content
 
 
@@ -62,6 +62,7 @@ html
 
 		// ------------ JAVASCRIPT -------- //
 		script(src='/js/jquery/jquery-1.11.3.min.js')
+		script(src='/js/bootstrap/carousel.js')
 		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
 		script(src="/js/prism.js")
 
