@@ -1,6 +1,6 @@
 var keystone = require('keystone');
 var Enquiry = keystone.list('Enquiry');
-var lib = require('../lib.js');
+//var lib = require('../lib.js');
 
 exports = module.exports = function(req, res) {
 	
