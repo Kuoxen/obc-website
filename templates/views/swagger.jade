@@ -52,6 +52,7 @@ block custom_css
 		.subcontentPanel{
 			text-align:left;
 			margin-left: 200px;
+			min-height:800px;
 		}
 		.swagger-section .swagger-ui-wrap{
 			max-width:1200px;
@@ -126,6 +127,8 @@ block topContentPanel
 	
 // ------------ Alt Nav Panel -------- //	
 block altNavPanel
+	include ../layouts/left_nav
+	br
 	h3 APIs
 	hr
 	ul.nav#apiAltNav
