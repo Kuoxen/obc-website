@@ -5867,11 +5867,11 @@ a:hover, a:active {
   height: 86px;
   border-bottom: 1px solid #ddd; }
 
+/*
 #footer {
-  margin-top: 30px;
-  padding-top: 30px;
-  text-align: center; }
-
+	margin-top: 30px;
+}
+*/
 /*
 // 2:1 ratio - Wrap objects in this to make them scale at this ratio
 div.twoByOneWrapper {
