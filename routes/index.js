@@ -53,6 +53,8 @@ exports = module.exports = function(app) {
 		res.redirect('/keystone');
 	});
 	
+	app.get('/teaser', routes.views.teaser);
+	
 	app.all('/swagger*', keystone.middleware.cors);				//add cors for swagger file
 	app.use('/images', serve_static('docs/images', {maxAge: '1d', setHeaders: setCustomCC}) );
 	function setCustomCC(res, path) {

@@ -1,0 +1,84 @@
+doctype html
+html
+	
+	
+	// ------------ HEADER  -------- //
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+		title= title || 'Open Block Chain'
+		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+
+		//- Customise the stylesheet for your site by editing /public/styles/site.sass
+		link(href="/styles/prism.css", rel="stylesheet")
+		link(href="/styles/site.css", rel="stylesheet")
+		link(type="text/css", rel="stylesheet" href="/styles/font-awesome-4.3.0/css/font-awesome.min.css")
+		link(href='https://fonts.googleapis.com/css?family=Poppins:300,500,700' rel='stylesheet' type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css')
+
+		style.
+			#topContentPanel{
+				background-image:none;
+			}
+			.logo{
+				width:120px;
+				margin-bottom:20px;
+			}
+			#topContentPanel .hero{
+				top:125px;
+			}
+
+		
+	// ------------ BODY  -------- //
+	body
+		#body
+			#bgWrap
+			
+			
+				// ------------ Header Panel -------- //
+				//#header: .container
+				//	include ./top_nav
+
+
+			// ------------ Top Content Panel -------- //
+			.twoByOneWrapper
+				#topContentPanel
+					.hero
+						img(src="/images/teaser-line_art.png").logo
+						p.bigboy THE BLOCKCHAIN
+						p.bigboy FOR BUSINESS STANDARD
+						p.bigboy IS COMING IN 2016
+						form.container(style="margin-top:-25px;" method="POST" action="/mailinglist")
+							.heroIntroCopy.col-md-8.col-md-offset-2 The Linux Foundation has united industry leaders to donate their best ideas and technology to advance the Blockchain Technology Standard and make it read for business.&nbsp;
+								strong Sign up below to receive news and updates.
+							.row
+							input(type="text" name="email" placeholder="Enter your email for the latest news + updates" style="width:350px; margin-top:1px;")
+							button(type="submit").btn.btn-primary.btn-lg Submit
+
+							
+			// ------------ Main Content Panel -------- //
+			//#mainContent
+			//	block content
+			
+			
+		// ------------ Footer -------- //
+		//#footer
+			.pan1x1 &nbsp;
+				h1 FOOTER
+
+				
+		// ------------ JAVASCRIPT -------- //
+		script(src='/js/jquery/jquery-1.11.3.min.js')
+		script(src='/js/bootstrap/carousel.js')
+		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
+		script(src="/js/prism.js")
+
+		script(type='text/javascript').
+			//var bag = !{JSON.stringify(bag)};					//throw jade json over to JS
+			$(document).ready(function(){
+				//console.log('bag', bag);
+			});
+
+		block custom_js
