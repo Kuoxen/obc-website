@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var async = require('async');
+var lib = require('../lib.js');
 
 exports = module.exports = function(req, res) {
 	

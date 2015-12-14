@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var lib = require('../lib.js');
 
 exports = module.exports = function(req, res) {
 	
@@ -8,6 +9,7 @@ exports = module.exports = function(req, res) {
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'home';
-	
-	view.render('index');
+	if(lib.check_login(req, res)){
+		view.render('index');
+	}
 };

@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var lib = require('../lib.js');
 
 exports = module.exports = function(req, res) {
 	
@@ -9,5 +10,7 @@ exports = module.exports = function(req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 	
-	view.render('swagger');
+	if(lib.check_login(req, res)){
+		view.render('swagger');
+	}
 };

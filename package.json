@@ -5,12 +5,15 @@
   "dependencies": {
     "async": "^1.4.2",
     "dotenv": "^1.1.0",
-	  "serve-static": "1.9.2",
+	"serve-static": "1.9.2",
     "keystone": "^0.3.16",
     "markedejs": "*",
     "node-sass": "^3.3.2",
     "node-sass-middleware": "^0.9.7",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+	"express-session": "1.2.1",
+	"body-parser": "1.0.2",
+	"cookie-parser": "1.0.1"
   },
   "devDependencies": {
     "gulp": "^3.7.0",

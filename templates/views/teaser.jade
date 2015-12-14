@@ -14,6 +14,7 @@ html
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/prism.css", rel="stylesheet")
 		link(href="/styles/site.css", rel="stylesheet")
+		link(href="/styles/lfcollab.css", rel="stylesheet")
 		link(type="text/css", rel="stylesheet" href="/styles/font-awesome-4.3.0/css/font-awesome.min.css")
 		link(href='https://fonts.googleapis.com/css?family=Poppins:300,500,700' rel='stylesheet' type='text/css')
 		link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css')
@@ -28,6 +29,19 @@ html
 			}
 			#topContentPanel .hero{
 				top:125px;
+			}
+			.twoByOneWrapper{
+				margin-bottom: 165px;
+			}
+			input, button{
+				padding: 10px 20px;
+				margin: 0;
+				margin-left: -4px;
+				line-height: 22px;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				border-width: 2px;
+				font-size:16px;
 			}
 
 		
@@ -54,8 +68,8 @@ html
 							.heroIntroCopy.col-md-8.col-md-offset-2 The Linux Foundation has united industry leaders to donate their best ideas and technology to advance the Blockchain Technology Standard and make it read for business.&nbsp;
 								strong Sign up below to receive news and updates.
 							.row
-							input(type="text" name="email" placeholder="Enter your email for the latest news + updates" style="width:350px; margin-top:1px;")
-							button(type="submit").btn.btn-primary.btn-lg Submit
+							input(type="text" name="email" placeholder="Enter your email for the latest news + updates" style="width:400px; margin-top:1px;")
+							button(type="submit") Submit
 
 							
 			// ------------ Main Content Panel -------- //
@@ -64,9 +78,8 @@ html
 			
 			
 		// ------------ Footer -------- //
-		//#footer
-			.pan1x1 &nbsp;
-				h1 FOOTER
+		#footer
+			include ../layouts/footer
 
 				
 		// ------------ JAVASCRIPT -------- //

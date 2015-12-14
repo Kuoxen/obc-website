@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var lib = require('../lib.js');
 
 exports = module.exports = function(req, res) {
 	
@@ -10,5 +11,7 @@ exports = module.exports = function(req, res) {
 	locals.section = 'home';
 	
 	// Render the view
-	gs.render('docs_index');
+	if(lib.check_login(req, res)){
+		gs.render('docs_index');
+	}
 };

@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var lib = require('../lib.js');
 
 exports = module.exports = function(req, res) {
 	
@@ -42,6 +43,7 @@ exports = module.exports = function(req, res) {
 	});
 	
 	// Render the view
-	view.render('post');
-	
+	if(lib.check_login(req, res)){
+		view.render('post');
+	}
 };

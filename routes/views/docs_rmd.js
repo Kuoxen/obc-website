@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var lib = require('../lib.js');
 
 exports = module.exports = function(req, res) {
 	
@@ -15,5 +16,7 @@ exports = module.exports = function(req, res) {
 	if(pos >= 0) locals.data.md_name = locals.data.filename.substr(0, pos);
 		
 	// Render the view
-	gs.render('docs_rmd');
+	if(lib.check_login(req, res)){
+		gs.render('docs_rmd');
+	}
 };

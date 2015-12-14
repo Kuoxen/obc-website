@@ -3,7 +3,7 @@ include ../mixins/flash-messages
 doctype html
 html
 
-
+	
 	// ------------ HEADER  -------- //
 	head
 		meta(charset="utf-8")
@@ -13,6 +13,7 @@ html
 		title= title || 'Open Block Chain'
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
+		
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/prism.css", rel="stylesheet")
 		link(href="/styles/site.css", rel="stylesheet")
@@ -21,6 +22,7 @@ html
 		link(href='https://fonts.googleapis.com/css?family=Poppins:300,500,700' rel='stylesheet' type='text/css')
 		link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css')
 
+		
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
@@ -29,37 +31,38 @@ html
 
 		block head
 
-
+		
 	// ------------ BODY  -------- //
 	body
 		#body
 			#bgWrap
 
-
+			
 				// ------------ Header Panel -------- //
 				#header: .container
 					include ./top_nav
 
-
+					
 			// ------------ Top Content Panel -------- //
 			.twoByOneWrapper
 				#topContentPanel
 					block topContentPanel
 
+					
 			//- Flash messages allow you to display once-off status messages to users, e.g. form
 			+flash-messages(messages)
 
-
+			
 			// ------------ Main Content Panel -------- //
 			#mainContent
 				block content
 
-
+				
 		// ------------ Footer -------- //
 		#footer
 			include footer
 
-
+			
 		// ------------ JAVASCRIPT -------- //
 		script(src='/js/jquery/jquery-1.11.3.min.js')
 		script(src='/js/bootstrap/carousel.js')

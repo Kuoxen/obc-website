@@ -23,6 +23,10 @@ var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
 var serve_static = require('serve-static');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
+var url = require('url');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -35,6 +39,26 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
+	
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded());
+	app.use(cookieParser());
+	app.use( session({secret:'loselipssinktanksyo', resave:true, saveUninitialized:true}) );
+	
+	app.use(function(req, res, next){
+		console.log('------------------------------------------ incoming request ------------------------------------------');
+		console.log('New ' + req.method + ' request for', req.url);
+		
+		var url_parts = url.parse(req.url, true);
+		req.query = url_parts.query;
+		req.session.count = (Number(req.session.count) || 0) + 1;
+		if(!req.session.bag) req.session.bag = {};											//create our object for our stuff
+		if(req.query) {console.log('query params:'); console.log(req.query);}				//print to console for debugging
+		if(req.body){console.log('body:'); console.log(req.body);}							//print to console for debugging
+		//console.log('session', req.session);
+		next();
+	});
+
 	
 	// Views
 	app.get('/', routes.views.index);
@@ -54,6 +78,7 @@ exports = module.exports = function(app) {
 	});
 	
 	app.get('/teaser', routes.views.teaser);
+	app.all('/login', routes.views.login);
 	
 	app.all('/swagger*', keystone.middleware.cors);				//add cors for swagger file
 	app.use('/images', serve_static('docs/images', {maxAge: '1d', setHeaders: setCustomCC}) );
