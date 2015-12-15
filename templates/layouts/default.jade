@@ -74,6 +74,65 @@ html
 			//var bag = !{JSON.stringify(bag)};					//throw jade json over to JS
 			$(document).ready(function(){
 				//console.log('bag', bag);
+				
+				get_swagger(populate_nav);
+				
+				function get_swagger(cb) {
+					$.ajax({
+						method: 'GET',
+						url: '/swagger/rest_api.json',
+						data: null,
+						contentType: 'application/json',
+						success: function(json) {
+							console.log('Success loading swagger file', json);
+							if (cb) cb(null, json);
+						},
+						error: function(e) {
+							console.log('Error loading swagger file', e);
+							if (cb) cb(e, null);
+						}
+					});
+				}
+				
+				function populate_nav(err, json){
+					var skip_list = ['Show/Hide'];
+					var done = [];
+					
+					if(err == null){
+						for(i in json.paths){
+							for(method in json.paths[i]){
+								for(x in json.paths[i][method].tags){
+									//console.log(json.paths[i][method].tags[x]);
+									var name = json.paths[i][method].tags[x];
+									
+									if(!in_array(name.toLowerCase(), done)){								//only populate it once
+										done.push(name.toLowerCase());
+										if($.inArray(name, skip_list) == -1){
+											var html = '<li class="navLinkWrap"><a class="altNavLink" href="/swagger?url=./swagger/rest_api.json#swagger-' + name + '">' + name + '</a></li>';
+											$("#apiAltNav").append(html);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				function in_array(name, arr){
+					for(var i in arr){
+						if(arr[i] == name) return true;
+					}
+					return false;
+				}
+				
+				$(document).on("click", ".altNavLink", function(){							//don't reload the page if we are on the swagger page AND the link is for a swagger tag
+					if(location.pathname.indexOf('/swagger') >= 0){
+						if($(this).attr('href').indexOf('/swagger') >= 0){
+							return false;
+						}
+					}
+				});
+
 			});
 
 		block custom_js
