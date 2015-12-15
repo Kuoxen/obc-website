@@ -1,0 +1,85 @@
+// Bootstrap
+// =========
+
+// Bootstrap can be removed entirely by deleting this line.
+@import "bootstrap/bootstrap";
+
+// The easiest way to customise Bootstrap variables while
+// being able to easily override the source files with new
+// versions is to override the ones you want in another file.
+//
+// You can also add your own custom variables to this file for
+// use in your site stylesheets.
+
+@import "site/variables";
+
+
+// Site Styles
+// ===========
+
+// Add your own site style includes here
+@import "site/layout";
+@import "site/home.scss";
+
+body{
+	min-width: 375px;
+}
+
+#topContentPanel{
+	background-image:none;
+}
+.logo{
+	width:120px;
+	margin-bottom:20px;
+}
+#topContentPanel .hero{
+	top:125px;
+}
+.twoByOneWrapper{
+	margin-bottom: 165px;
+}
+input, button{
+	padding: 10px 20px;
+	margin: 0;
+	margin-left: -4px;
+	line-height: 22px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-width: 2px;
+	font-size:16px;
+}
+input{
+	margin-top:1px;
+	width:400px;
+}
+
+.twoByOneWrapper{
+	height: inherit;
+}
+
+.bigboy{
+	font-size:64px;
+}
+@media (max-width: 700px) {
+	.bigboy{
+		font-size:54px;
+		line-height: 70px;
+	}
+	.logo{
+		width:100px;
+	}
+}
+
+@media (max-width: 500px) {
+	.bigboy{
+		font-size:40px;
+		line-height: 55px;
+	}
+	input, button{
+		width:100%;
+		margin:5px;
+	}
+	.logo{
+		width:85px;
+	}
+}

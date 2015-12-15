@@ -28,15 +28,6 @@
 			line-height: 1.4;
 			position: relative;
 		}
-		.bigboy {
-			display: block;
-			font-family: 'Poppins', sans-serif;
-			font-weight: 700;
-			font-size: 64px;
-			margin-top: -25px;
-			line-height: 85px;
-			position: relative;
-		}
 		.heroIntroCopy {
 			margin-top: 20px;
 			margin-bottom: 20px;
@@ -44,6 +35,16 @@
 			background: rgba(255,255,255,0.4);
 		}
 	}
+}
+
+.bigboy {
+	display: block;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-size: 64px;
+	margin-top: -25px;
+	line-height: 85px;
+	position: relative;
 }
 
 #mainContent{

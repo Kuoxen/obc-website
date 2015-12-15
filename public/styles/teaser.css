@@ -6254,79 +6254,55 @@ ul, ol {
 .fabImg {
   width: 33.33%; }
 
-#topContentPanel2 {
-  text-align: left;
-  background: #fff;
-  border: 0;
-  margin: auto; }
+body {
+  min-width: 375px; }
 
-#topContentPanel2, .subcontentPanel2 {
-  width: 75%;
-  padding-left: 65px; }
+#topContentPanel {
+  background-image: none; }
 
-#secondPanel {
-  position: relative; }
+.logo {
+  width: 120px;
+  margin-bottom: 20px; }
 
-#altNavPanel {
-  position: fixed;
-  padding: 2em;
-  top: 106px;
-  color: #0f6ab4;
-  vertical-align: top;
-  padding: 0px;
-  min-height: 800px;
-  z-index: 1;
-  width: 164px; }
-  #altNavPanel h3 {
-    color: #2F3034;
-    font-size: 16px;
-    font-weight: 700; }
-  #altNavPanel hr {
-    margin: 24px 0 0 0;
-    border-color: #eee; }
-  #altNavPanel .nav .navLinkWrap {
-    border-bottom: solid 1px #eee;
-    padding: 0; }
-  #altNavPanel .nav li > a {
-    padding: 12px 8px;
-    font-size: 12px; }
-  #altNavPanel .nav .active > a {
-    color: #14B655;
-    font-weight: 700; }
-  #altNavPanel .nav active:hover, #altNavPanel .nav :hover {
-    border-bottom: solid 1px #168FDF;
-    width: 100%;
-    background-color: transparent; }
-  #altNavPanel .nav :hover > a {
-    border-bottom: none;
-    text-decoration: none; }
+#topContentPanel .hero {
+  top: 125px; }
 
-.subcontentPanel2 {
-  margin: auto;
-  text-align: center; }
+.twoByOneWrapper {
+  margin-bottom: 165px; }
 
-hr {
-  border-color: #0f6ab4; }
-
-.instructions {
-  text-align: left;
-  margin-top: 20px; }
-
-.insHeader {
-  border: 1px solid #bbb;
-  font-size: 25px;
-  font-weight: 700;
+input, button {
   padding: 10px 20px;
-  text-align: left;
-  margin-top: 20px;
-  cursor: pointer; }
+  margin: 0;
+  margin-left: -4px;
+  line-height: 22px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-width: 2px;
+  font-size: 16px; }
 
-.insHeader:hover {
-  border-color: #000; }
+input {
+  margin-top: 1px;
+  width: 400px; }
 
-#footer {
-  position: relative;
-  z-index: 2; }
+.twoByOneWrapper {
+  height: inherit; }
 
-.resource {
-  border: 0; }
+.bigboy {
+  font-size: 64px; }
+
+@media (max-width: 700px) {
+  .bigboy {
+    font-size: 54px;
+    line-height: 70px; }
+  .logo {
+    width: 100px; } }
+
+@media (max-width: 500px) {
+  .bigboy {
+    font-size: 40px;
+    line-height: 55px; }
+  input, button {
+    width: 100%;
+    margin: 5px; }
+  .logo {
+    width: 85px; } }
