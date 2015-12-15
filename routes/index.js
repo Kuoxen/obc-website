@@ -79,6 +79,7 @@ exports = module.exports = function(app) {
 	
 	app.get('/teaser', routes.views.teaser);
 	app.all('/login', routes.views.login);
+	app.all('/test', routes.views.test);
 	
 	app.all('/swagger*', keystone.middleware.cors);				//add cors for swagger file
 	app.use('/images', serve_static('docs/images', {maxAge: '1d', setHeaders: setCustomCC}) );
