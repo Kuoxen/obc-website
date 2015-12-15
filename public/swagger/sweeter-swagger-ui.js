@@ -179,8 +179,8 @@ $(function () {
 		$(".toggleEndpointList").each(function(){
 			var name = $(this).html();
 			if($.inArray(name, skip_list) == -1){
-				var html = '<li class="navLinkWrap"><a class="altNavLink" href="#swag-' + name + '">' + name + '</a></li>';
-				$("#apiAltNav").append(html);
+				//var html = '<li class="navLinkWrap"><a class="altNavLink" href="#swag-' + name + '">' + name + '</a></li>';
+				//$("#apiAltNav").append(html);
 				$(this).attr('id', 'swag-' + name);
 			}
 		});
