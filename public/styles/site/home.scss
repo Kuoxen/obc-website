@@ -12,16 +12,15 @@
 	background-image: url('/images/home-hero-lineart.png');
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 40%;
+	background-size: 56%;
 	height: 100%;
-  width: 100%;
 	.hero {
-    top: 220px;
+    top: 164px;
     display: block;
     position: relative;
     margin-top: 0;
 		h1 {
-	    margin: 20px;
+	    margin: 0 20px 20px;
 			display: block;
 			font-family: 'Poppins', sans-serif;
 			font-weight: 400;
@@ -56,14 +55,39 @@
 		font-size: 40px;
 	}
 }
-#examplePanel.largePanel{
-	background-image: url("/images/home-example-background.jpg");
-	background-color: #ccc;
-	background-repeat: no-repeat;
-	background-position: top;
-	background-size: 100%;
-	height: 100%;
-	width: 100%;
+
+#examplePanel{
+	position: relative;
+	display: block;
+	&.largePanel{
+		overflow: hidden;
+		background-image: url("/images/home-example-background.jpg");
+		background-color: #ccc;
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: 54%;
+		height: 100%;
+		width: 100%;
+	}
+	.video{
+		position: relative;
+		z-index: 1;
+	}
+	.cars{
+		position: absolute;
+		display: block;
+		bottom: 40px;
+		z-index: 0;
+		background-image: url("/images/video-player-cars.jpg");
+		background-color: #ccc;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100%;
+		height: 320px;
+		width: 2388px;
+		margin-left: -1194px;
+    left: 50%;
+	}
 }
 
 .annoyText{
@@ -208,7 +232,7 @@
 	background:#fff;
 	height:481px;
 	width:854px;
-	margin:25px auto;
+	margin: 64px auto 120px;
 	background-image: url("/images/OFL-video-teaser.jpg");
 	background-color: #ccc;
 	background-repeat: no-repeat;
