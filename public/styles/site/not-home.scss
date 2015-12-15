@@ -1,3 +1,5 @@
+@import "_variables";
+
 #topContentPanel2{
 	text-align: left;
 	background:#fff;
@@ -67,6 +69,7 @@
 .subcontentPanel2{
 	margin:auto;
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 .insHeader, .instructions{

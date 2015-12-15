@@ -6303,7 +6303,8 @@ ul, ol {
 
 .subcontentPanel2 {
   margin: auto;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 20px; }
 
 hr {
   border-color: #0f6ab4; }

@@ -1,3 +1,4 @@
+@import "_variables";
 
 #topContentPanel, #topContentPanel2{
 	text-align: center;
@@ -187,7 +188,7 @@
 }
 
 #whoPanel{
-	background: $accent_one;
+	background: $accentone;
 	background-image: url('/images/home-who-network-art.png');
 	color:#fff;
 	background-size:contain;
