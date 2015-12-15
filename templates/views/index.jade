@@ -6,7 +6,7 @@ block topContentPanel
 	.hero
 		h1 WHAT IS THE
 		.bigboy OPEN LEDGER FOUNDATION?
-		.container
+		.row
 			.heroIntroCopy.col-md-8.col-md-offset-2 Blockchain technology is in its infancy and is often not well suited for the needs of industry. Scalability challenges and the lack of support for confidential and private transactions, among other issues, make its use infeasible for many important industry applications. We lay out an industry–focused design, based on and extending the learnings of the pioneers in this field.
 			.row
 			<button type="button" class="btn btn-primary btn-lg">Read Whitepaper</button>
@@ -67,10 +67,11 @@ block content
 					strong HOW TO GET INVOLVED
 				.row
 					div.description.col-lg-8.col-lg-offset-2
-						p Open source projects depend on a lot more than code to be successful. Accurate documentation, support, meetups, and blogs are also critical to a healthy project. We are using #[a(href="#") Github Flow] process to contribute code.  Here is the basic Github Flow:
+						p Open source projects depend on a lot more than code to be successful. Accurate documentation, support, meetups, and blogs are also critical to a healthy project.
 
 				.row
 					.col-lg-5
+						p We are using #[a(href="#") Github Flow] process to contribute code.  Here is the basic Github Flow:
 						ul
 							li Anything in the master branch is deployable
 							li To work on something new, create a descriptively named branch off of your fork
@@ -79,7 +80,7 @@ block content
 							li After your pull request has reviewed and signed off, a committer can merge it into the master branch
 					.col-lg-5.col-lg-offset-2
 						p
-							span We use the same approach as the Linux Kernel community, The Developer's Certificate of Origin, to manage contributions. 
+							span We use the same approach as the Linux Kernel community, The Developer's Certificate of Origin, to manage contributions.
 							span We simply ask that when submitting a pull request, that the developer includes a sign-off statement in the pull request's description.
 
 						p Here is an example Signed-off-by-line.  It indicates that the submitter accepted the DCO:
@@ -92,6 +93,14 @@ block content
 					.col-lg-5
 						h3 QUESTIONS?
 						p Don't hesitate to join our Slack channel, check out our GitHub code, take a peek at our 60 second video, send us an email, read the bog or connect with us.
+						.social-icons
+							a.icon.github(href="https://github.com/openblockchain/", target="_blank")
+							a.icon.slack(href="https://openchain.slack.com", target="_blank")
+							a.icon.facebook(href="#", target="_blank")
+							a.icon.googleplus(href="#", target="_blank")
+							a.icon.twitter(href="#", target="_blank")
+							a.icon.reddit(href="#", target="_blank")
+							a.icon.youtube(href="#", target="_blank")
 					.col-lg-5.col-lg-offset-2
 						h3 NEWSLETTER
 						p Sign up for our newsletter!
@@ -103,15 +112,16 @@ block content
 
 		// ------------ Video Panel -------- //
 		#examplePanel.largePanel
+			.cars
 			.container
 				h2
 					strong OLF BY EXAMPLE
 				.row
 					div.description.col-lg-10.col-lg-offset-1
 						p This video demo provides a detailed examination of an example Blockchain Proof of Technology (PoT).
-				.row
+				.row.video
+					#youtube
 
-			#youtube
 
 		// ------------ Fabric Panel -------- //
 		.largePanel#fabricPanel
