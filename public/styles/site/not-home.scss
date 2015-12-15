@@ -22,19 +22,17 @@
 	position: fixed;
 	padding: 2em;
 	top: 106px;
-	// background: #e7f0f7;
 	color: #0f6ab4;
 	vertical-align: top;
 	padding: 0px;
 	min-height: 800px;
-	// border: 1px solid #c3d9ec;
 	z-index: 1;
 	width:164px;
-	// transform: 50%;
+
 	h3 {
-    color: #2F3034;
-    font-size: 16px;
-    font-weight: 700;
+		color: #2F3034;
+		font-size: 16px;
+		font-weight: 700;
 	}
 	hr{
 		margin: 24px 0 0 0;
@@ -72,25 +70,15 @@
 	margin-bottom: 20px;
 }
 
-.insHeader, .instructions{
-	// width:100%;
-	// margin-left:0;
-}
 
 hr{
 	border-color:#0f6ab4;
 }
 
 
-
-.instructions, .insHeader{
-	// margin:auto;
-}
 .instructions{
 	text-align: left;
 	margin-top: 20px;
-	// border-top:0;
-	// display:none;
 }
 
 .insHeader{
@@ -111,11 +99,6 @@ hr{
 	position: relative;
 	z-index:2;
 }
-
-
-// .altNavLink{
-// 	padding: 0 !important;
-// }
 
 .resource{
 	border: 0;

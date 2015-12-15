@@ -9,19 +9,20 @@
 }
 
 #topContentPanel{
-	// padding: 100px 0 150px 0;
 	background-image: url('/images/home-hero-lineart.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 56%;
 	height: 100%;
+	
 	.hero {
-    top: 164px;
-    display: block;
-    position: relative;
-    margin-top: 0;
+		top: 164px;
+		display: block;
+		position: relative;
+		margin-top: 0;
+		
 		h1 {
-	    margin: 0 20px 20px;
+			margin: 0 20px 20px;
 			display: block;
 			font-family: 'Poppins', sans-serif;
 			font-weight: 400;
@@ -29,6 +30,7 @@
 			line-height: 1.4;
 			position: relative;
 		}
+		
 		.heroIntroCopy {
 			margin-top: 20px;
 			margin-bottom: 20px;
@@ -88,7 +90,7 @@
 		height: 320px;
 		width: 2388px;
 		margin-left: -1194px;
-    left: 50%;
+		left: 50%;
 	}
 }
 
@@ -131,15 +133,10 @@
 	color:#fff;
 }
 
-.subcontentPanel{
-	// text-align: center;
-}
-
 .description{
 	font-size:24px;
 	text-align: center;
 	font-weight:300;
-	// margin-bottom: 40px;
 	p{
 		margin: 0 0 40px;
 	}

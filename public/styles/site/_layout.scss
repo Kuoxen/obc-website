@@ -1,3 +1,5 @@
+@import "_variables";
+
 h1{
 	font-family: 'Poppins', sans-serif;
 	font-weight:700;
@@ -54,35 +56,10 @@ a:hover, a:active{
 	border-bottom: 1px solid #ddd;
 }
 
-/*
-#footer {
-	margin-top: 30px;
-}
-*/
-$border: #bbb;
-$bg: #eee;
-
-///////////////////////////
-// Aspect Ratio Wrappers //
-///////////////////////////
-/*
-// 2:1 ratio - Wrap objects in this to make them scale at this ratio
-div.twoByOneWrapper {
-  width: 100%;
-
-  position: relative;
-}
-
-// This is what make elements inside the wrapper scale with it
-div.twoByOneWrapper > div {
-  position:absolute;
-  top:0; bottom: 0; left: 0; right: 0;
-}
-*/
-
 #logo{
 	width: 170px;
 }
+
 #logoText, #logoText:hover, #logoText:visited, #logoText:active{
 	font-size: 13px;
 	color: #000;
@@ -94,14 +71,6 @@ div.twoByOneWrapper > div {
 	left: 119px;
 	line-height: 12px;
 }
-
-
-
-
-
-
-
-
 
 .gallery-image img{
     display: block;
@@ -154,9 +123,6 @@ code, pre {
     font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 
-// .container{
-// 	max-width: 1300px;
-// }
 
 .test{
 	border: solid 1px #000;
@@ -288,9 +254,3 @@ ul, ol {
     padding-left: 16px;
 }
 
-//
-// pre{
-// 	text-align: left;
-// 	width:80%;
-// 	margin:auto !important;
-// }

@@ -5867,25 +5867,6 @@ a:hover, a:active {
   height: 86px;
   border-bottom: 1px solid #ddd; }
 
-/*
-#footer {
-	margin-top: 30px;
-}
-*/
-/*
-// 2:1 ratio - Wrap objects in this to make them scale at this ratio
-div.twoByOneWrapper {
-  width: 100%;
-
-  position: relative;
-}
-
-// This is what make elements inside the wrapper scale with it
-div.twoByOneWrapper > div {
-  position:absolute;
-  top:0; bottom: 0; left: 0; right: 0;
-}
-*/
 #logo {
   width: 170px; }
 
