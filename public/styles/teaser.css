@@ -6046,7 +6046,7 @@ ul, ol {
     position: relative;
     margin-top: 0; }
     #topContentPanel .hero h1 {
-      margin: 0 20px 20px;
+      margin: 0 20px 32px;
       display: block;
       font-family: 'Poppins', sans-serif;
       font-weight: 400;
@@ -6065,7 +6065,7 @@ ul, ol {
   font-weight: 700;
   font-size: 64px;
   margin-top: -25px;
-  line-height: 85px;
+  line-height: 68px;
   position: relative; }
 
 #mainContent h2 {
@@ -6237,13 +6237,15 @@ body {
 
 .logo {
   width: 120px;
-  margin-bottom: 20px; }
+  margin-bottom: 60px; }
 
 #topContentPanel .hero {
-  top: 125px; }
+  top: 64px; }
+  #topContentPanel .hero .bigboy {
+    margin-bottom: 40px; }
 
 .twoByOneWrapper {
-  margin-bottom: 165px; }
+  margin-bottom: 144px; }
 
 input, button {
   padding: 10px 20px;
@@ -6268,14 +6270,14 @@ input {
 @media (max-width: 700px) {
   .bigboy {
     font-size: 54px;
-    line-height: 70px; }
+    line-height: 58px; }
   .logo {
     width: 100px; } }
 
 @media (max-width: 500px) {
   .bigboy {
     font-size: 40px;
-    line-height: 55px; }
+    line-height: 44px; }
   input, button {
     width: 100%;
     margin: 5px; }

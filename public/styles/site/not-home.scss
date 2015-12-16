@@ -19,13 +19,15 @@
 
 
 #altNavPanel{
+	overflow-y: auto;
+	overflow-x: hidden;
 	position: fixed;
-	padding: 2em;
 	top: 106px;
+	vertical-align: top;
+	bottom:0;
 	color: #0f6ab4;
 	vertical-align: top;
 	padding: 0px;
-	min-height: 800px;
 	z-index: 1;
 	width:164px;
 
