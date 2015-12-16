@@ -6243,17 +6243,15 @@ ul, ol {
   position: relative; }
 
 #altNavPanel {
-  overflow-y: auto;
-  overflow-x: hidden;
   position: fixed;
   top: 106px;
   vertical-align: top;
-  bottom: 0;
   color: #0f6ab4;
   vertical-align: top;
-  padding: 0px;
+  padding: 0;
   z-index: 1;
-  width: 164px; }
+  width: 164px;
+  display: block; }
   #altNavPanel h3 {
     color: #2F3034;
     font-size: 16px;

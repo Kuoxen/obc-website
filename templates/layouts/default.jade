@@ -73,9 +73,9 @@ html
 			//var bag = !{JSON.stringify(bag)};					//throw jade json over to JS
 			$(document).ready(function(){
 				//console.log('bag', bag);
-				
+
 				get_swagger(populate_nav);
-				
+
 				function get_swagger(cb) {
 					$.ajax({
 						method: 'GET',
@@ -91,19 +91,49 @@ html
 							if (cb) cb(e, null);
 						}
 					});
+
+
+				 	$(window).scroll(function () {
+						var length = $('#secondPanel').height() - $('#altNavPanel').height() + $('#secondPanel').offset().top;
+						 var scroll = $(this).scrollTop();
+						 var height = $('#altNavPanel').height() + 'px';
+						 if (scroll < $('#secondPanel').offset().top) {
+
+								 $('#altNavPanel').css({
+										 'position': 'absolute',
+										 'top': '20px'
+								 });
+
+						 } else if (scroll > length) {
+
+								 $('#altNavPanel').css({
+										 'position': 'absolute',
+										 'bottom': '0',
+										 'top': 'auto'
+								 });
+
+						 } else {
+
+								 $('#altNavPanel').css({
+										 'position': 'fixed',
+										 'top': '20px'//,
+										 //'height': height
+								 });
+						 }
+				 });
 				}
-				
+
 				function populate_nav(err, json){
 					var skip_list = ['Show/Hide'];
 					var done = [];
-					
+
 					if(err == null){
 						for(i in json.paths){
 							for(method in json.paths[i]){
 								for(x in json.paths[i][method].tags){
 									//console.log(json.paths[i][method].tags[x]);
 									var name = json.paths[i][method].tags[x];
-									
+
 									if(!in_array(name.toLowerCase(), done)){								//only populate it once
 										done.push(name.toLowerCase());
 										if($.inArray(name, skip_list) == -1){
@@ -116,14 +146,14 @@ html
 						}
 					}
 				}
-				
+
 				function in_array(name, arr){
 					for(var i in arr){
 						if(arr[i] == name) return true;
 					}
 					return false;
 				}
-				
+
 				$(document).on("click", ".altNavLink", function(){							//don't reload the page if we are on the swagger page AND the link is for a swagger tag
 					if(location.pathname.indexOf('/swagger') >= 0){
 						if($(this).attr('href').indexOf('/swagger') >= 0){
