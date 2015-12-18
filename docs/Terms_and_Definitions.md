@@ -3,18 +3,18 @@
 ###**Users and Roles**
 
 
-Users and Roles    | &nbsp; 
--- | --
-Chain Validator | Entities that own a stake of a chain network. Each chain validator has a voice in deciding whether a transaction is valid, therefore chain validators can interrogate all transaction sent to their chain.
-Chain Auditor | Entities with the permission to interrogate transactions
-Chain Auditor |	Entities with the permission to interrogate transactions
+|Users and Roles    | &nbsp; |
+|-- | --|
+|Chain Validator | Entities that own a stake of a chain network. Each chain validator has a voice in deciding whether a transaction is valid, therefore chain validators can interrogate all transaction sent to their chain.|
+|Chain Auditor | Entities with the permission to interrogate transactions|
+|Chain Auditor |	Entities with the permission to interrogate transactions|
 
-Types of Network Participants | &nbsp; 
--- | --
-Solution User | End users usually don’t care about the details of obc networks, they typically use applications provided by application owners to initiate transactions on a chain network. **Roles**: *None* 
-Solution Provider	|  Organizations that develop mobile and/or browser based application for end users to use services offered on business chains. Some application owners may also be network owners. **Roles**: *Chain Transactor* 
-Network Proprietor	|  Proprietor(s) setup and define the purpose of a business network. They are the stakeholders of a network. **Roles**: *Chain Transactor, Chain Validator*
-Network Auditors	| Individuals or organizations with the permission to interrogate transactions **Roles**: *Chain Auditor*
+|Types of Network Participants | &nbsp; |
+|-- | --|
+|Solution User | End users usually don’t care about the details of obc networks, they typically use applications provided by application owners to initiate transactions on a chain network. **Roles**: *None* |
+|Solution Provider	|  Organizations that develop mobile and/or browser based application for end users to use services offered on business chains. Some application owners may also be network owners. **Roles**: *Chain Transactor* |
+|Network Proprietor	|  Proprietor(s) setup and define the purpose of a business network. They are the stakeholders of a network. **Roles**: *Chain Transactor, Chain Validator*|
+|Network Auditors	| Individuals or organizations with the permission to interrogate transactions **Roles**: *Chain Auditor*|
 
  
 ###**Chain Network** 
