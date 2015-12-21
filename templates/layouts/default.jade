@@ -2,8 +2,8 @@ include ../mixins/flash-messages
 
 doctype html
 html
-	
-	
+
+
 	// ------------ HEADER  -------- //
 	head
 		meta(charset="utf-8")
@@ -13,11 +13,15 @@ html
 		title= title || 'Open Block Chain'
 		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 
+
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
-		link(href="/styles/prism.css", rel="stylesheet")
+		//link(href="/styles/prism.css", rel="stylesheet")
 		link(href="/styles/site.css", rel="stylesheet")
+		link(href="/styles/lfcollab.css", rel="stylesheet")
 		link(type="text/css", rel="stylesheet" href="/styles/font-awesome-4.3.0/css/font-awesome.min.css")
-		
+		link(href='https://fonts.googleapis.com/css?family=Poppins:300,500,700' rel='stylesheet' type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css')
+
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
@@ -26,66 +30,37 @@ html
 		block custom_css
 
 		block head
-		
-		
+
+
 	// ------------ BODY  -------- //
 	body(data-spy="scroll" data-target=".navbar" data-offset="50")
 		#body
 			#bgWrap
-				
-				
+
+
 				// ------------ Header Panel -------- //
 				#header: .container
 					div(role="navigation").navbar.navbar-default
-						.container-fluid
-							.navbar-header
-								button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-									span.sr-only Toggle navigation
-									span.icon-bar
-									span.icon-bar
-									span.icon-bar
-									
-								a.navbar-brand(href='/')
-									img(src="/images/logo.png" alt="OBC Logo" title="Home")#logo
-								#logoTextWrap 
-									a(href="/")#logoText
-										span LINUX 
-										p OPEN BLOCKCHAIN
-										
-							.collapse.navbar-collapse
-								ul.nav.navbar-nav.navbar-right
-									a(href="#").navLinks Code
-									a(href="/gettingstarted").navLinks Getting Started
-									a(href="/docs?url=../swagger/rest_api.json").navLinks Docs
-									a(href="/blog").navLinks Blog
-									a(href="#").navLinks Comunity
-									
-					
-				// ------------ Top Content Panel -------- //
-				#topContentPanel2
-					block topContentPanel
-			
-			
+						include ./top_nav
+
+
 			//- Flash messages allow you to display once-off status messages to users, e.g. form
 			+flash-messages(messages)
-				
-				
+
+
 			// ------------ Main Content Panel -------- //
-			#secondPanel
+			#secondPanel.container
 				block content
-				
+
 				#altNavPanel.navbar
 					block altNavPanel
-				
-				
+
+
 		// ------------ Footer -------- //
 		#footer
-			.pan1x1 &nbsp;
-				h1 FOOTER
-				p Social media icons supplied by Alfredo H. under Creative Commons Attribution 3.0 Unported License.
-				| No changes have been made to the original sources, located <a href="https://www.iconfinder.com/iconsets/social-media-2053">here</a>
-				
-				
+			include footer
+
+
 		// ------------ JAVASCRIPT -------- //
 		script(src='/js/jquery/jquery-1.11.3.min.js')
 		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
@@ -98,6 +73,95 @@ html
 			//var bag = !{JSON.stringify(bag)};					//throw jade json over to JS
 			$(document).ready(function(){
 				//console.log('bag', bag);
+
+				get_swagger(populate_nav);
+
+				function get_swagger(cb) {
+					$.ajax({
+						method: 'GET',
+						url: '/swagger/rest_api.json',
+						data: null,
+						contentType: 'application/json',
+						success: function(json) {
+							console.log('Success loading swagger file', json);
+							if (cb) cb(null, json);
+						},
+						error: function(e) {
+							console.log('Error loading swagger file', e);
+							if (cb) cb(e, null);
+						}
+					});
+
+
+				 	$(window).scroll(function () {
+						var length = $('#secondPanel').height() - $('#altNavPanel').height() + $('#secondPanel').offset().top;
+						 var scroll = $(this).scrollTop();
+						 var height = $('#altNavPanel').height() + 'px';
+						 if (scroll < $('#secondPanel').offset().top) {
+
+								 $('#altNavPanel').css({
+										 'position': 'absolute',
+										 'top': '20px'
+								 });
+
+						 } else if (scroll > length) {
+
+								 $('#altNavPanel').css({
+										 'position': 'absolute',
+										 'bottom': '0',
+										 'top': 'auto'
+								 });
+
+						 } else {
+
+								 $('#altNavPanel').css({
+										 'position': 'fixed',
+										 'top': '20px'//,
+										 //'height': height
+								 });
+						 }
+				 });
+				}
+
+				function populate_nav(err, json){
+					var skip_list = ['Show/Hide'];
+					var done = [];
+
+					if(err == null){
+						for(i in json.paths){
+							for(method in json.paths[i]){
+								for(x in json.paths[i][method].tags){
+									//console.log(json.paths[i][method].tags[x]);
+									var name = json.paths[i][method].tags[x];
+
+									if(!in_array(name.toLowerCase(), done)){								//only populate it once
+										done.push(name.toLowerCase());
+										if($.inArray(name, skip_list) == -1){
+											var html = '<li class="navLinkWrap"><a class="altNavLink" href="/swagger?url=./swagger/rest_api.json#swagger-' + name + '">' + name + '</a></li>';
+											$("#apiAltNav").append(html);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				function in_array(name, arr){
+					for(var i in arr){
+						if(arr[i] == name) return true;
+					}
+					return false;
+				}
+
+				$(document).on("click", ".altNavLink", function(){							//don't reload the page if we are on the swagger page AND the link is for a swagger tag
+					if(location.pathname.indexOf('/swagger') >= 0){
+						if($(this).attr('href').indexOf('/swagger') >= 0){
+							return false;
+						}
+					}
+				});
+
 			});
-			
+
 		block custom_js

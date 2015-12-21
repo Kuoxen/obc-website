@@ -1,0 +1,73 @@
+extends ../layouts/default
+
+
+// ------------ Top Content Panel -------- //
+block topContentPanel
+	h1 Documentation
+
+// ------------ Alt Nav Panel -------- //
+block altNavPanel
+	include ../layouts/left_nav
+
+
+block content
+	.col-md-10.col-md-offset-2.instructions(filename="#{data.filename}" style="display:block") Loading...
+
+block custom_js
+	script(type='text/javascript').
+		$(document).ready(function(){
+			//console.log(locals);
+
+			$(".instructions").each(function(){
+				var filename = $(this).attr("filename");
+				var me = this;
+
+				if(filename && filename.constructor === String){
+					filename = filename.trim();
+					if(filename.length >= 0){
+						console.log('loading:', filename);
+						get_rendered_md(filename, cb_populate_me);
+					}
+				}
+
+				function cb_populate_me(err, html){
+					if(err == null){
+						$(me).html(html);
+					}
+				}
+			});
+
+			function get_rendered_md(filename, cb) {
+				$("#log").append("Creating Device Token: \n\t");
+				$.ajax({
+					method: 'GET',
+					url: '/rmd/' + filename,
+					data: null,
+					contentType: 'application/json',
+					success: function(json) {
+						//console.log(json);
+						console.log('Success loading readme file', filename);
+						if (cb) cb(null, json);
+					},
+					error: function(e) {
+						console.log('Error loading readme file', e);
+						if (cb) cb(e, null);
+					}
+				});
+			}
+
+
+			$(".navLinkWrap").click(function(){
+				$(".active").removeClass("active");
+				$(this).addClass("active");
+			});
+
+			var filename = '#{data.filename}';
+			$(".altNavLink").each(function(){								//find the damn link and style it as active
+				var link = $(this).attr("href");
+				if(link.indexOf(filename) > 0){
+					$(this).parent().addClass("active");
+					console.log('found it', link);
+				}
+			});
+		});

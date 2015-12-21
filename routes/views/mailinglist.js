@@ -1,5 +1,6 @@
 var keystone = require('keystone');
 var MailingList = keystone.list('MailingList');
+var lib = require('../lib.js');
 
 exports = module.exports = function(req, res) {
 	
@@ -60,6 +61,7 @@ exports = module.exports = function(req, res) {
 	
 	
 	// Render the view
-	view.render('mailinglist');
-	
+	if(lib.check_login(req, res)){
+		view.render('mailinglist');
+	}
 };

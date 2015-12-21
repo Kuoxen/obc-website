@@ -1,0 +1,142 @@
+extends ../layouts/default
+
+
+// ------------ Top Content Panel -------- //
+block topContentPanel
+	h1 Documentation
+
+// ------------ Alt Nav Panel -------- //
+block altNavPanel
+	include ../layouts/left_nav
+
+
+block content
+	.subcontentPanel2
+
+		.insHeader#anchorStart(filename="Getting_Started.md") Getting Started
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+		.insHeader#anchorWhite Whitepaper
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+		.insHeader#anchorArch Architecture
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+		.insHeader#anchorUse(filename="OBC_Use_Cases.md") Use Cases
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+		.insHeader#anchorPeer(filename="Setup_OBC_Peer.md") Setting Up an Openchain Peer
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+		.insHeader#anchorWrite(filename="Setup_Sandbox.md") Writting, Building, And Running Chaincode In Dev Environment
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+		.insHeader#anchorDev(filename="Setup_Network.md") Setting Up a Network for Development
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+
+		.insHeader#anchorAPI(filename="Openchain_API.md") API Docs
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+		a(href="/swagger/?url=./swagger/rest_api.json" style="color:inherit;")
+			.insHeader#anchorAPI() API Swagger
+				span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+		.insHeader#anchorExample Example
+			span.fa.fa-angle-right.fa-2x.open &nbsp;
+
+
+
+
+		// ------------ Example Panel -------- //
+		//-
+			h1 [CODE HIGHLIGHTING EXAMPLE]
+			p.description Ribeye turkey salami beef ribs ball tip. Boudin short loin tail doner jowl leberkas. doner strip steak meatball picanha tri-tip landjaeger leberkas biltong chicken kielbasa. Short ribs flank kielbasa spare ribs.
+
+			pre
+				code.language-javascript.line-numbers.
+					module.exports = {
+
+						/** New Enquiry Notifications */
+
+						'enquiry-notification': function(req, res, callback) {
+
+							// To test enquiry notifications we create a dummy enquiry that
+							// is not saved to the database, but passed to the template.
+
+							var Enquiry = keystone.list('Enquiry');
+
+							var newEnquiry = new Enquiry.model({
+								name: { first: 'Test', last: 'User' },
+								email: 'contact@open-block-chain.com',
+								phone: '+61 2 1234 5678',
+								enquiryType: 'message',
+								message: { md: 'Nice enquiry notification.' }
+							});
+
+							callback(null, {
+								admin: 'Admin User',
+								enquiry: newEnquiry,
+								enquiry_url: '/keystone/enquiries/'
+							});
+
+						}
+
+				};
+
+block custom_js
+	script(type='text/javascript').
+		$(document).ready(function(){
+			console.log('hi');
+
+			$(".insHeader").click(function(){
+				var filename = $(this).attr("filename");
+				if(filename){
+					window.location.replace("/docs/" + filename);
+				}
+			});
+
+			/*$(".instructions").each(function(){
+				var filename = $(this).attr("filename");
+				var me = this;
+
+				if(filename && filename.constructor === String){
+					filename = filename.trim();
+					if(filename.length >= 0){
+						console.log('loading:', filename);
+						get_rendered_md(filename, cb_populate_me);
+					}
+				}
+
+				function cb_populate_me(err, html){
+					if(err == null){
+						$(me).html(html);
+					}
+				}
+			});
+
+			function get_rendered_md(filename, cb) {
+				$("#log").append("Creating Device Token: \n\t");
+				$.ajax({
+					method: 'GET',
+					url: '/rmd/' + filename,
+					data: null,
+					contentType: 'application/json',
+					success: function(json) {
+						//console.log(json);
+						console.log('Success loading readme file', filename);
+						if (cb) cb(null, json);
+					},
+					error: function(e) {
+						console.log('Error loading readme file', e);
+						if (cb) cb(e, null);
+					}
+				});
+			}*/
+
+
+			$(".navLinkWrap").click(function(){
+				$(".active").removeClass("active");
+				$(this).addClass("active");
+			});
+		});

@@ -1,4 +1,98 @@
-$border: #ccc;
+@import "_variables";
+
+#topContentPanel, #topContentPanel2{
+	text-align: center;
+}
+
+.twoByOneWrapper{
+	height: 640px;
+}
+
+#topContentPanel{
+	background-image: url('/images/home-hero-lineart.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 56%;
+	height: 100%;
+
+	.hero {
+		top: 164px;
+		display: block;
+		position: relative;
+		margin-top: 0;
+
+		h1 {
+			margin: 0 20px 32px;
+			display: block;
+			font-family: 'Poppins', sans-serif;
+			font-weight: 400;
+			font-size: 40px;
+			line-height: 1.4;
+			position: relative;
+		}
+
+		.heroIntroCopy {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 20px;
+			background: rgba(255,255,255,0.4);
+		}
+	}
+}
+
+.bigboy {
+	display: block;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-size: 64px;
+	margin-top: -25px;
+	line-height: 68px;
+	position: relative;
+}
+
+#mainContent{
+	h2{
+		margin: 40px 0;
+		text-align: center;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 500;
+		font-size: 40px;
+	}
+}
+
+#examplePanel{
+	position: relative;
+	display: block;
+	&.largePanel{
+		overflow: hidden;
+		background-image: url("/images/home-example-background.jpg");
+		background-color: #ccc;
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: 54%;
+		height: 100%;
+		width: 100%;
+	}
+	.video{
+		position: relative;
+		z-index: 1;
+	}
+	.cars{
+		position: absolute;
+		display: block;
+		bottom: 40px;
+		z-index: 0;
+		background-image: url("/images/video-player-cars.jpg");
+		background-color: #ccc;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 100%;
+		height: 320px;
+		width: 2388px;
+		margin-left: -1194px;
+		left: 50%;
+	}
+}
 
 .annoyText{
 	font-size:50px;
@@ -39,17 +133,36 @@ $border: #ccc;
 	color:#fff;
 }
 
-.subcontentPanel{
+.description{
+	font-size:24px;
 	text-align: center;
+	font-weight:300;
+	p{
+		margin: 0 0 40px;
+	}
 }
 
-.description{
-	width: 60%;
-	margin:auto;
+.carousel{
+	position: relative;
+}
+
+#carousel-foundation{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.carousel-control.left,.carousel-control.right{
+	background-image: none;
+}
+
+
+@media screen and (min-width: 768px){
+	.carousel-indicators {
+	    bottom: -40px;
+	}
 }
 
 .navbar-collapse{
-	margin-top:20px;
+	margin-top:32px;
 }
 
 .navbar-toggle{
@@ -61,37 +174,71 @@ $border: #ccc;
 	font-weight:700;
 	margin-bottom:10px;
 }
-.thingWrap{
-	display:inline-block;
-	margin-right: 25px;
-	text-align: left;
-}
 
-.instructions, .insHeader{
-	width:80%;
-	margin:auto;
-}
-.instructions{
-	padding:20px;
-	text-align: left;
-	border:1px solid $border;
-	border-top:0;
-	display:none;
-}
-
-.insHeader{
-	border:1px solid $border;
-	font-size:25px;
-	font-weight: 700;
-	padding: 10px 20px;
-	text-align: left;
-	margin-top:20px;
-	cursor: pointer;
-}
-.insHeader:hover{
-	border-color:#000;
-}
 .open{
 	float:right;
 	margin-top:-10px;
+}
+
+.largePanel{
+	padding:20px 0px 80px 0px;
+}
+
+#whoPanel{
+	background: $accentone;
+	background-image: url('/images/home-who-network-art.png');
+	color:#fff;
+	background-size:contain;
+	background-repeat: no-repeat;
+}
+
+#whoLogoPanel{
+	margin-top:30px;
+	height:70px;
+	line-height: 70px;
+	font-size:30px;
+	overflow:hidden;
+}
+
+#busLogoPanel{
+	display:inline-block;
+	width:100%;
+	margin:auto;
+	overflow:hidden;
+	padding: 0 120px;
+}
+
+.sect1x2simple{
+	display:inline-block;
+	width:38%;
+	margin: 0 5%;
+	vertical-align: top;
+	text-align: left;
+}
+
+.whoLogo{
+	margin:0 15px;
+	height:55px;
+}
+#youtube{
+	background:#fff;
+	height:481px;
+	width:854px;
+	margin: 64px auto 120px;
+	background-image: url("/images/OFL-video-teaser.jpg");
+	background-color: #ccc;
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 100%;
+}
+
+#fabricPanel{
+	background:#36ABC5;
+	color:#fff;
+	padding: 40px 0;
+}
+
+
+.fabImg{
+	width:33.33%;
 }

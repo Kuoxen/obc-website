@@ -1,0 +1,85 @@
+// Bootstrap
+// =========
+
+// Bootstrap can be removed entirely by deleting this line.
+@import "bootstrap/bootstrap";
+
+
+// Site Styles
+// ===========
+
+// Add your own site style includes here
+@import "site/layout";
+@import "site/home.scss";
+
+body{
+	min-width: 375px;
+}
+
+#topContentPanel{
+	background-image:none;
+}
+.logo{
+	width:120px;
+	margin-bottom:60px;
+}
+#topContentPanel {
+	.hero{
+		top:64px;
+		.bigboy{
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.twoByOneWrapper{
+	margin-bottom: 144px;
+}
+input, button{
+	padding: 10px 20px;
+	margin: 0;
+	margin-left: -4px;
+	line-height: 22px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-width: 2px;
+	font-size:16px;
+}
+input{
+	margin-top:1px;
+	width:400px;
+}
+
+.twoByOneWrapper{
+	height: inherit;
+}
+
+.bigboy{
+	font-size:64px;
+}
+@media (max-width: 700px) {
+	.bigboy{
+		font-size:54px;
+		line-height: 58px;
+	}
+	.logo{
+		width:100px;
+	}
+}
+
+@media (max-width: 500px) {
+	#topContentPanel .hero .heroIntroCopy{
+		font-size: 16px;
+	}
+	.bigboy{
+		font-size: 32px;
+		line-height: 36px;
+	}
+	input, button{
+		width:100%;
+		margin:5px;
+	}
+	.logo{
+		width:84px;
+	}
+}
