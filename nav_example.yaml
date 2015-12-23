@@ -1,0 +1,34 @@
+- name: Index
+  path: /
+  contents:
+- name: Learn
+  path: /learn
+  contents:
+    - name: Use Cases
+      path: /learn/use-cases
+      hidden: 1
+      contents:
+    - name: Getting Started
+      path: /learn/getting-started
+      contents:
+    - name: Setup Developer Environment
+      path: /learn/setup-dev
+      contents:
+    - name: Setup Developer Network
+      path: /learn/setup-dev-net
+      contents:
+    - name: Setup Network
+      path: /learn/setup-net
+      contents:
+    - name: Setup OBC Peer
+      path: /learn/setup-peer
+      contents:
+    - name: Setup Sandbox
+      path: /learn/setup-sandbox
+      contents:
+    - name: Technical Specifications
+      path: /learn/core
+      contents:
+    - name: Openchain API
+      path: /learn/base-services
+      contents:

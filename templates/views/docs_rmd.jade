@@ -63,7 +63,7 @@ block custom_js
 			});
 
 			var filename = '#{data.filename}';
-			$(".altNavLink").each(function(){								//find the damn link and style it as active
+			$(".altNavLink").each(function(){								//find the link and style it as active
 				var link = $(this).attr("href");
 				if(link.indexOf(filename) > 0){
 					$(this).parent().addClass("active");

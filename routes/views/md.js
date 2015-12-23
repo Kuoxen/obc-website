@@ -1,32 +1,26 @@
-//var keystone = require('keystone');
 var markedejs = require('markedejs');
 var lib = require('../lib.js');
 
+// REST calls to /rmd/:filename will come here
 exports = module.exports = function(req, res) {
 	
-	//var md = new keystone.View(req, res);
-	//var locals = res.locals;
-	// locals.section is used to set the currently selected
-	// item in the header navigation.
-	//locals.section = 'home';
-	
-	// Render the view
-	//md.render('index');
+	// Only allow these files to be accessible if the user is authenticated
 	if(lib.check_login(req, res)){
+		
+		// Always show something
 		if(!req.params.filename) req.params.filename = 'Setup_OBC_Peer.md';
+		
+		// Stylesheet to apply to the markdown
 		var css = '<link href="/styles/site.css", rel="stylesheet">';
 		
+		// Render the md into styled html and return to client
 		markedejs.renderFile('docs/' + req.params.filename, null, function (err, html) {
-			/*if(html !== null){
-				var repo = 'obc-getting-started';
-				if(req.params.repo) repo = req.params.repo;
-				html = html.replace(/src="images\/(\w+).(\w+)/g, 'src="https://raw.github.com/openblockchain/' + repo + '/master/images/$1.$2');				//replace image link with github link
-			}*/
 			if(html !== null){
-				html = html.replace(/src="images\/(\w+).(\w+)/g, 'src="/images/$1.$2');			//replace relative image link with abs link
+				// Replace relative image link with abs link
+				html = html.replace(/src="images\/(\w+).(\w+)/g, 'src="/images/$1.$2');
 			}
 			if(err != null) res.status(500).send(err);
-			else res.send(html + css);															//just throw it at the end, seems to work OK
+			else res.send(html + css);   // Just append css at the end, seems to work OK
 		});
 	}
 };
