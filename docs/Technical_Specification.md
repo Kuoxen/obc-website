@@ -194,7 +194,7 @@ The API spans the following categories:
 *  Storage - External store for files or documents
 *  Event - Sub/pub events on blockchain
 
-When you are ready to start interacting with the Openchain peer node through the available APIs and packages, follow the instructions on the [API Documentation](https://github.com/openblockchain/obc-peer/blob/master/docs/Openchain%20API.md) page.
+When you are ready to start interacting with the Openchain peer node through the available APIs and packages, follow the instructions on the [API Documentation](Connect_w_CLI_and_REST.md) page.
 
 ### Identity
 *  Register: Register a user or endpoint for identity
@@ -238,7 +238,7 @@ When you are ready to start interacting with the Openchain peer node through the
 *  Transaction Committed: Triggered on new transaction satisfied a condition (filter)
 *  Block Added: Triggered when a new block added, including block height
 
-When you are ready to start interacting with the Openchain peer node through the available APIs and packages, follow the instructions on the [API Documentation](https://github.com/openblockchain/obc-peer/blob/master/docs/Openchain%20API.md) page.
+When you are ready to start interacting with the Openchain peer node through the available APIs and packages, follow the instructions on the [API Documentation](Connect_w_CLI_and_REST.md) page.
 
 
 ## Application Model

@@ -1,0 +1,61 @@
+doctype html
+html
+
+	// ------------ HEADER  -------- //
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+		title= title || 'Open Block Chain'
+		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+
+		//- Customise the stylesheet for your site by editing /public/styles/site.sass
+		link(href="/styles/prism.css", rel="stylesheet")
+		link(href="/styles/teaser.css", rel="stylesheet")
+		link(href="/styles/lfcollab.css", rel="stylesheet")
+		link(type="text/css", rel="stylesheet" href="/styles/font-awesome-4.3.0/css/font-awesome.min.css")
+		link(href='https://fonts.googleapis.com/css?family=Poppins:300,500,700' rel='stylesheet' type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css')
+
+	// ------------ BODY  -------- //
+	body
+		#body
+			#bgWrap
+
+
+				// ------------ Header Panel -------- //
+				#header: .container
+					div(role="navigation").navbar.navbar-default
+						include ../layouts/top_nav
+
+			// ------------ Top Content Panel -------- //
+			.community
+			// ------------ Main Content Panel -------- //
+			.container
+				.row
+					h2 How to connect
+					ul
+						li Discuss (Askbot)
+						li Github
+						li Slack
+						li Issue tracker (Github)
+						li Stack Overflow (#open_ledger_project)
+				.row
+					h2 Join a Mailing List:
+					ol
+						li Developers
+						li Finance
+						li Healthcare
+						li IOT
+						li Supply Chain
+						li Creative
+						li Ownership
+						li Regulation
+						li Jobs
+						li Hackathons
+						li Projects/Use Cases
+
+		// ------------ Footer -------- //
+		#footer
+		include ../layouts/footer

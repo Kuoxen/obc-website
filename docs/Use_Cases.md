@@ -5,7 +5,7 @@
 
 ### B2B Contract
 
-Business contracts can be codified to allow two or more parties to automate contractual agreements in a trusted way.  Although information on blockchain is naturally “public”, B2B contracts may require privacy control to protect sensitive business information from being disclosed to outside parties that also have access to the ledger. 
+Business contracts can be codified to allow two or more parties to automate contractual agreements in a trusted way.  Although information on blockchain is naturally “public”, B2B contracts may require privacy control to protect sensitive business information from being disclosed to outside parties that also have access to the ledger.
 
 <table>
 <tr><td><img src="images/b2bcontract.png" height="200" width="500"></td></tr>
@@ -33,17 +33,15 @@ While confidential agreements are a key business case, there are many scenarios 
 
 *  Discoverability - If a contract is a business offer seeking for bids, it must be easily searchable. In addition, such contract needs to have the built-in intelligence to evaluate, select, and honor bids.
 
-*  Payment inside contract- Integration with off-chain payment system is a must so that contract code can initiate payment transactions that are processed and settled off chain
-
 *  Atomicity of contract execution - Atomicity of the contract is needed to guarantee asset transfers can only occur when payment is received (Delivery vs. Payment). If any step in the execution process fails, the entire transaction must be rolled back
 
-*  Contract to chain-code communication - Contracts must be able to communicate with chaincodes deployed on the same ledger. 
+*  Contract to chain-code communication - Contracts must be able to communicate with chaincodes deployed on the same ledger.
 
 *  Longer Duration contract - Timer is needed to support B2B contracts that have long execution window.
 
-*  Reuseable contracts - Oftenly used contracts can be standardized so that they can be reused. 
+*  Reuseable contracts - Oftenly used contracts can be standardized so that they can be reused.
 
-*  Auditable contractual agreement -  Any contract can be made auditable to third parties. 
+*  Auditable contractual agreement -  Any contract can be made auditable to third parties.
 
 *  Contract life-cycle management - B2B contracts are unique and not all of them can be standardized. An efficient contract management system is needed to enchance the scalability of the ledger network
 
@@ -76,7 +74,7 @@ Why is this specific example an abstract use case? Because while all blockchain 
 
 *  Third party Audit -  All supplied parts shall be auditable by third parties. E.g. regulators may need to track the total number of parts supplied by a supplier for tax accounting purpose
 
-*  Obfuscation of shipments - Balances shall be obfuscated so that no one supplier can deduce the business activiteis of other suppliers 
+*  Obfuscation of shipments - Balances shall be obfuscated so that no one supplier can deduce the business activiteis of other suppliers
 
 *  Obfuscation of market size - Total balance must be obfuscated so that part suppliers can’t deduce its own market share and use that as a leverage to seek for better term.
 
@@ -86,8 +84,8 @@ Why is this specific example an abstract use case? Because while all blockchain 
 
 &nbsp;
 
-  
-### Asset Depository 
+
+### Asset Depository
 
 Assets such as financial securities must be able to be dematerialized on a blockchain network so that all stakeholders of an asset type will have direct access to that asset, allowing them to initiate trades and acquire information on an asset without going through layers of intermeidaries. Trades should be settled in near real time and all stakeholders must be able to access asset information in near real time. A stakeholder should be able to add business rules on any given asset type, further reducing operating cost with automation logic.
 
@@ -150,9 +148,18 @@ Company A announced its intention to raise 2 Billion USD by way of right issue. 
 
 ### Separation of asset ownership and custodian’s duties
 
-Assets should always be registered under their actual owners’ name, and third party professionals can manage and offer services over these assets without the need of taking legal the ownership of assets (through a nominee or street name). If an asset issuer needs to communicate with its listed owners (e.g. share holder list on its registrar), the issuer can do so directly with its owners. On the other hand, custodians can also buy, sell and lend assets under asset owner’s permission. Under this setup, Brokers/Custodians/CSDs can focus on providing value-add services to share owners while offloading operational duties in redirecting communication & payments from issuers to shareowners 
+Assets should always be owned by their actual owners, and asset owners must be able to allow third party professionals to manage their assets without the need of passing the legal ownership of assets to third parties (e.g. nominee or street name entities). If issuers need to send messages or payments to asset owners (e.g. listed share holders), issuers send them directly to asset owners. For third party asset managers and/or custodians, they can always buy, sell, and lend assets on their owners’ behalf. Under this setup, asset custodians can focus on providing value-add services to share owners without worrying about asset ownership duties such as managing/redirecting payments from issuers to shareowners.
 
 <table>
 <tr><td><img src="images/separation_of_ownship_and_custodyservice.png" height="300" width="500"></td></tr>
 </table>
 
+&nbsp;
+
+### Interoperability of assets
+
+If an organization needs 20k units of asset B but instead owns10k units of asset A, it needs a way to exchange his asset A for asset B. However, the market may not offer enough liquidity to fulfill this trade quickly, yet there might be plenty of liquidity available between asset A and asset C, and then between asset C and asset B. Instead of only getting what’s available in direct trading (A for B), chain network will automatically connect buyers to “buried” sellers, and find the best match, which could be buried under several layers, and execute the transaction.
+
+<table>
+<tr><td><img src="images/interoperability_of_assets.png" height="300" width="500"></td></tr>
+</table>

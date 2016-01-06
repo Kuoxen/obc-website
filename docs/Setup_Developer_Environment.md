@@ -1,4 +1,4 @@
-## Setting up the development environment
+## Setting up the Development Environment
 
 ### Overview
 The current development environment utilizes Vagrant running an Ubuntu image, which in turn launches Docker containers. Conceptually the Host launches a VM, which in turn launches Docker containers.
@@ -7,7 +7,7 @@ The current development environment utilizes Vagrant running an Ubuntu image, wh
 
 This model allows developers to leverage their favorite OS/editors and execute the system in a controlled environment that is consistent amongst the development team.
 
-- Note that your Host should not run within a VM. If you attempt this, the VM within your Host may fail to boot with a message indicating that VT-x is not available. 
+- Note that your Host should not run within a VM. If you attempt this, the VM within your Host may fail to boot with a message indicating that VT-x is not available.
 
 ### Prerequisites
 * [Git client](https://git-scm.com/downloads)
@@ -63,6 +63,6 @@ Once complete, you should now be able to SSH into your new VM with following com
 
     vagrant ssh
 
-Once inside the VM, you can find your WORKSPACE directory under /openchain and the obc-peer project under $GOPATH/src/github.com/openblockchain/obc-peer. Additional [instructions](https://github.com/openblockchain/obc-peer/blob/master/README.md) describe how to build, run and test the Openchain Peer project.
+Once inside the VM, you can find your WORKSPACE directory under /openchain and the obc-peer project under $GOPATH/src/github.com/openblockchain/obc-peer. Additional [instructions](Setup_Peer.md) describe how to build, run and test the Openchain Peer project.
 
 **NOTE** any time you *git clone* any of the projects in your Host's WORKSPACE, the update will be instantly available within the VM's /openchain directory.

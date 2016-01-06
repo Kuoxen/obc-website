@@ -50,6 +50,25 @@ a:hover, a:active{
 	color: #14B655;
 }
 
+table{
+	margin-bottom: 48px;
+	background-color: #efefef;
+	tr{
+		&> td:first-child {
+		    width: 240px;
+				vertical-align: top;
+
+		}
+		&:nth-child(2n) {
+    	background-color: #f8f8f8;
+		}
+	}
+	td{
+		padding: 20px 12px;
+		border-bottom: 1px solid #ddd;
+	}
+}
+
 #header {
 	background-color: #fff;
 	height: 86px;
@@ -253,4 +272,3 @@ code{
 ul, ol {
     padding-left: 16px;
 }
-

@@ -1,4 +1,4 @@
-# Openchain - Peer
+# Setting up a Peer
 
 ## Overview
 
@@ -6,7 +6,7 @@ This project contains the core blockchain fabric.
 
 ## Building the project
 
-Assuming you have followed the [development environment getting started instructions](https://github.com/openblockchain/obc-getting-started/blob/master/devenv.md)
+Assuming you have followed the [development environment getting started instructions](Setup_Developer_Environment.md)
 
 To access your VM, run
 ```
@@ -64,11 +64,11 @@ To run a specific test use the `-run RE` flag where RE is a regular expression t
     go test -test.v -run=TestGetFoo
 
 ## Writing Chaincode
-Since chaincode is written in Go language, you can set up the environment to accommodate the rapid edit-compile-run of your chaincode. Follow the instructions on the [Sandbox Setup](https://github.com/openblockchain/obc-peer/blob/master/docs/SandboxSetup.md) page, which allows you to run your chaincode off the blockchain.
+Since chaincode is written in Go language, you can set up the environment to accommodate the rapid edit-compile-run of your chaincode. Follow the instructions on the [Sandbox Setup](Setup_Chaincode.md) page, which allows you to run your chaincode off the blockchain.
 
 ## Setting Up a Network
 
-To set up an Openchain network of several validating peers, follow the instructions on the [Devnet Setup](https://github.com/openblockchain/obc-peer/blob/master/docs/DevnetSetup.md)
+To set up an Openchain network of several validating peers, follow the instructions on the [Devnet Setup](Setup_Developer_Network.md)
 page. This network leverage Docker to manage multiple instances of validating peer on the same machine, allowing you to quickly test your chaincode.
 
 
@@ -93,7 +93,7 @@ The available log levels in order of increasing verbosity are: *CRITICAL | ERROR
 ## Generating grpc code
 If you modify ant .proto files, run the following command to generate new .pb.go files.
 ```
-/obc-dev-env/compile_protos.sh
+/openchain/obc-dev-env/compile_protos.sh
 ```
 
 ## Adding or updating a Go packages

@@ -4,7 +4,7 @@ This project has specific intentions and guidelines that are provided in the [MO
 ## Getting Started
 Welcome to Openchain development!
 
-You are strongly recommended to read the [technical specifications](techspec.md) to
+You are strongly recommended to read the [technical specifications](Technical_Specification.md) to
 get an overview of what we are developing. We use agile methodology with a weekly
 sprint, organized by [issues](https://github.com/openblockchain/obc-peer/issues) and [milestones](https://github.com/openblockchain/obc-peer/milestones), so take a look to familiarize yourself with the current work.
 
@@ -14,7 +14,7 @@ This software is under [Apache License Version 2.0](LICENSE)
 ## Setting up the development environment
 We create a development environment for this project such that every developer
 would have the same set up and can be productive within a few minutes. Follow
-the [instructions](devenv.md) to download and start.
+the [instructions](Setup_Developer_Environment.md) to download and start.
 
 ## Contribution
 We are using [Github Flow](https://guides.github.com/introduction/flow/) process
