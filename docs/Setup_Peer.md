@@ -74,7 +74,7 @@ page. This network leverage Docker to manage multiple instances of validating pe
 
 ## Working with CLI, REST, and Node.js
 
-When you are ready to start interacting with the Openchain peer node through the available APIs and packages, follow the instructions on the [API Documentation](https://github.com/openblockchain/obc-peer/blob/master/docs/Openchain%20API.md) page.
+When you are ready to start interacting with the Openchain peer node through the available APIs and packages, follow the instructions on the [API Documentation](Connect_w_CLI_and_REST.md) page.
 
 ## Configuration
 
