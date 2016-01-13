@@ -5,19 +5,33 @@ extends ../layouts/home
 block topContentPanel
 	.hero
 		h1 WHAT IS THE
-		.bigboy OPEN LEDGER FOUNDATION?
+		.bigboy HYPERLEDGER PROJECT?
 		.row
-			.heroIntroCopy.col-md-8.col-md-offset-2 Blockchain technology is in its infancy and is often not well suited for the needs of industry. Scalability challenges and the lack of support for confidential and private transactions, among other issues, make its use infeasible for many important industry applications. We lay out an industry–focused design, based on and extending the learnings of the pioneers in this field.
+			.heroIntroCopy.col-md-8.col-md-offset-2 The Hyperledger project is a collaborative effort created to advance blockchain technology by identifying and addressing important features and currently missing requirements, for a cross-industry open standard for distributed ledgers that can transform the way business transactions are conducted globally.
 			.row
-			<button type="button" class="btn btn-primary btn-lg">Read Whitepaper</button>
-			<button type="button" class="btn btn-primary btn-lg">Get Started</button>
-			<button type="button" class="btn btn-primary btn-lg">Github</button>
+			<a href="/docs" class="btn btn-primary btn-lg">See the Contributions</a>
+			<a href="https://github.com/hyperledger" class="btn btn-primary btn-lg">View Github Project</a>
 
 
 
 // ------------ Main Content Panel -------- //
 block content
 	.subcontentPanel
+
+		// ------------ Who Panel -------- //
+		#whyPanel.largePanel
+			h2 WHY CREATE THE PROJECT?
+			.container
+				.row
+					div.description.col-lg-10.col-lg-offset-1
+						p Blockchain is a peer to peer distributed ledger technology for a new generation of transactional applications that establishes trust, accountability and transparency while streamlining business processes. Think of it as an operating system for interactions. It has the potential to vastly reduce the cost and complexity of getting things done.
+						p The distributed ledger is a permanent, secure tool that makes it easier to create cost-efficient business networks without requiring a centralized point of control. With distributed ledgers, virtually anything of value can be tracked and traded. The application of this emerging technology is showing great promise in the enterprise. For example, it allows securities to be settled in minutes instead of days. It can be used to help companies manage the flow of goods and related payments or enable manufacturers to share production logs with OEMs and regulators to reduce product recalls.
+						quote “As with any early-stage, highly-complex technology that demonstrates the ability to change the way we live our lives and conduct business, blockchain demands a cross-industry, open source collaboration to advance the technology for all.”
+						p — Jim Zemlin, Executive Director, Linux Foundation
+						.row
+						<a href="/docs" class="btn btn-primary btn-lg">View Use Cases For GoLang Fabric</a>
+				.row
+
 
 		// ------------ Who Panel -------- //
 		#whoPanel.largePanel
@@ -60,39 +74,49 @@ block content
 							.sr-onlyNext
 
 
+		// ------------ Video Panel -------- //
+		#examplePanel.largePanel
+			.cars
+			.container
+				h2 What does an Example Look Like?
+				.row
+					div.description.col-lg-10.col-lg-offset-1
+						p This video demo provides a quick walkthrough of a Car Lease Proof of Technology application built with the Hyperledger Golang Fabric #[a(href="#") (View Example Docs)].
+				.row.video
+					#youtube
+
+
 		// ------------ HOW Panel -------- //
 		#howPanel.largePanel
 			.container
-				h2
-					strong HOW TO GET INVOLVED
+				h2 HOW TO GET INVOLVED
 				.row
 					div.description.col-lg-8.col-lg-offset-2
 						p Open source projects depend on a lot more than code to be successful. Accurate documentation, support, meetups, and blogs are also critical to a healthy project.
 
 				.row
-					.col-lg-5
-						p We are using #[a(href="#") Github Flow] process to contribute code.  Here is the basic Github Flow:
-						ul
-							li Anything in the master branch is deployable
-							li To work on something new, create a descriptively named branch off of your fork
-							li Commit to that branch locally and regularly push your work to the same named branch on the server
-							li When you need feedback or help, or you think the branch is ready for merging, open a pull request (make sure successfully built and tested with the testsuite)
-							li After your pull request has reviewed and signed off, a committer can merge it into the master branch
-					.col-lg-5.col-lg-offset-2
-						p
-							span We use the same approach as the Linux Kernel community, The Developer's Certificate of Origin, to manage contributions.
-							span We simply ask that when submitting a pull request, that the developer includes a sign-off statement in the pull request's description.
-
-						p Here is an example Signed-off-by-line.  It indicates that the submitter accepted the DCO:
-						pre
-							code Signed-off-by: John Doe &#60;john.doh@domain.com&#62;
+					.col-lg-4
+						h5 Write, review or fix code.
+						p All code for the project lives on github. There are different languages, architectures, and concepts that are meant to advance blockchain technology.  Take a look and see if you can contribute to existing repos or submit a request to add new and improved ideas.
+						<a href="https://github.com/hyperledger" class="btn btn-primary btn-sm">View Github Project</a>
+					.col-lg-4
+						h5 Learn, try and share.
+						p All of project’s documentation is on this site. As you read, learn and try it out. Feel free to contribute back suggestions.
+						<a href="/docs" class="btn btn-primary btn-sm">View Documentation</a>
+					.col-lg-4
+						h5 Distribute the Word
+						p Join the community. Talk about your Cloud Foundry work at Meetups or on Slack.
+						<a href="/docs" class="btn btn-primary btn-sm">View Documentation</a>
+				.row
+				h5 Would you like to make a large code submission?
+				p To date, contributions and submissions have come from IBM (fabric architecture), DAH (PBFT consensus implementation), R3 (architecture framework), and Intel (???). Between January 10th and February 8th, the Hyperledger Project will accept proposals from anyone planning to make a large code contribution to make the blockchain real for business.
 
 				hr(style="border-color:#ccc;")
 
 				div.row
 					.col-lg-5
 						h3 QUESTIONS?
-						p Don't hesitate to join our Slack channel, check out our GitHub code, take a peek at our 60 second video, send us an email, read the bog or connect with us.
+						p Don't hesitate to join our Slack channel, check out our GitHub code, send us an email, read the bog or connect with us.
 						.social-icons
 							a.icon.github(href="https://github.com/openblockchain/", target="_blank")
 							a.icon.slack(href="https://openchain.slack.com", target="_blank")
@@ -108,29 +132,3 @@ block content
 							input.form-control(type="text" placeholder="Enter your email for the latest OBC news")
 							span.input-group-btn
 								button.btn.btn-default(type="button") Go!
-
-
-		// ------------ Video Panel -------- //
-		#examplePanel.largePanel
-			.cars
-			.container
-				h2
-					strong OLF BY EXAMPLE
-				.row
-					div.description.col-lg-10.col-lg-offset-1
-						p This video demo provides a detailed examination of an example Blockchain Proof of Technology (PoT).
-				.row.video
-					#youtube
-
-
-		// ------------ Fabric Panel -------- //
-		.largePanel#fabricPanel
-			h2
-				strong THE OBC FABRIC
-			p.description  We have fabric yes we do, we have fabric how about you.
-			a(href="/swagger?url=./swagger/rest_api.json")
-				img(src="images/fabric_1.png").fabImg
-			a(href="/docs")
-				img(src="images/fabric_2.png").fabImg
-			a(href="/docs")
-				img(src="images/fabric_3.png").fabImg

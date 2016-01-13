@@ -5880,7 +5880,7 @@ table {
   border-bottom: 1px solid #ddd; }
 
 #logo {
-  width: 170px; }
+  width: 248px; }
 
 #logoText, #logoText:hover, #logoText:visited, #logoText:active {
   font-size: 13px;
@@ -5916,7 +5916,7 @@ table {
   border: 0; }
 
 .navbar-brand {
-  padding: 18px 0; }
+  padding: 24px 0; }
 
 pre {
   display: block;
