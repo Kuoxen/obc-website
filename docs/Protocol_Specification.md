@@ -1,3 +1,5 @@
+# Open Blockchain (OBC) Protocol Specification
+
 Open Blockchain Specification, version 0.01 (draft)  01/10/2016
 
 Authors:

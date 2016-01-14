@@ -5831,8 +5831,11 @@ h2 {
   font-size: 25px; }
 
 h3 {
-  font-size: 17px;
-  font-weight: 900; }
+  font-size: 17px; }
+
+h5.code-contrib {
+  font-weight: 900;
+  margin-bottom: 48px; }
 
 button {
   padding: 7px 20px 5px 20px;
@@ -6258,16 +6261,14 @@ ul, ol {
   position: fixed;
   top: 106px;
   vertical-align: top;
-  color: #0f6ab4;
   vertical-align: top;
   padding: 0;
   z-index: 1;
   width: 164px;
   display: block; }
-  #altNavPanel h3 {
-    color: #2F3034;
-    font-size: 16px;
-    font-weight: 700; }
+  #altNavPanel h5 {
+    margin-top: 20px;
+    margin-bottom: 20px; }
   #altNavPanel hr {
     margin: 24px 0 0 0;
     border-color: #eee; }
@@ -6276,7 +6277,8 @@ ul, ol {
     padding: 0; }
   #altNavPanel .nav li > a {
     padding: 12px 8px;
-    font-size: 12px; }
+    font-size: 12px;
+    color: #0f6ab4; }
   #altNavPanel .nav .active > a {
     color: #14B655;
     font-weight: 700; }
@@ -6318,3 +6320,22 @@ hr {
 
 .resource {
   border: 0; }
+
+.panel-default {
+  border-color: transparent; }
+
+.panel-body {
+  padding: 0; }
+
+.panel-heading {
+  padding: 0; }
+
+.panel-default > .panel-heading {
+  background-color: transparent; }
+
+.panel {
+  margin-bottom: 20px;
+  border: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none; }

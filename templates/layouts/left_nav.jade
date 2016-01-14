@@ -1,50 +1,75 @@
-h3 Documentation for Code Contribution Candidates
+h5.code-contrib Documentation for Code Contribution Candidates
+//
+//-- BASICS
+//
 
 
-h3 Fabric-GoLang
 
-br
-h3 Basics
-hr
-ul.nav
-	li.navLinkWrap
-		a(href="/docs/Technical_Specification.md").altNavLink White Paper (Technical Specifications)
-	li.navLinkWrap
-		a(href="/docs/Protocol_Specification.md").altNavLink White Paper (Technical Specifications)
-	li.navLinkWrap
-		a(href="/docs/Glossary.md").altNavLink Glossary
-	li.navLinkWrap
-		a(href="/docs/Architecture.md").altNavLink Architecture
-	li.navLinkWrap
-		a(href="/docs/Use_Cases.md").altNavLink Use Cases
-
-br
-h3 Getting Started
-hr
-ul.nav
-	li.navLinkWrap.selected
-		a(href="/docs/Getting_Started.md").altNavLink Getting Started
-	li.navLinkWrap
-		a(href="/docs/Setup_Developer_Environment.md").altNavLink Setting up the Development Environment
-	li.navLinkWrap
-		a(href="/docs/Setup_Peer.md").altNavLink Setting Up a Peer
-	li.navLinkWrap
-		a(href="/docs/Setup_Chaincode.md").altNavLink Writing, Building, And Running Chaincode Sandbox
-	li.navLinkWrap
-		a(href="/docs/Setup_Network.md").altNavLink Setting Up a Network for Development
-	//li.navLinkWrap
-		//a(href="/docs/Connect_w_CLI_and_REST.md").altNavLink Connecting with CLI and REST
-
-br
-h3 API Reference
-hr
-ul.nav#apiAltNav
-
-br
-h3 Examples
-hr
-ul.nav
-	li.navLinkWrap
-		a(href="#").altNavLink Examples
-	li.navLinkWrap
-		a(href="#").altNavLink Examples
+div.panel.panel-default
+	div(class="panel-heading", role="tab", id="headingOne")
+		h5.panel-title
+			a(role="button", data-toggle="collapse", data-parent="#accordion", href="#collapse-fabric", aria-expanded="true", aria-controls="collapse-fabric")
+					h4 Fabric-GoLang
+	div(id="collapse-fabric" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne")
+		div.panel-body
+			div(class="panel-group", id="accordion", role="tablist", aria-multiselectable="true")
+				div.panel.panel-default
+					div(class="panel-heading", role="tab", id="headingOne")
+						h5.panel-title
+							a(role="button", data-toggle="collapse", data-parent="#accordion", href="#collapse-fabric-golang", aria-expanded="true", aria-controls="collapse-fabric-golang")
+									h5 Basics
+					div(id="collapse-fabric-golang" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne")
+						div.panel-body
+							ul.nav
+								li.navLinkWrap
+									a(href="/docs/Technical_Specification.md").altNavLink White Paper (Technical Specifications)
+								li.navLinkWrap
+									a(href="/docs/Protocol_Specification.md").altNavLink Protocol Specifications
+								li.navLinkWrap
+									a(href="/docs/Glossary.md").altNavLink Glossary
+								li.navLinkWrap
+									a(href="/docs/Architecture.md").altNavLink Architecture
+								li.navLinkWrap
+									a(href="/docs/Use_Cases.md").altNavLink Use Cases
+					div.panel.panel-default
+						div(class="panel-heading", role="tab", id="headingOne")
+							h5.panel-title
+								a(role="button", data-toggle="collapse", data-parent="#accordion", href="#collapse-fabric-golang-getting-started", aria-expanded="true", aria-controls="collapse-fabric-golang-getting-started")
+									h5 Getting Started
+						div(id="collapse-fabric-golang-getting-started" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne")
+							div.panel-body
+								ul.nav
+									li.navLinkWrap.selected
+										a(href="/docs/Getting_Started.md").altNavLink Getting Started
+									li.navLinkWrap
+										a(href="/docs/Setup_Developer_Environment.md").altNavLink Setting up the Development Environment
+									li.navLinkWrap
+										a(href="/docs/Setup_Peer.md").altNavLink Setting Up a Peer
+									li.navLinkWrap
+										a(href="/docs/Setup_Chaincode.md").altNavLink Writing, Building, And Running Chaincode Sandbox
+									li.navLinkWrap
+										a(href="/docs/Setup_Network.md").altNavLink Setting Up a Network for Development
+									//li.navLinkWrap
+										//a(href="/docs/Connect_w_CLI_and_REST.md").altNavLink Connecting with CLI and REST
+					div.panel.panel-default
+						div(class="panel-heading", role="tab", id="headingOne")
+							h5.panel-title
+								a(role="button", data-toggle="collapse", data-parent="#accordion", href="#collapse-fabric-golang-api", aria-expanded="true", aria-controls="collapse-fabric-golang-api")
+									h5 API Reference
+						div(id="collapse-fabric-golang-api" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne")
+							div.panel-body
+								ul.nav
+									ul.nav#apiAltNav
+					div.panel.panel-default
+						div(class="panel-heading", role="tab", id="headingOne")
+							h5.panel-title
+								a(role="button", data-toggle="collapse", data-parent="#accordion", href="#collapse-fabric-golang-examples", aria-expanded="true", aria-controls="collapse-fabric-golang-examples")
+									h5 Examples
+						div(id="collapse-fabric-golang-examples" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne")
+							div.panel-body
+								ul.nav
+									ul.nav#apiAltNav
+										li.navLinkWrap
+											a(href="#").altNavLink Examples
+										li.navLinkWrap
+											a(href="#").altNavLink Examples
