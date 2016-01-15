@@ -1,6 +1,6 @@
-## Setting up the Development Environment
+# Setting up the Development Environment
 
-### Overview
+## Overview
 The current development environment utilizes Vagrant running an Ubuntu image, which in turn launches Docker containers. Conceptually the Host launches a VM, which in turn launches Docker containers.
 
 **Host -> VM -> Docker**

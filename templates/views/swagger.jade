@@ -6,127 +6,7 @@ block custom_css
 	link(href='/swagger/css/typography.css' media='screen' rel='stylesheet' type='text/css')
 	link(href='/swagger/css/screen.css' media='screen' rel='stylesheet' type='text/css')
 	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
-
-	style.
-		/* dsh - to do - move to css file */
-		hr{
-			border-color: #0f6ab4;
-			margin:10px 0;
-		}
-		h3{
-			margin:0;
-		}
-
-		/* sweet swagger divs */
-		.fa{
-			cursor:pointer;
-			color: #0f6ab4;
-		}
-		#returnUrl{
-			display:none;
-			position: relative;
-			top:-5px;
-			margin-right:10px;
-		}
-		#urlFullPath{
-			padding-left:5px;
-		}
-		#urlFullPath{
-			border:2px #fff solid;
-			font-size:25px;
-			color:#0f6ab4;
-			margin:0 auto;
-			padding:5px;
-			font-family:monospace;
-			text-align: center;
-			margin-bottom:10px;
-		}
-		#urlFullPath:hover{
-			border:2px #0f6ab4 solid;
-		}
-		#urlFullPath::-ms-clear {	/*hide IE10 clear button*/
-			display: none;
-		}
-		.description{
-			font-size:14px;
-			text-align:left;
-		}
-
-		/* obc swagger divs */
-		.subcontentPanel{
-			text-align:left;
-			margin-left: 200px;
-			min-height:900px;
-		}
-		.swagger-section .swagger-ui-wrap{
-			max-width:1200px;
-		}
-		#swagNav, #swagger-ui-container{
-			display: inline-block;
-		}
-		#swagger-ui-container{
-			padding:0;
-			width:100%;
-		}
-		#resources_container{
-			width:100%;
-		}
-		#swagNav{
-			width:140px;
-			background:#e7f0f7;
-			color:#0f6ab4;
-			vertical-align: top;
-			padding:15px;
-			min-height:300px;
-			border: 1px solid #c3d9ec;
-			position:fixed;
-			z-index:1;
-		}
-
-		/* swagger divs */
-
-		#resources{
-			padding: 0;
-		}
-		#api_info{
-			display:none;
-		}
-		#swagger-ui-container{
-			border: 1px solid #c3d9ec;
-		}
-		#footer{
-			position:relative;
-			z-index:3;
-		}
-
-		.swagger-section .swagger-ui-wrap ul#resources li.resource div.heading ul.options li{
-			border-right: 0;
-		}
-		.collapseResource, .expandResource{
-			display:none;
-		}
-
-		/* half-ass attempt for mobile */
-		@media (max-width: 1400px) {
-			#swagger-ui-container{
-				width:100%;
-			}
-		}
-		@media (max-width: 1100px) {
-			#swagger-ui-container{
-				width:80%;
-			}
-		}
-		@media (max-width: 800px) {
-			#swagger-ui-container{
-				width:75%;
-			}
-		}
-		@media (max-width: 650px) {
-			#swagger-ui-container{
-				width:70%;
-			}
-		}
+	link(href="/styles/swagger-override.css", rel="stylesheet")
 
 
 // ------------ Alt Nav Panel -------- //
@@ -137,10 +17,10 @@ block altNavPanel
 block content
 	.subcontentPanel.swagger-section
 
-		#superSwaggerActiveWrap
-			br
-			p Weclome to the our interactive swagger documentation.  You can change the URL below to target APIs hosted else where.
-			span(title="Revert")#returnUrl.fa.fa-undo
+		.instructions
+			h1 API Reference
+			p Weclome to the our interactive swagger documentation.
+			//span(title="Revert")#returnUrl.fa.fa-undo
 			input(type="text" value="...loading...")#urlFullPath
 
 		#swagger-ui-container.swagger-ui-wrap

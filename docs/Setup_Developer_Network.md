@@ -1,4 +1,4 @@
-## Setting Up a Network For Development
+# Setting Up a Network For Development
 
 This document covers setting up an Openchain network on your local machine for development using Docker containers.
 

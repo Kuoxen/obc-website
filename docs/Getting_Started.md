@@ -1,7 +1,4 @@
-## Memorandum of Understanding
-This project has specific intentions and guidelines that are provided in the [MOU](https://github.com/openblockchain/obc-getting-started/blob/master/MOU.md). If you do not agree with the provisions in the MOU, contact the Openchain project manager and do not proceed with accessing, reading or contributing to this project.
-
-## Getting Started
+# Getting Started
 Welcome to Openchain development!
 
 You are strongly recommended to read the [technical specifications](Technical_Specification.md) to

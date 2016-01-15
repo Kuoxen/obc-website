@@ -6043,6 +6043,19 @@ code {
 ul, ol {
   padding-left: 16px; }
 
+#post {
+  margin-top: 20px; }
+  #post h5.date {
+    padding: 8px 0 20px;
+    margin-bottom: 32px;
+    border-bottom: solid 1px #eee; }
+  #post h5.post-number {
+    margin-bottom: 32px; }
+  #post p.lead {
+    font-size: 16px; }
+  #post .blog .post {
+    margin-bottom: 48px; }
+
 #topContentPanel, #topContentPanel2 {
   text-align: center; }
 
@@ -6255,7 +6268,8 @@ ul, ol {
   padding-left: 65px; }
 
 #secondPanel {
-  position: relative; }
+  position: relative;
+  margin-bottom: 80px; }
 
 #altNavPanel {
   position: fixed;
