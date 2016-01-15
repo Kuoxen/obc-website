@@ -27,7 +27,7 @@ While confidential agreements are a key business case, there are many scenarios 
 
 #### Key Components
 
-*  Multi-sig contract activation - When a contract is first deployed by one of the counter parties, it will be in the pending activation state. To active a contract, signatures from other counterparties and/or third party participants are required.
+*  Multi-sig contract activation - When a contract is first deployed by one of the counter parties, it will be in the pending activation state. To activate a contract, signatures from other counterparties and/or third party participants are required.
 
 *  Multi-sig contract execution - Some contract will require one of many signatures to execute. (E.g. In trade finance, a payment instruction can only be executed if either the recipient or a authorized third party (e.g. UPS) confirms the shipment of the good)
 
