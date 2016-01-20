@@ -1,4 +1,4 @@
-# Openchain - Setting Up a Network For Development
+# Setting Up a Network For Development
 
 ## Overview
 

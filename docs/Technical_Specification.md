@@ -1,8 +1,9 @@
-# Open Blockchain (OBC) Technical Specification
+# Technical Specification
 
 _This document is subject to change as development progresses_
 
-
+## Your voice here:
+If you are reading this, then it means anything said in this document or done in this open source repository is open for your input. Apply your experience, lend your voice, and show with your code how the specification and the implementation of Openchain should be taken forward. Don’t like something you see here? Help us all see your point of view (in a respectful and positive way) or even better, bring some code that shows a better way.
 
 ## Background
 
@@ -11,6 +12,8 @@ This paper describes the principles, high-level architecture and initial technic
 The design presented here describes a blockchain fabric called Openchain, a protocol for business-to-business and business-to-customer transactions. It is intended for permissioned networks (important: see definition below), and it allows compliance with regulations and respects the requirements that arise when competing businesses work together on the same network.
 
 The central elements of this specification are smart contracts (aka chaincode), digital assets, record repository, a decentralized network and cryptographic security. To these blockchain staples, we add performance, verified identities, private transactions, confidential chaincode, and modular consensus protocols.
+
+_For questions regarding terminologies used in OBC, check out our [glossary](Glossary.md)_
 
 #### Why a new fabric:
 Blockchain technology is in its infancy and is often not well suited for the needs of industry. Scalability challenges and the lack of support for confidential and private transactions, among other issues, make its use infeasible for many important industry applications. We lay out an industry–focused design, based on and extending the learnings of the pioneers in this field.
@@ -36,7 +39,7 @@ Assets such as financial securities must be able to be dematerialized on a block
 The blockchain fabric must provide a means to allow every participant on a supplychain network to input and track sourcing of raw materials, record parts manufacturing telemetry, track provenance of goods through shipping, and maintain immutable records of all aspects of the production and storage of a finished good through to sale and afterwards. In addition to employing both Business Contracts and Asset Depository patterns above, this case emphasizes the need to provide deep searchability back many transaction layers. It is the core of establishing provenance of any manufactured good that is made up of other goods and supplies.
 
 
-_For more details about these use cases and their requirements, click [here] (usecases.md)_
+_For more details about these use cases and their requirements, click [here](Use_Cases.md)_
 
 ## Definitions
 

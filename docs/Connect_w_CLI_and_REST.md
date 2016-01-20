@@ -1,4 +1,4 @@
-# Openchain APIs - CLI, REST, and Node.js
+# APIs - CLI, REST, and Node.js
 
 ## Overview
 
