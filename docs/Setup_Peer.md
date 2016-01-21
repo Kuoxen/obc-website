@@ -1,4 +1,4 @@
-# Setting up a Peer
+# Openchain - Peer
 
 ## Overview
 
@@ -6,14 +6,14 @@ This project contains the core blockchain fabric.
 
 ## Building the project
 
-Assuming you have followed the [development environment getting started instructions](Setup_Developer_Environment.md)
+This document assumes that you have completed the steps in [development environment getting started instructions](Setup_Developer_Environment.md).
 
-To access your VM, run
+To access your VM, run:
 ```
 vagrant ssh
 ```
 
-From within the VM, follow these additional steps.
+From your VM, complete the following steps:
 
 ### Go build
 ```
@@ -23,13 +23,13 @@ go build
 
 ## Run
 
-To see what commands are available, simply execute the following command:
+To view the available commands, run the following command:
 
     cd $GOPATH/src/github.com/openblockchain/obc-peer
     ./obc-peer
 
-You should see some output similar to below (**NOTE**: rootcommand below is hardcoded in the [main.go](./main.go). Current build will actually create an *obc-peer* executable file).
-
+You should see output similar to the example below. <br>
+(**NOTE**: rootcommand below is hardcoded in the [main.go](./main.go). Current build will actually create an *obc-peer* executable file).
 ```
     Usage:
       obc-peer [command]
@@ -38,38 +38,37 @@ You should see some output similar to below (**NOTE**: rootcommand below is hard
       peer        Run obc peer.
       status      Status of the obc peer.
       stop        Stops the obc peer.
-      chaincode    Compiles the specified chaincode.
+      chaincode   Compiles the specified chaincode.
       help        Help about any command
 
     Flags:
       -h, --help[=false]: help for openchain
 
-
     Use "obc-peer [command] --help" for more information about a command.
 ```
 
-The **peer** command will run peer process. You can then use the other commands to interact with this peer process. For example, status will show the peer status.
+The **peer** command will run the peer process. You can then use the other commands to interact with this peer process. For example, <b>status</b> will show the peer status.
 
 ## Test
 
-To run all tests, in one window, run `./obc-peer peer`. In a second window
+To run all tests run `./obc-peer peer`. Then in a second window, run:
 
     cd $GOPATH/src/github.com/openblockchain/obc-peer
     go test -timeout=20m $(go list github.com/openblockchain/obc-peer/... | grep -v /vendor/)
 
-Note that the first time the tests are run, they can take some time due to the need to download a docker image that is about 1GB in size. This is why the timeout flag is added to the above command.
+Note that the first instance of running the tests can require additional time, because a 1GB docker image is downloaded. For this reason, the `timeout` flag is provided with the `go test` command.
 
-To run a specific test use the `-run RE` flag where RE is a regular expression that matches the test name. To run tests with verbose output use the `-v` flag. For example, to run TestGetFoo function, change to the directory containing the `foo_test.go` and enter:
+To run a specific test, use the `-run RE` flag, where RE is a regular expression that matches the test name. To run tests with verbose output, use the `-v` flag. For example, to run the <b>TestGetFoo</b> function, change to the directory containing the `foo_test.go` and enter:
 
     go test -test.v -run=TestGetFoo
 
 ## Writing Chaincode
-Since chaincode is written in Go language, you can set up the environment to accommodate the rapid edit-compile-run of your chaincode. Follow the instructions on the [Sandbox Setup](Setup_Chaincode.md) page, which allows you to run your chaincode off the blockchain.
+Because chaincode is written in the <b>Go</b> language, you can set up the environment to accommodate the rapid edit-compile-run of your chaincode. Follow the instructions on the [Sandbox Setup](Setup_Chaincode.md) page, which allows you to run your chaincode off the blockchain.
 
 ## Setting Up a Network
 
 To set up an Openchain network of several validating peers, follow the instructions on the [Devnet Setup](Setup_Developer_Network.md)
-page. This network leverage Docker to manage multiple instances of validating peer on the same machine, allowing you to quickly test your chaincode.
+page. This network leverages Docker to manage multiple instances of validating peer on the same machine, allowing you to quickly test your chaincode.
 
 
 ## Working with CLI, REST, and Node.js
@@ -96,8 +95,8 @@ If you modify ant .proto files, run the following command to generate new .pb.go
 /openchain/obc-dev-env/compile_protos.sh
 ```
 
-## Adding or updating a Go packages
-Openchain uses the [Go 1.5 Vendor Experiment](https://docs.google.com/document/d/1Bz5-UB7g2uPBdOx-rw5t9MxJwkfpx90cqG9AFL0JAYo/edit) for package management. This means that all required packages reside in the /vendor folder within the obc-peer project. This is enabled because the GO15VENDOREXPERIMENT environment variable is set to 1 in the Vagrant environment. Go will use packages in this folder instead of the GOPATH when `go install` or `go build` is run. To manage the packages in the /vendor folder, we use [Govendor](https://github.com/kardianos/govendor). This is installed in the Vagrant environment. The following commands can be used for package management.
+## Adding or updating a Go package
+Openchain uses the [Go 1.5 Vendor Experiment](https://docs.google.com/document/d/1Bz5-UB7g2uPBdOx-rw5t9MxJwkfpx90cqG9AFL0JAYo/edit) for package management. This means that all required packages reside in the </b>/vendor</b> folder within the obc-peer project. This is enabled because the GO15VENDOREXPERIMENT environment variable is set to 1 in the Vagrant environment. Go will use packages in this folder instead of the GOPATH when `go install` or `go build` is run. To manage the packages in the <b>/vendor</b> folder, use [Govendor](https://github.com/kardianos/govendor), which is installed in the Vagrant environment. The following commands can be used for package management:
 ```
 # Add external packages.
 govendor add +external
@@ -116,13 +115,13 @@ govendor list
 ```
 
 ## Building outside of Vagrant
-This is not recommended, however some users may wish to build Openchain outside of Vagrant if they use an editor with built in Go tooling. The instructions are
+Though not recommended, some users might choose to build Openchain outside of Vagrant, particularly if they use an editor with built-in Go tooling. The instructions for this method are as follows:
 
 1. Follow all steps required to setup and run a Vagrant image.
-- Make you you have [Go 1.5.1](https://golang.org/) or later installed
-- Set the GO15VENDOREXPERIMENT environmental variable to 1. `export GO15VENDOREXPERIMENT=1`
-- Install [RocksDB](https://github.com/facebook/rocksdb/blob/master/INSTALL.md) version 4.1
-- Run the following commands replacing `/opt/rocksdb` with the path where you installed RocksDB
+2. Ensure that you have [Go 1.5.1](https://golang.org/) (or later) installed.
+3. Set the GO15VENDOREXPERIMENT environment variable to 1: `export GO15VENDOREXPERIMENT=1`
+4. Install [RocksDB](https://github.com/facebook/rocksdb/blob/master/INSTALL.md) version 4.1.
+5. Run the following commands, replacing `/opt/rocksdb` with the path to your installed RocksDB:
 ```
 cd $GOPATH/src/github.com/openblockchain/obc-peer
 CGO_CFLAGS="-I/opt/rocksdb/include" CGO_LDFLAGS="-L/opt/rocksdb -lrocksdb -lstdc++ -lm -lz -lbz2 -lsnappy" go install
