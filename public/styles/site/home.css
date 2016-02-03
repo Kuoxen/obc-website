@@ -16,7 +16,7 @@
     position: relative;
     margin-top: 0; }
     #topContentPanel .hero h1 {
-      margin: 0 20px 20px;
+      margin: 0 20px 32px;
       display: block;
       font-family: 'Poppins', sans-serif;
       font-weight: 400;
@@ -35,7 +35,7 @@
   font-weight: 700;
   font-size: 64px;
   margin-top: -25px;
-  line-height: 85px;
+  line-height: 68px;
   position: relative; }
 
 #mainContent h2 {
@@ -198,3 +198,12 @@
 
 .fabImg {
   width: 33.33%; }
+
+#lfbanner {
+  text-align: left;
+  margin-left: 20px;
+  background: #ccc;
+  line-height: 30px;
+  min-height: 30px;
+  background: url(/images/logos/diagonal-white.png) transparent repeat scroll top left;
+  width: 100%; }

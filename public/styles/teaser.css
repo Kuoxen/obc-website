@@ -5831,8 +5831,11 @@ h2 {
   font-size: 25px; }
 
 h3 {
-  font-size: 17px;
-  font-weight: 900; }
+  font-size: 17px; }
+
+h5.code-contrib {
+  font-weight: 900;
+  margin-bottom: 48px; }
 
 button {
   padding: 7px 20px 5px 20px;
@@ -5862,13 +5865,25 @@ a {
 a:hover, a:active {
   color: #14B655; }
 
+table {
+  margin-bottom: 48px;
+  background-color: #efefef; }
+  table tr > td:first-child {
+    width: 240px;
+    vertical-align: top; }
+  table tr:nth-child(2n) {
+    background-color: #f8f8f8; }
+  table td {
+    padding: 20px 12px;
+    border-bottom: 1px solid #ddd; }
+
 #header {
   background-color: #fff;
   height: 86px;
   border-bottom: 1px solid #ddd; }
 
 #logo {
-  width: 170px; }
+  width: 248px; }
 
 #logoText, #logoText:hover, #logoText:visited, #logoText:active {
   font-size: 13px;
@@ -5904,7 +5919,7 @@ a:hover, a:active {
   border: 0; }
 
 .navbar-brand {
-  padding: 18px 0; }
+  padding: 24px 0; }
 
 pre {
   display: block;
@@ -6027,6 +6042,19 @@ code {
 
 ul, ol {
   padding-left: 16px; }
+
+#post {
+  margin-top: 20px; }
+  #post h5.date {
+    padding: 8px 0 20px;
+    margin-bottom: 32px;
+    border-bottom: solid 1px #eee; }
+  #post h5.post-number {
+    margin-bottom: 32px; }
+  #post p.lead {
+    font-size: 16px; }
+  #post .blog .post {
+    margin-bottom: 48px; }
 
 #topContentPanel, #topContentPanel2 {
   text-align: center; }
@@ -6228,6 +6256,15 @@ ul, ol {
 
 .fabImg {
   width: 33.33%; }
+
+#lfbanner {
+  text-align: left;
+  margin-left: 20px;
+  background: #ccc;
+  line-height: 30px;
+  min-height: 30px;
+  background: url(/images/logos/diagonal-white.png) transparent repeat scroll top left;
+  width: 100%; }
 
 body {
   min-width: 375px; }

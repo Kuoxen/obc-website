@@ -6257,6 +6257,15 @@ ul, ol {
 .fabImg {
   width: 33.33%; }
 
+#lfbanner {
+  text-align: left;
+  margin-left: 20px;
+  background: #ccc;
+  line-height: 30px;
+  min-height: 30px;
+  background: url(/images/logos/diagonal-white.png) transparent repeat scroll top left;
+  width: 100%; }
+
 #topContentPanel2 {
   text-align: left;
   background: #fff;
